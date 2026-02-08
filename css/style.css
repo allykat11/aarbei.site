@@ -614,7 +614,7 @@ ul li a:hover span::after {
 @media (max-width: 768px) {
   .digital-projects-gallery {
     grid-template-columns: 1fr;
-    padding: 60px 20px 40px; /* smaller padding */
+    padding: 120px 20px 40px; /* smaller padding */
     gap: 20px;               /* smaller gap */
   }
 
