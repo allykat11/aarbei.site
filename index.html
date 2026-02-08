@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./imgs/favicon/favicon.png" type="image/png">
+    <title>aarbei.art</title>
+</head>
+
+</script>
+
+<body class="home">
+
+    <header class="site-header">
+        <h1 class="site-title">aarbei.art</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html"><span>home</span></a></li>
+                <li><a href="pages/digital-project.html"><span>digital projects</span></a></li>
+                <li><a href="pages/photography.html"><span>photography prints</span></a></li>
+                <li><a href="pages/contact.html"><span>contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <main class="homepage">
+
+        <!-- First full-page image -->
+            <section class="hero hero-text">
+                <img src="./imgs/home/150ppi/portfolio.png" alt="Portfolio">
+            </section>
+
+            <!-- Second full-page image -->
+            <section class="hero hero-image">
+                <img src="./imgs/home/150ppi/tblmtn.png" alt="Featured artwork">
+            </section>
+
+        </main>
+
+        <section class="about">
+            <div class="about-inner">
+                <div class="about-col">
+                    <p>
+                    I’m a multidisciplinary designer and visual artist exploring digital spaces, 
+                    and image-making. Currently focused on personal projects and commissioned work. 
+                    I like to keep projects simple! 
+                    </p>
+                </div>
+
+                <div class="about-col">
+                    <p>
+                    I have a great passion for the outdoors, and the environment, and hope that my work can contribute 
+                    to conservation efforts, and be used as a tool for change for the planet. 
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="projects-inner">
+
+                <a href="./project-pages/project1.html" class="project-item">
+                    <img src="./imgs/digital-projects/cape energy tours/Cape Energy-01.png" alt="Cape Energy Tours">
+                    <span class="project-title">Cape Energy Tours</span>
+                </a>
+
+                <a href="./project-pages/project2.html" class="project-item">
+                    <img src="./imgs/digital-projects/bethlehem bouldering/mtn.png" alt="bethlehem bouldering">
+                    <span class="project-title">Bethlehem Bouldering</span>
+                </a>
+
+                <a href="./project-pages/project3.html" class="project-item">
+                    <img src="./imgs/digital-projects/SKOON./cleansers/300ppi/Asset 62.png" alt="SKOON.">
+                    <span class="project-title">SKOON.</span>
+                </a>
+            </div>
+
+            <div class="projects-link">
+                <a href="pages/digital-project.html">see more here →</a>
+            </div>
+    </section>
+    
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-left">
+            <p>aarbei.art</p>
+            </div>
+
+            <div class="footer-right">
+            <a href="https://www.instagram.com/" target="_blank">instagram</a>
+            <a href="https://www.tiktok.com/" target="_blank">tiktok</a>
+            <a href="https://www.youtube.com/" target="_blank">youtube</a>
+            <a href="https://www.upwork.com/" target="_blank">upworks</a>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+<script>
+    const header = document.querySelector(".site-header");
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                    // scrolling down
+                    header.classList.add("header-hidden");
+                } else if (currentScrollY < lastScrollY) {
+                    // scrolling up
+                    header.classList.remove("header-hidden");
+                }
+
+                lastScrollY = currentScrollY;
+                ticking = false;
+            });
+
+            ticking = true;
+        }
+    });
+    </script>
+
+
+
+</body>
+</html>

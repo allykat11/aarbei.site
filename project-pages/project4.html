@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../imgs/favicon/favicon.png" type="image/png">
+    <title>aarbei.art</title>
+</head>
+
+</script>
+
+<body class="home">
+
+    <header class="site-header">
+        <h1 class="site-title">aarbei.art</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html"><span>home</span></a></li>
+                <li><a href="../pages/digital-project.html"><span>digital projects</span></a></li>
+                <li><a href="../pages/photography.html"><span>photography prints</span></a></li>
+                <li><a href="../pages/contact.html"><span>contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-page">
+        <section class="editorial-project sage-project">
+
+            <!-- Hero (brand mood or studio image) -->
+            <section class="editorial-hero-block">
+                <video autoplay muted loop playsinline src="../imgs/digital-projects/sage yoga/sageyogastudiovid.mov"></video>
+            </section>
+            <!-- Intro -->
+            <section class="editorial-intro wide">
+                <span class="editorial-label">Brand Identity</span>
+                <h2 class="editorial-title">Sage Yoga</h2>
+                <p class="editorial-meta">Branding · Digital · Environmental · 2021–2023</p>
+
+                <p class="editorial-description">
+                Sage Yoga is a holistic brand developed from the ground up for a Stellenbosch-based yoga studio.
+                Created during my final year of university, the project evolved into a living business -
+                spanning identity, space, digital presence, and community touchpoints.
+                </p>
+            </section>
+
+            <!-- Brand look & feel -->
+            <section class="editorial-image-row single">
+                <img src="../imgs/digital-projects/sage yoga/Sage Yoga Brand Style Guide.jpg" alt="Sage Yoga brand system">
+            </section>
+
+            <!-- Signage -->
+            <section class="editorial-image-row two-up">
+                <img src="../imgs/digital-projects/sage yoga/IMG_4590.png" alt="Sage Yoga studio signage">
+                <img src="../imgs/digital-projects/sage yoga/Photo 2022-08-05, 11 18 56 (1).jpg" alt="Sage Yoga studio signage">
+            </section>
+
+            <!-- Philosophy text -->
+            <section class="editorial-text centered">
+                <p>
+                The visual language was designed to feel grounded, soft, and contemporary -
+                balancing calm neutrality with warmth and approachability. The owner (my mum) liked lavender and sage together, the most calming colours.
+                </p>
+            </section>
+
+            <!-- Social media -->
+            <section class="editorial-image-row three-up">
+
+                <video
+                    src="../imgs/digital-projects/sage yoga/Inhale-Exhale-Quote-Gif.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                ></video>
+
+                <img
+                    src="../imgs/digital-projects/sage yoga/instapost.png"
+                    alt="Sage Yoga social media post"
+                >
+
+                <video
+                    src="../imgs/digital-projects/sage yoga/instapost2.mov"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                ></video>
+            </section>
+
+            <!-- Website mobile walkthrough -->
+            <section class="editorial-feature">
+                <p class="editorial-feature-label">Digital Experience</p>
+                <h3 class="editorial-feature-title">Mobile Website Walkthrough</h3>
+
+                <section class="editorial-video phone manual-play">
+                    <video
+                        src="../imgs/digital-projects/sage yoga/sageyoga-site.mp4"
+                        playsinline
+                    ></video>
+
+                    <button class="video-play-btn" aria-label="Play video">
+                        ▶
+                    </button>
+                </section>
+
+            </section>
+
+            <!-- Closing -->
+            <section class="editorial-outro">
+                <p>
+                Sage Yoga represents a full-scope brand built with care, continuity,
+                and long-term intention - shaped through real use, real space,
+                and a genuine community. 
+                
+                <br><br><strong>The studio ran from 2021 - 2023, and has closed since. </strong> 
+                </p>
+            </section>
+
+        </section>
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-left">
+            <p>aarbei.art</p>
+            </div>
+
+            <div class="footer-right">
+            <a href="https://www.instagram.com/" target="_blank">instagram</a>
+            <a href="https://www.tiktok.com/" target="_blank">tiktok</a>
+            <a href="https://www.youtube.com/" target="_blank">youtube</a>
+            <a href="https://www.upwork.com/" target="_blank">upworks</a>
+            </div>
+
+        </div>
+    </footer>
+    
+    <script>
+  document.querySelectorAll('.editorial-video.manual-play').forEach(wrapper => {
+    const video = wrapper.querySelector('video');
+    const button = wrapper.querySelector('.video-play-btn');
+
+    button.addEventListener('click', () => {
+      video.play();
+      wrapper.classList.add('is-playing');
+    });
+
+    video.addEventListener('pause', () => {
+      wrapper.classList.remove('is-playing');
+    });
+  });
+</script>
+
+
+</body>
+</html>

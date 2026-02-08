@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../imgs/favicon/favicon.png" type="image/png">
+    <title>aarbei.art</title>
+</head>
+
+</script>
+
+<body class="home">
+
+    <header class="site-header">
+        <h1 class="site-title">aarbei.art</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html"><span>home</span></a></li>
+                <li><a href="../pages/digital-project.html"><span>digital projects</span></a></li>
+                <li><a href="../pages/photography.html"><span>photography prints</span></a></li>
+                <li><a href="../pages/contact.html"><span>contact</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-page">
+        <section class="editorial-project aston-project">
+
+            <!-- Hero (collage or strongest visual) -->
+            <section class="editorial-hero">
+                <img src="../imgs/digital-projects/aston martin/banner.png" alt="Aston Martin Instagram collage">
+            </section>
+
+            <!-- Intro -->
+            <section class="editorial-intro compact">
+                <span class="editorial-label">Content Merchants</span>
+                <h2 class="editorial-title">Aston Martin</h2>
+                <p class="editorial-meta">Digital Assets · 2024</p>
+
+                <p class="editorial-description">
+                A small suite of digital touchpoints created for Aston Martin,
+                spanning WhatsApp communication, social media, and email.
+                </p>
+            </section>
+
+            <!-- WhatsApp graphics -->
+            <section class="editorial-image-row three-up">
+                <img src="../imgs/digital-projects/aston martin/Aston Martin Whatsapp Invite-03.png" alt="Aston Martin WhatsApp graphic">
+                <img src="../imgs/digital-projects/aston martin/Whatsapp Invite-02.png" alt="Aston Martin WhatsApp graphic">
+                <img src="../imgs/digital-projects/aston martin/Whatsapp Invite-03.png" alt="Aston Martin WhatsApp graphic">
+            </section>
+
+            <!-- Single mailer -->
+            <!-- Square mailer preview -->
+            <section class="editorial-image square">
+                <img 
+                    src="../imgs/digital-projects/aston martin/CM - Aston Martin - Daytona Invitation Mailer_Page_1.jpg"
+                    alt="Aston Martin email mailer"
+                    class="expandable-image"
+                    data-full="../imgs/digital-projects/aston martin/CM - Aston Martin - Daytona Invitation Mailer_Page_1.jpg"
+                >
+            </section>
+
+            <!-- Fullscreen lightbox -->
+            <div class="image-modal" id="mailer-modal">
+                <button class="modal-close" aria-label="Close">&times;</button>
+                <img src="" alt="Expanded Aston Martin mailer">
+            </div>
+
+
+            <!-- Quiet closing line -->
+            <section class="editorial-outro minimal">
+                <p>
+                Designed to reflect precision, and the brand’s understated confidence.
+                </p>
+            </section>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-left">
+            <p>aarbei.art</p>
+            </div>
+
+            <div class="footer-right">
+            <a href="https://www.instagram.com/" target="_blank">instagram</a>
+            <a href="https://www.tiktok.com/" target="_blank">tiktok</a>
+            <a href="https://www.youtube.com/" target="_blank">youtube</a>
+            <a href="https://www.upwork.com/" target="_blank">upworks</a>
+            </div>
+
+        </div>
+    </footer>
+    
+    <script>
+        const modal = document.getElementById("mailer-modal");
+        const modalImg = modal.querySelector("img");
+        const closeBtn = modal.querySelector(".modal-close");
+
+        document.querySelectorAll(".expandable-image").forEach(img => {
+            img.addEventListener("click", () => {
+            modalImg.src = img.dataset.full || img.src;
+            modal.classList.add("active");
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.classList.remove("active");
+            modalImg.src = "";
+        });
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+            modal.classList.remove("active");
+            modalImg.src = "";
+            }
+        });
+    </script>
+
+
+</body>
+</html>
