@@ -506,12 +506,7 @@ ul li a:hover span::after {
 /*---------------------digital-projects--------------------*/
 
 
-@media (max-width: 768px) {
-  .digital-projects-gallery {
-    grid-template-columns: 1fr;
-    padding: 140px 20px 140px;
-  }
-}
+
 
 .digital-projects-gallery {
   margin-top: 0;              /* remove this */
@@ -614,11 +609,19 @@ ul li a:hover span::after {
 }
 
 /* ---------- MOBILE ---------- */
+
+
 @media (max-width: 768px) {
   .digital-projects-gallery {
     grid-template-columns: 1fr;
-    padding: 120px 20px 80px;
-    gap: 28px;
+    padding: 60px 20px 40px; /* smaller padding */
+    gap: 20px;               /* smaller gap */
+  }
+
+  .project-image {
+    width: 90%;        /* slightly smaller width */
+    max-height: 300px; /* optional cap */
+    margin: 0 auto;    /* center */
   }
 
   .project-description {
@@ -629,6 +632,7 @@ ul li a:hover span::after {
     font-size: 0.85rem;
   }
 }
+
 
 @media (hover: none) {
   .project:hover img {
