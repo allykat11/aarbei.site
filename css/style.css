@@ -206,6 +206,19 @@ ul li a:hover span::after {
     color: #DE2720;
 }
 
+.top-projects-heading {
+    text-align: center;
+    margin: 40px 0 40px 0;
+}
+
+.top-projects-heading h2 {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+
 .projects {
   width: 100%;
   background-color: #F4ECE5;
@@ -620,7 +633,7 @@ ul li a:hover span::after {
 
   .project-image {
     width: 90%;        /* slightly smaller width */
-    max-height: 300px; /* optional cap */
+    max-height: 400px; /* optional cap */
     margin: 0 auto;    /* center */
   }
 
@@ -889,6 +902,25 @@ ul li a:hover span::after {
   font-family: 'Zen Kurenaido';
 }
 
+.cv-download {
+    margin-top: 20px;
+}
+
+.cv-button {
+    text-decoration: underline;
+    font-size: 16px;
+    color: inherit;
+    border: none;
+    padding: 10px;
+    font-family: 'Zen Kurenaido';
+}
+
+.cv-button:hover {
+    background-color: #DE2720;
+    color: #fff;
+}
+
+
 /* Mobile */
 @media (max-width: 768px) {
     .contact-content {
@@ -981,22 +1013,38 @@ ul li a:hover span::after {
     flex-direction: column;
   }
 
-  .project-image,
-  .project-info {
-    width: 100%;
+  .project-image2 {
+    width: 100% !important;
+    
   }
 
-  .project-image {
-    height: 60vh;
+  .project-image2 {
+    height: auto;
+  }
+
+  .project-image2 img {
+      width: 100%;
+      height: auto;
+      display: block;
+  }
+
+  .project-title2 {
+    text-align: center;
+  }
+
+  .project-meta {
+    text-align: center;
   }
 
   .project-info {
     padding: 40px 24px;
+    width: 100%;
   }
     .project-gallery {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 /*--------- bethlehem bouldering -------------*/
@@ -1324,6 +1372,10 @@ ul li a:hover span::after {
 
   .collection-link {
     font-size: 20px;
+  }
+
+  .project-overview-text {
+    padding: 20px;
   }
 }
 
@@ -1814,6 +1866,10 @@ video:fullscreen {
 @media (max-width: 700px) {
   .project-image-row.five-up {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video-caption {
+    padding: 20px;
   }
 }
 
@@ -2916,6 +2972,7 @@ video:fullscreen {
 
 .website-credit-content {
   opacity: 0.85;
+  padding: 20px;
 }
 
 
@@ -2926,15 +2983,14 @@ video:fullscreen {
   }
 
   .editorial-section {
-    margin-bottom: 120px;
+    margin-bottom: 40px;
   }
 }
 
 @media (max-width: 768px) {
   .editorial-hero {
-    padding: 40px 20px 0;
+    padding: 80px 0 0;
   }
-
   .editorial-hero img {
     height: 50vh;
   }
