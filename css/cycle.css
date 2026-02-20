@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 90px; /* adjust if needed */
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/InterTight-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Zen Kurenaido;
+    src: url(../fonts/ZenKurenaido-Regular.ttf);
+}
+
+@font-face {
+    font-family: Coromant;
+    src: url(../fonts/Cormorant-VariableFont_wght.ttf);
+}
+
+.site-header {
+    position: fixed;  /* must be fixed for hide-on-scroll */
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #F4ECE5;
+    z-index: 1001;
+    transition: transform 0.3s ease; /* smooth hide/show */
+}
+
+.site-header.header-hidden {
+    transform: translateY(-100%); /* moves header completely out of view */
+}
+
+.site-title {
+    font-family: 'Zen Kurenaido';
+    font-size: 28px;
+    font-weight: 400;
+    padding: 20px 0 10px 0; /* much less top padding */
+    margin: 0;
+    color: #DE2720;
+}
+
+body {
+    background-color: #F4ECE5;
+    color: #DE2720;
+    margin: 0;
+    padding-top: 20px; /* space for title + nav */
+    font-family: 'Coromant';
+}
+
+/* Center the nav and site-title */
+nav {
+    display: flex;
+    align-items: center;  /* Vertically center the items */
+    justify-content: center;  /* Center the nav and site title horizontally */
+    width: 100%;
+    padding: 10px 30px; /* Add some padding to the sides for breathing room */
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;  /* Vertically align the title and nav */
+    justify-content: center;  /* Center everything horizontally */
+    gap: 30px; /* Space between the site title and the navigation items */
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the nav items horizontally */
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+ul li a {
+    font-family: 'Zen Kurenaido';
+    font-size: 16px;
+    font-weight: 400;
+    color: #DE2720;
+    text-decoration: none;
+    padding: 10px 0;
+    letter-spacing: 0.03em;
+}
+
+ul li a span {
+    position: relative;
+}
+
+ul li a span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 1.5px;
+    background-color: #DE2720;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+ul li a:hover span::after {
+    transform: scaleX(1);
+}
+
+/* Tablet and Mobile Styles */
+
+/* Tablet view: 1024px and below */
+@media (max-width: 1024px) {
+    .site-header {
+        padding-top: 10px; /* Adjust for smaller screens */
+    }
+
+    nav {
+        padding: 10px 20px;  /* Reduce space on the sides */
+        gap: 20px;  /* Add some spacing between the title and nav */
+    }
+
+    .site-title {
+        font-size: 24px; /* Smaller title on tablets */
+    }
+
+    ul {
+        gap: 30px; /* Less space between nav items */
+    }
+
+    ul li a {
+        font-size: 14px; /* Smaller font for mobile */
+    }
+}
+
+/* Mobile view: 768px and below */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 15px;  /* Add padding for mobile */
+        justify-content: center; /* Ensure title and nav items stay centered */
+    }
+
+    .site-title {
+        font-size: 20px; /* Even smaller font size for mobile */
+    }
+
+    ul {
+        gap: 20px; /* Less space between nav items */
+    }
+
+    ul li a {
+        font-size: 14px; /* Smaller font size */
+    }
+}
+
+
+body {
+  color: #f5f5f5;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.project {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+}
+
+.meta {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+
+/* Text Blocks */
+.text-block {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.text-block p {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  max-width: 600px;
+}
+
+.ending {
+  min-height: 60vh;
+}
+
+/* Video Blocks */
+.video-block {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-block video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Subtle Fade Effect Between Sections */
+section {
+  position: relative;
+}
+
+/* ============================= */
+/* CYCLE PROJECT PAGE */
+/* ============================= */
+
+.cycle-page {
+  padding-top: 140px; /* clears fixed header */
+  padding-bottom: 120px;
+}
+
+/* Intro block */
+.cycle-intro {
+  max-width: 720px;
+  margin: 0 auto 120px;
+  padding: 0 20px;
+  text-align: center;
+  color: #DE2720;
+}
+
+.cycle-label {
+  font-family: 'Zen Kurenaido';
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+.cycle-title {
+  font-family: 'Zen Kurenaido';
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.cycle-meta {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 40px;
+}
+
+.cycle-description {
+  font-family: 'Coromant';
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Text between videos */
+.cycle-text {
+  max-width: 640px;
+  margin: 120px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Coromant';
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #DE2720;
+}
+
+/* Video blocks */
+.cycle-video {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.cycle-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+/* Softer ending spacing */
+.cycle-text.end {
+  margin-bottom: 60px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+
+  .cycle-intro {
+    margin-bottom: 80px;
+  }
+
+  .cycle-text {
+    margin: 80px auto;
+    font-size: 18px;
+  }
+
+  .cycle-video {
+    padding: 0 20px;
+  }
+
+  .cycle-title {
+    font-size: 28px;
+  }
+}
+
+.site-footer {
+  width: 100%;
+  background-color: #F4ECE5;
+  padding: 40px 0;
+}
+
+.footer-inner {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* vertical centering */
+}
+
+.footer-left p {
+  font-family: 'Zen Kurenaido';
+  font-size: 20px;
+  font-weight: 400;
+  color: #DE2720;
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-right a {
+  font-family: 'Zen Kurenaido';
+  font-size: 14px;
+  font-weight: 400;
+  color: #DE2720;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  position: relative;
+}
+
+/* underline hover, same language as nav */
+.footer-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1.5px;
+  background-color: #DE2720;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.footer-right a:hover::after {
+  transform: scaleX(1);
+}
