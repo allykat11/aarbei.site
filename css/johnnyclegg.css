@@ -374,6 +374,11 @@ ul li a:hover span::after {
     padding: 0 30px;
     margin-bottom: 100px;
   }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 
@@ -408,6 +413,7 @@ ul li a:hover span::after {
   .clegg-link::after {
     bottom: -4px;
   }
+
 }
 
 

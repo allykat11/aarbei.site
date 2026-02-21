@@ -332,6 +332,11 @@ section {
   .cycle-title {
     font-size: 28px;
   }
+  
+    .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+}
 }
 
 .site-footer {

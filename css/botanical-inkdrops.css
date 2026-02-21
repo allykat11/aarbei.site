@@ -139,6 +139,11 @@ ul li a:hover span::after {
     ul li a {
         font-size: 14px; /* Smaller font for mobile */
     }
+
+    .footer-inner {
+    flex-direction: column;
+    gap: 20px;
+    }
 }
 
 /* Mobile view: 768px and below */
