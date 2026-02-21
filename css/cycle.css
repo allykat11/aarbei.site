@@ -250,8 +250,8 @@ section {
 }
 
 .cycle-label {
-  font-family: 'Zen Kurenaido';
-  font-size: 12px;
+  font-family: 'Cormorant';
+  font-size: 18px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   opacity: 0.6;
@@ -266,10 +266,11 @@ section {
 }
 
 .cycle-meta {
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   opacity: 0.7;
+  font-family: 'Cormorant';
   margin-bottom: 40px;
 }
 

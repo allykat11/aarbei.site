@@ -204,8 +204,8 @@ ul li a:hover span::after {
 }
 
 .clegg-label {
-  font-family: 'Zen Kurenaido';
-  font-size: 12px;
+  font-family: 'Cormorant';
+  font-size: 16px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   opacity: 0.6;

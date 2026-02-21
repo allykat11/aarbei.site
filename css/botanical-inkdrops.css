@@ -161,6 +161,218 @@ ul li a:hover span::after {
     }
 }
 
+
+/* =========================
+   PROJECT PAGE STYLES
+========================= */
+
+.project-page {
+    width: 90%;
+    max-width: 1400px;
+    margin: 140px auto 100px auto; /* space for fixed header */
+}
+
+/* =========================
+   INTRO SPLIT LAYOUT
+========================= */
+
+.project-intro {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: start; /* prevents stretching */
+    margin-bottom: 100px;
+}
+
+
+.intro-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.intro-right {
+    display: flex;
+    justify-content: flex-end; /* pushes image inward slightly */
+}
+
+.intro-right img {
+    width: 90%;  /* makes image smaller */
+    height: auto;
+    display: block;
+}
+
+/* Typography adjustments */
+
+.project-title {
+    font-family: 'Zen Kurenaido';
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.project-meta {
+    font-family: 'Coromant';
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.project-description p {
+    font-family: 'Coromant';
+    font-size: 18px;
+    line-height: 2.5;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+
+    .project-intro {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .intro-right {
+        order: -1; /* image moves above text on tablet/mobile */
+    }
+
+    .project-description p {
+    font-family: 'Coromant';
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+}
+
+/* =========================
+   INK LABEL ROW
+========================= */
+
+.ink-labels {
+    margin-bottom: 120px;
+}
+
+.ink-labels h3 {
+    font-family: 'Zen Kurenaido';
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+
+.labels-row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+}
+
+.labels-row img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: 
+        transform 0.4s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.4s cubic-bezier(.4,0,.2,1),
+        filter 0.4s cubic-bezier(.4,0,.2,1);
+    cursor: pointer;
+}
+
+/* Slight dim of non-hovered images */
+.labels-row:hover img {
+    filter: brightness(0.85);
+}
+
+/* Expand hovered image */
+.labels-row img:hover {
+    transform: scale(1.4);
+    filter: brightness(1);
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   EDITORIAL GALLERY
+========================= */
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 60px 40px; /* vertical / horizontal */
+}
+
+.project-gallery figure {
+    margin: 0;
+}
+
+.project-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Art-directed placements */
+.project-gallery figure:nth-child(1) { grid-column: span 7; }
+.project-gallery figure:nth-child(2) { grid-column: span 5; }
+.project-gallery figure:nth-child(3) { grid-column: span 6; }
+.project-gallery figure:nth-child(4) { grid-column: span 6; }
+.project-gallery figure:nth-child(5) { grid-column: span 6; }
+.project-gallery figure:nth-child(6) { grid-column: span 8; }
+
+/* Caption styling */
+.project-gallery figcaption {
+    font-family: 'Coromant';
+    font-size: 18px;
+    margin-top: 12px;
+    opacity: 0.7;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+
+    .project-gallery {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .project-gallery figure {
+        grid-column: span 6 !important;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+
+    .labels-row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .project-page {
+        width: 92%;
+    }
+
+    .project-title {
+        font-size: 30px;
+    }
+
+    .labels-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .site-footer {
   width: 100%;
   background-color: #F4ECE5;
