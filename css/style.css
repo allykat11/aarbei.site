@@ -171,6 +171,7 @@ ul li a:hover span::after {
 }
 /* Images fill their section */
 .hero img {
+    top: 200px;
     width: 100%;
     height: auto;
     display: block;
