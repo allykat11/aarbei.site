@@ -160,7 +160,7 @@ ul li a:hover span::after {
 .homepage {
     width: 100%;
     margin: 0;
-    padding-top: var(--header-height);
+    padding-top: calc(var(--header-height) + 30px);
 }
 
 .hero {
@@ -171,7 +171,6 @@ ul li a:hover span::after {
 }
 /* Images fill their section */
 .hero img {
-    top: 200px;
     width: 100%;
     height: auto;
     display: block;
