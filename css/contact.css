@@ -397,12 +397,6 @@ ul li a:hover span::after {
     border-color: var(--tag-color);
 }
 
-.tag-wildlife {
-    --tag-color: #6e782f;
-    color: var(--tag-color);
-    border-color: var(--tag-color);
-}
-
 /* Hover effect */
 
 .skill-tag:hover {
