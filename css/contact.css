@@ -308,93 +308,151 @@ ul li a:hover span::after {
     }
 }
 
+/* ---------------- SKILLS / CONTACT TAGS ---------------- */
+
 .skills {
-  width: 100%;
-  background-color: #F4ECE5;
-  padding-top: 20px;
-  padding-bottom: 70px;
+    width: 100%;
+    background-color: #F4ECE5;
+    padding: 20px 0 40px;
+}
+
+.skills-contact {
+    margin-top: 140px;
 }
 
 .skills-inner {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .skills-title {
-  font-family: 'Zen Kurenaido';
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  color: #DE2720;
-  margin-bottom: 60px;
-}
-
-.skills-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;   /* space between rows */
+    font-family: 'Zen Kurenaido';
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: #DE2720;
+    margin-bottom: 35px;
 }
 
 .skills-row {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
-  margin-bottom: 20px; /* space between top & bottom rows */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 16px;
 }
 
 .skill-tag {
-  font-family: 'Zen Kurenaido';
-  font-size: 14px;
-  letter-spacing: 0.05em;
-  padding: 10px 20px;
-  border-radius: 40px;
-  opacity: 0.9;
-  cursor: default;
-  user-select: none;
-  transition: background-color 0.35s ease, 
-              color 0.35s ease, 
-              border-color 0.35s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 14px;
+    letter-spacing: 0.05em;
+
+    padding: 10px 24px;
+    border-radius: 50px;
+    border: 1.5px solid;
+
+    white-space: nowrap;
+    cursor: default;
+    user-select: none;
+
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
 }
 
+/* Individual tag colours */
+
 .tag-uiux {
-  --tag-color: #DE2720;
-  color: var(--tag-color);
-  border: 1.5px solid var(--tag-color);
+    --tag-color: #DE2720;
+    color: var(--tag-color);
+    border-color: var(--tag-color);
 }
 
 .tag-digital {
-  --tag-color: #2f292a;
-  color: var(--tag-color);
-  border: 1.5px solid var(--tag-color);
+    --tag-color: #2f292a;
+    color: var(--tag-color);
+    border-color: var(--tag-color);
 }
 
 .tag-motion {
-  --tag-color: #254d8d;
-  color: var(--tag-color);
-  border: 1.5px solid var(--tag-color);
+    --tag-color: #254d8d;
+    color: var(--tag-color);
+    border-color: var(--tag-color);
 }
 
 .tag-graphic {
-  --tag-color: #669BBC;
-  color: var(--tag-color);
-  border: 1.5px solid var(--tag-color);
+    --tag-color: #669BBC;
+    color: var(--tag-color);
+    border-color: var(--tag-color);
 }
 
 .tag-wildlife {
-  --tag-color: #6e782f;
-  color: var(--tag-color);
-  border: 1.5px solid var(--tag-color);
+    --tag-color: #6e782f;
+    color: var(--tag-color);
+    border-color: var(--tag-color);
 }
 
-.skill-tag:hover {
-  background-color: var(--tag-color);
-  color: #F4ECE5; /* your site background */
-}
+/* Hover effect */
 
 .skill-tag:hover {
-  opacity: 1;
+    background-color: var(--tag-color);
+    color: #F4ECE5;
+    transform: translateY(-2px);
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+    .skills-contact {
+        margin-top: 130px;
+    }
+
+    .skills-inner {
+        width: 95%;
+    }
+
+    .skills-row {
+        gap: 12px;
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .skills-contact {
+        margin-top: 120px;
+        padding-bottom: 25px;
+    }
+
+    .skills-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .skills-row {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .skill-tag {
+        font-size: 12px;
+        padding: 9px 16px;
+    }
+
 }
 
 .site-footer {
