@@ -158,23 +158,40 @@ ul li a:hover span::after {
 
 
 .homepage {
+    width: 100%;
+    margin: 0;
     padding-top: var(--header-height);
 }
 
-.hero {
+/* TEXT HERO */
+
+.hero-text {
     width: 100%;
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 8% 70px;
+    background-color: #F4ECE5;
+    line-height: normal;
+}
+
+/* IMAGE HERO */
+
+.hero-image {
+    width: 100%;
+    padding: 0;
     margin: 0;
     line-height: 0;
 }
 
-.hero-image {
-    padding: 0;
-}
-
 .hero-image img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
+    object-fit: cover;
 }
 
 
