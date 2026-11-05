@@ -158,24 +158,195 @@ ul li a:hover span::after {
 
 
 .homepage {
-    width: 100%;
-    margin: 0;
-    padding-top: calc(var(--header-height) + 80px);
+    padding-top: var(--header-height);
 }
-
 
 .hero {
     width: 100%;
     margin: 0;
-    padding: 80px 0 0;
     line-height: 0;
 }
-/* Images fill their section */
-.hero img {
+
+.hero-image {
+    padding: 0;
+}
+
+.hero-image img {
     width: 100%;
     height: auto;
     display: block;
 }
+
+
+/* ================================
+   HOMEPAGE HERO TEXT
+================================ */
+
+.hero-text {
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 120px 8% 80px;
+
+    background-color: #F4ECE5;
+    line-height: normal;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Small studio introduction */
+
+.hero-eyebrow {
+    font-family: 'Zen Kurenaido';
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    font-weight: 400;
+
+    margin-bottom: 35px;
+
+    color: #DE2720;
+
+    animation: fadeUp 1s ease both;
+}
+
+/* Main heading */
+
+.hero-heading {
+    font-family: 'Coromant';
+    font-size: clamp(48px, 7vw, 100px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+
+    color: #DE2720;
+
+    margin-bottom: 30px;
+
+    animation: fadeUp 1s ease 0.2s both;
+}
+
+.hero-heading span {
+    font-style: italic;
+}
+
+/* Supporting description */
+
+.hero-description {
+    max-width: 520px;
+
+    font-family: 'Coromant';
+    font-size: clamp(17px, 1.5vw, 21px);
+    font-weight: 300;
+    line-height: 1.5;
+
+    color: #DE2720;
+
+    animation: fadeUp 1s ease 0.4s both;
+}
+
+/* Scroll indicator */
+
+.hero-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 65px;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 10px;
+    letter-spacing: 0.2em;
+
+    color: #DE2720;
+
+    animation: fadeUp 1s ease 0.6s both;
+}
+
+.hero-indicator span {
+    display: block;
+    width: 1px;
+    height: 35px;
+    background-color: #DE2720;
+
+    animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollLine {
+    0%, 100% {
+        transform: scaleY(0.5);
+        transform-origin: top;
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+    .hero-text {
+        min-height: 65vh;
+        padding: 100px 7% 60px;
+    }
+
+    .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        margin-bottom: 25px;
+    }
+
+    .hero-heading {
+        font-size: clamp(43px, 11vw, 65px);
+        line-height: 1.05;
+        margin-bottom: 25px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+        max-width: 340px;
+    }
+
+    .hero-indicator {
+        margin-top: 45px;
+    }
+}
+
 
 .container {
     width: 90%;
@@ -414,4 +585,5 @@ ul li a:hover span::after {
     }
 
 }
+
 
