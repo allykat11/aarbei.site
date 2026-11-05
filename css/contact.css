@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 90px; /* adjust if needed */
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/InterTight-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Zen Kurenaido;
+    src: url(../fonts/ZenKurenaido-Regular.ttf);
+}
+
+@font-face {
+    font-family: Coromant;
+    src: url(../fonts/Cormorant-VariableFont_wght.ttf);
+}
+
+.site-header {
+    position: fixed;  /* must be fixed for hide-on-scroll */
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #F4ECE5;
+    z-index: 1001;
+    transition: transform 0.3s ease; /* smooth hide/show */
+}
+
+.site-header.header-hidden {
+    transform: translateY(-100%); /* moves header completely out of view */
+}
+
+.site-title {
+    font-family: 'Zen Kurenaido';
+    font-size: 28px;
+    font-weight: 400;
+    padding: 20px 0 10px 0; /* much less top padding */
+    margin: 0;
+    color: #DE2720;
+}
+
+body {
+    background-color: #F4ECE5;
+    color: #DE2720;
+    margin: 0;
+    padding-top: 20px; /* space for title + nav */
+    font-family: 'Coromant';
+}
+
+/* Center the nav and site-title */
+nav {
+    display: flex;
+    align-items: center;  /* Vertically center the items */
+    justify-content: center;  /* Center the nav and site title horizontally */
+    width: 100%;
+    padding: 10px 30px; /* Add some padding to the sides for breathing room */
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;  /* Vertically align the title and nav */
+    justify-content: center;  /* Center everything horizontally */
+    gap: 30px; /* Space between the site title and the navigation items */
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the nav items horizontally */
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+ul li a {
+    font-family: 'Zen Kurenaido';
+    font-size: 16px;
+    font-weight: 400;
+    color: #DE2720;
+    text-decoration: none;
+    padding: 10px 0;
+    letter-spacing: 0.03em;
+}
+
+ul li a span {
+    position: relative;
+}
+
+ul li a span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 1.5px;
+    background-color: #DE2720;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+ul li a:hover span::after {
+    transform: scaleX(1);
+}
+
+/* Tablet and Mobile Styles */
+
+/* Tablet view: 1024px and below */
+@media (max-width: 1024px) {
+    .site-header {
+        padding-top: 10px; /* Adjust for smaller screens */
+    }
+
+    nav {
+        padding: 10px 20px;  /* Reduce space on the sides */
+        gap: 20px;  /* Add some spacing between the title and nav */
+    }
+
+    .site-title {
+        font-size: 24px; /* Smaller title on tablets */
+    }
+
+    ul {
+        gap: 30px; /* Less space between nav items */
+    }
+
+    ul li a {
+        font-size: 14px; /* Smaller font for mobile */
+    }
+}
+
+/* Mobile view: 768px and below */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 15px;  /* Add padding for mobile */
+        justify-content: center; /* Ensure title and nav items stay centered */
+    }
+
+    .site-title {
+        font-size: 20px; /* Even smaller font size for mobile */
+    }
+
+    ul {
+        gap: 20px; /* Less space between nav items */
+    }
+
+    ul li a {
+        font-size: 14px; /* Smaller font size */
+    }
+}
+
+
+/*---------------------contact--------------------*/
+
+/* Contact page layout */
+.contact-page {
+    margin-top: 40px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;   /* stack vertically */
+    align-items: center;
+}
+/* Text container */
+.contact-content {
+    width: 70%;
+    max-width: 900px;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    color: #DE2720;
+    transform: none;
+}
+
+.skills-contact {
+  margin-top: 140px;    /* pushes it down below header */
+  padding-top: 40px;    /* internal breathing room */
+  padding-bottom: 40px;
+}
+
+.portrait-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 36px;
+}
+
+.portrait-wrapper {
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.18),
+    0 4px 10px rgba(0, 0, 0, 0.12);
+
+}
+.portrait-wrapper:hover {
+  transform: rotate(-1deg) translateY(-3px);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.22),
+    0 6px 14px rgba(0, 0, 0, 0.14);
+}
+
+.portrait-image {
+  display: block;
+  max-width: 280px;   /* control size without forcing ratio */
+  height: auto;
+  border-radius: 2px;
+}
+
+/* Contact text */
+.contact-content p {
+    font-size: 18px; /* slightly smaller */
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+/* Button */
+.contact-button {
+    display: inline-block;
+    padding: 14px 40px;
+    border: 1.5px solid #DE2720;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #DE2720;
+    font-family: "Zen Kurenaido", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+/* Hover effect */
+.contact-button:hover {
+    background-color: #DE2720;
+    color: white;
+}
+
+.contact-focus {
+  margin-top: 20px;
+  font-family: 'Coromant';
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.contact-tags {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-tags span {
+  font-family: 'Zen Kurenaido';
+  font-size: 13px;
+  padding: 8px 18px;
+  border: 1px solid #DE2720;
+  border-radius: 40px;
+  opacity: 0.8;
+}
+
+.contact-note {
+  margin-top: 20px;
+  font-size: 6px;
+  opacity: 0.7;
+  text-align: center;
+  font-family: 'Zen Kurenaido';
+}
+
+.cv-download {
+    margin-top: 20px;
+}
+
+.cv-button {
+    text-decoration: underline;
+    font-size: 16px;
+    color: inherit;
+    border: none;
+    padding: 10px;
+    font-family: 'Zen Kurenaido';
+}
+
+.cv-button:hover {
+    background-color: #DE2720;
+    color: #fff;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .contact-content {
+        width: 90%;
+    }
+
+    .contact-content p {
+        font-size: 18px;
+    }
+
+    .contact-button {
+        font-size: 15px;
+        padding: 12px 32px;
+    }
+}
