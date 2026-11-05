@@ -156,6 +156,171 @@ ul li a:hover span::after {
     }
 }
 
+/*--- aston martin ----*/
+
+/* ---------------- Aston Martin Editorial Tweaks ---------------- */
+
+.editorial-intro.compact {
+  margin: 60px auto 60px;
+}
+
+/* ---------------- Editorial Hero ---------------- */
+.editorial-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* 70% of viewport height */
+  max-height: 800px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editorial-hero img,
+.editorial-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures it fills area without distortion */
+  object-position: bottom; /* aligns image/video from the top */
+  display: block;
+}
+
+/* Optional overlay for text or gradient */
+.editorial-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+  pointer-events: none;
+}
+
+/* Optional hero text */
+.editorial-hero .hero-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Cormorant', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .editorial-hero {
+    height: 50vh;
+  }
+
+  .editorial-hero .hero-text {
+    font-size: 1.8rem;
+    bottom: 15px;
+  }
+}
+
+
+/* 3-up row (WhatsApp graphics) */
+.editorial-image-row.three-up {
+  width: 100%;
+  padding: 0 40px 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.editorial-image-row.three-up img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Single image section */
+.editorial-image.single {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+/* Minimal outro */
+.editorial-outro.minimal {
+  margin-bottom: 80px;
+  font-size: 17px;
+  opacity: 0.8;
+}
+
+/* Square mailer preview */
+.editorial-image.square {
+  max-width: 680px;      /* 👈 bigger, more editorial */
+  margin: 0 auto 80px;
+  padding: 0 20px;
+  background-color: #F4ECE5;
+}
+
+.editorial-image.square img {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  width: 100%;
+  aspect-ratio: 1 / 1;      /* square */
+  object-fit: cover;
+  object-position: top;     /* 👈 THIS is the key */
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.editorial-image.square img:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* Modal already exists, but ensure priority */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+
+}
+
+.image-modal.active {
+  display: flex;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 900px) {
+  .editorial-image-row.three-up {
+    grid-template-columns: 1fr;
+    padding: 0 20px 80px;
+  }
+}
+
 .site-footer {
   width: 100%;
   background-color: #F4ECE5;

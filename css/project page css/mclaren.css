@@ -156,6 +156,134 @@ ul li a:hover span::after {
     }
 }
 
+/*---- mclaren ----*/
+
+/* ---------------- McLaren Editorial Extensions ---------------- */
+
+/* Mailer grid */
+.editorial-mailers {
+  max-width: 1100px;
+  margin: 0 auto 140px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.mailer-square img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.mailer-square img:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* Feature section */
+.editorial-feature {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.editorial-feature-label {
+  font-family: 'Zen Kurenaido';
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.editorial-feature-title {
+  font-family: 'Zen Kurenaido';
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* ---------------- McLaren Mailer Section ---------------- */
+
+/* Bigger square grid */
+.editorial-mailers.large {
+  max-width: 1300px;
+  margin: 0 auto 80px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Square previews */
+.editorial-mailers.large img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top; /* 👈 anchor to top */
+  cursor: zoom-in;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.editorial-mailers.large img:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* Fullscreen modal */
+.mclaren-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.mclaren-modal.active {
+  display: flex;
+}
+
+.mclaren-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+/* Close button */
+.mclaren-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 900px) {
+  .editorial-mailers {
+    grid-template-columns: 1fr;
+    padding: 0 20px 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .editorial-mailers.large {
+    grid-template-columns: 1fr;
+    padding: 0 20px 100px;
+  }
+}
+
+
 .site-footer {
   width: 100%;
   background-color: #F4ECE5;

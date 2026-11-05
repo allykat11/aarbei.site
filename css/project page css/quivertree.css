@@ -156,6 +156,174 @@ ul li a:hover span::after {
     }
 }
 
+/*----- Quivertree Work -----*/
+
+/* --- Hospitality editorial sections --- */
+
+.hospitality-project {
+  color: #DE2720;
+}
+
+/* Section spacing */
+.editorial-section {
+  margin-bottom: 30px;
+}
+
+.editorial-hero {
+  padding: 60px 0;   /* top, sides, no bottom */
+}
+
+.editorial-hero img {
+  width: 100%;
+  height: 85vh;           /* adjust if needed */
+  object-fit: cover;
+  object-position: top;   /* 👈 this is the key part */
+  display: block;
+}
+
+
+/* Luxury header */
+.section-header {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Zen Kurenaido';
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.section-meta {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 24px;
+}
+
+.section-description {
+  font-family: 'Cormorant';
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Slideshow (luxury = no chaos) */
+.editorial-slideshow {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 80%;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 0 40px;
+  scroll-snap-type: x mandatory;
+}
+
+.editorial-slideshow img {
+  width: 100%;
+  height: auto;
+  scroll-snap-align: center;
+  object-fit: cover;
+}
+
+/* Banhoek – natural ratio image stack */
+.editorial-image-stack {
+  max-width: 720px;          /* keeps it intimate + print-like */
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;                 /* space between images */
+}
+
+.editorial-image-stack img {
+  width: 100%;
+  height: auto;              /* 👈 respects original resolution */
+  display: block;
+}
+
+.editorial-image-stack img {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.editorial-image-stack img:first-child {
+  margin-bottom: 12px;
+}
+
+/* Providence website credit section */
+.website-credit {
+  margin-top: 40px;          /* pulls it closer to Banhoek */
+}
+
+.section-header.small {
+  margin-bottom: 24px;
+}
+
+.section-header.small .section-title {
+  font-size: 24px;
+}
+
+.website-credit-content {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.website-credit-content p {
+  font-family: 'Cormorant';
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+/* Editorial link style */
+.editorial-link {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+}
+
+.editorial-link:hover {
+  opacity: 0.7;
+}
+
+.website-credit-content {
+  opacity: 0.85;
+  padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .editorial-slideshow {
+    grid-auto-columns: 90%;
+    padding: 0 20px;
+  }
+
+  .editorial-section {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .editorial-hero {
+    padding: 80px 0 0;
+  }
+  .editorial-hero img {
+    height: 50vh;
+  }
+}
+
+
 .site-footer {
   width: 100%;
   background-color: #F4ECE5;

@@ -23,6 +23,168 @@
     src: url(../fonts/Cormorant-VariableFont_wght.ttf);
 }
 
+/*--- sage yoga ---*/
+/* ---------------- Sage Yoga Editorial ---------------- */
+
+.sage-project {
+  color: #DE2720; /* soft sage / charcoal tone */
+}
+
+
+
+/* Wider intro for brand storytelling */
+.editorial-intro.wide {
+  max-width: 860px;
+}
+
+
+.editorial-hero-block {
+  max-width: 600px;
+  margin: 80px auto 120px;
+  padding: 0 20px;
+}
+
+.editorial-hero-block video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Centered philosophy text */
+.editorial-text.centered {
+  max-width: 720px;
+  margin: 0 auto 120px;
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Cormorant';
+  font-size: 19px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Phone-style video */
+.editorial-video.phone video {
+  max-width: 360px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* Softer outro */
+.sage-project .editorial-outro {
+  max-width: 720px;
+  opacity: 0.9;
+}
+
+.editorial-video.manual-play {
+  position: relative;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  cursor: pointer;
+  min-height: 200px;       /* optional: ensures some height for small videos */
+}
+
+.editorial-video.manual-play video {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  border-radius: 8px; /* optional styling */
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* perfectly centers button */
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.editorial-video.is-playing .video-play-btn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+@media (hover: hover) {
+  .video-play-btn:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.65);
+  }
+}
+
+
+/* -------- Editorial image rows -------- */
+
+.editorial-image-row {
+  max-width: 1100px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+  display: grid;
+  gap: 24px;
+}
+
+.editorial-image-row.three-up {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Treat videos like images */
+.editorial-image-row img,
+.editorial-image-row video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.editorial-image-row.two-up {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sage-project .editorial-image-row video {
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+
+
+@media (hover: hover) {
+  .editorial-image-row video:hover {
+    opacity: 0.95;
+  }
+}
+
+@media (max-width: 768px) {
+  .editorial-image-row.three-up {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .editorial-image-row.two-up {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .editorial-video {
+    margin: 80px 0;
+  }
+
+  .editorial-video.phone video {
+    max-width: 280px;
+  }
+}
+
+
 .site-header {
     position: fixed;  /* must be fixed for hide-on-scroll */
     top: 0;
