@@ -361,6 +361,312 @@ ul li a:hover span::after {
     }
 }
 
+
+/* ==========================================
+   PACKAGES SECTION
+========================================== */
+
+.packages-section {
+    width: 100%;
+    padding: 100px 0 90px;
+    background-color: #F4ECE5;
+    color: #DE2720;
+}
+
+
+/* HEADING */
+
+.packages-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.packages-heading h2 {
+    font-family: 'Zen Kurenaido';
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.packages-heading p {
+    font-family: 'Zen Kurenaido';
+    font-size: 23px;
+    font-weight: 400;
+}
+
+
+/* CURRENCY SELECTOR */
+
+.currency-selector {
+    width: 90%;
+    max-width: 1540px;
+    margin: 25px auto 35px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+
+.currency-btn {
+    border: none;
+    background: transparent;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 20px;
+    color: #DE2720;
+
+    padding: 10px 20px;
+    border-radius: 30px;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
+}
+
+.currency-btn:hover {
+    background-color: rgba(222, 39, 32, 0.10);
+}
+
+.currency-btn.active {
+    background-color: #DE2720;
+    color: #F4ECE5;
+}
+
+
+/* PACKAGE GRID */
+
+.packages-grid {
+    width: 90%;
+    max-width: 1540px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+
+    align-items: stretch;
+}
+
+
+/* PACKAGE CARD */
+
+.package-card {
+    border: 1px solid rgba(222, 39, 32, 0.3);
+    padding: 25px 30px;
+
+    min-width: 0;
+    min-height: 440px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: border-color 0.3s ease;
+}
+
+.package-card:hover {
+    border-color: #DE2720;
+}
+
+
+/* PACKAGE TITLE */
+
+.package-card h3 {
+    font-family: 'Zen Kurenaido';
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.3;
+
+    margin-bottom: 18px;
+}
+
+
+/* PRICE */
+
+.package-price {
+    font-family: 'Zen Kurenaido';
+    font-size: 27px;
+    font-weight: 400;
+
+    margin-bottom: 18px;
+}
+
+
+/* DESCRIPTION */
+
+.package-description {
+    font-family: 'Zen Kurenaido';
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    margin-bottom: 8px;
+}
+
+
+/* PACKAGE FEATURES */
+
+.package-features {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+    gap: 5px;
+}
+
+.package-features li {
+    position: relative;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    padding-left: 22px;
+}
+
+.package-features li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+
+/* CUSTOM SERVICES NOTE */
+
+.packages-custom {
+    width: 85%;
+    max-width: 1100px;
+    margin: 55px auto 0;
+
+    text-align: center;
+}
+
+.packages-custom h3 {
+    font-family: 'Zen Kurenaido';
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.packages-custom p {
+    font-family: 'Zen Kurenaido';
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .packages-grid {
+        width: 92%;
+        gap: 18px;
+    }
+
+    .package-card {
+        padding: 22px 18px;
+        min-height: 430px;
+    }
+
+    .package-card h3 {
+        font-size: 21px;
+    }
+
+    .package-description {
+        font-size: 18px;
+    }
+
+    .package-features li {
+        font-size: 17px;
+    }
+
+    .package-price {
+        font-size: 24px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .packages-section {
+        padding: 75px 0 60px;
+    }
+
+    .packages-heading h2 {
+        font-size: 25px;
+    }
+
+    .packages-heading p {
+        font-size: 19px;
+    }
+
+    .currency-selector {
+        width: 90%;
+        justify-content: center;
+        gap: 4px;
+        margin: 25px auto 30px;
+    }
+
+    .currency-btn {
+        font-size: 16px;
+        padding: 9px 13px;
+    }
+
+    .packages-grid {
+        width: 88%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .package-card {
+        min-height: auto;
+        padding: 25px 22px;
+    }
+
+    .package-card h3 {
+        font-size: 23px;
+    }
+
+    .package-price {
+        font-size: 25px;
+    }
+
+    .package-description {
+        font-size: 19px;
+        line-height: 1.5;
+    }
+
+    .package-features li {
+        font-size: 18px;
+    }
+
+    .packages-custom {
+        width: 88%;
+        margin-top: 45px;
+    }
+
+    .packages-custom h3 {
+        font-size: 22px;
+    }
+
+    .packages-custom p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+}
+
+
 .site-footer {
   width: 100%;
   background-color: #F4ECE5;
