@@ -70,10 +70,10 @@ nav {
     gap: 30px; /* Space between the site title and the navigation items */
 }
 
-ul {
+.site-header ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Center the nav items horizontally */
+    justify-content: center;
     gap: 40px;
     margin: 0;
     padding: 0;
@@ -111,6 +111,267 @@ ul li a:hover span::after {
 }
 
 /* Tablet and Mobile Styles */
+
+/* =====================================
+   SERVICES PAGE
+===================================== */
+
+.service-options {
+    width: 100%;
+    min-height: 85vh;
+    padding: 145px 0 110px;
+    background-color: #F4ECE5;
+    color: #DE2720;
+}
+
+/* MAIN HEADING */
+
+.services-heading {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.services-heading h2 {
+    font-family: 'Zen Kurenaido';
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: #DE2720;
+}
+
+
+/* SERVICES GRID */
+
+.service-options-inner {
+    position: relative;
+
+    width: 85%;
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 90px;
+    row-gap: 90px;
+}
+
+
+/* CENTRAL DIVIDER LINES */
+
+.service-options-inner::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 15%;
+
+    width: 1px;
+    height: 70%;
+
+    background-color: rgba(222, 39, 32, 0.25);
+    transform: translateX(-50%);
+}
+
+.service-options-inner::after {
+    content: "";
+    position: absolute;
+
+    left: 25%;
+    top: 50%;
+
+    width: 50%;
+    height: 1px;
+
+    background-color: rgba(222, 39, 32, 0.25);
+    transform: translateY(-50%);
+}
+
+
+/* INDIVIDUAL SERVICE */
+
+.service-col {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: start;
+    column-gap: 20px;
+
+    padding: 0 10px;
+}
+
+
+/* NUMBER */
+
+.service-number {
+    font-family: 'Coromant';
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1;
+
+    color: #DE2720;
+}
+
+
+/* SERVICE CONTENT */
+
+.service-content {
+    width: 100%;
+}
+
+.service-content h3 {
+    font-family: 'Zen Kurenaido';
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    color: #DE2720;
+    margin-bottom: 3px;
+}
+
+
+/* DESCRIPTION */
+
+.service-description {
+    font-family: 'Coromant';
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.35;
+
+    color: #DE2720;
+    margin-bottom: 8px;
+}
+
+
+/* SERVICE LIST */
+
+.service-list {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-list li {
+    position: relative;
+
+    font-family: 'Coromant';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.45;
+
+    color: #DE2720;
+
+    padding-left: 20px;
+}
+
+.service-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1024px) {
+
+    .service-options {
+        padding: 130px 0 90px;
+    }
+
+    .service-options-inner {
+        width: 90%;
+        column-gap: 45px;
+        row-gap: 75px;
+    }
+
+    .service-col {
+        grid-template-columns: 38px minmax(0, 1fr);
+        column-gap: 14px;
+    }
+
+    .service-number {
+        font-size: 32px;
+    }
+
+    .service-content h3 {
+        font-size: 23px;
+    }
+
+    .service-description {
+        font-size: 19px;
+    }
+
+    .service-list li {
+        font-size: 18px;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .service-options {
+        padding: 125px 0 70px;
+    }
+
+    .services-heading {
+        margin-bottom: 50px;
+    }
+
+    .services-heading h2 {
+        font-size: 23px;
+    }
+
+    .service-options-inner {
+        width: 88%;
+
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    /* Remove central cross dividers on mobile */
+
+    .service-options-inner::before,
+    .service-options-inner::after {
+        display: none;
+    }
+
+    .service-col {
+        grid-template-columns: 38px minmax(0, 1fr);
+        column-gap: 15px;
+
+        padding: 0 0 35px;
+        border-bottom: 1px solid rgba(222, 39, 32, 0.25);
+    }
+
+    .service-col:last-child {
+        border-bottom: none;
+    }
+
+    .service-number {
+        font-size: 30px;
+    }
+
+    .service-content h3 {
+        font-size: 23px;
+    }
+
+    .service-description {
+        font-size: 19px;
+        line-height: 1.35;
+    }
+
+    .service-list li {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+}
 
 /* Tablet view: 1024px and below */
 @media (max-width: 1024px) {
