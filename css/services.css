@@ -135,7 +135,7 @@ ul li a:hover span::after {
 
 .services-heading h2 {
     font-family: 'Zen Kurenaido';
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 400;
     letter-spacing: 0.03em;
     color: #DE2720;
@@ -201,7 +201,7 @@ ul li a:hover span::after {
 
 .service-number {
     font-family: 'Coromant';
-    font-size: 38px;
+    font-size: 30px;
     font-weight: 300;
     line-height: 1.1;
     color: #DE2720;
@@ -212,7 +212,7 @@ ul li a:hover span::after {
 
 .service-content h3 {
     font-family: 'Zen Kurenaido';
-    font-size: 27px;
+    font-size: 22px;
     font-weight: 400;
     line-height: 1.2;
     color: #DE2720;
@@ -224,7 +224,7 @@ ul li a:hover span::after {
 
 .service-description {
     font-family: 'Coromant';
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 1.35;
     color: #DE2720;
