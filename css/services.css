@@ -787,7 +787,7 @@ ul li a:hover span::after {
 
 .faq-item {
     width: 100%;
-    background-color: #DCDCDC;
+    background-color: none;
 
     border: none;
     border-bottom: 1px solid #FFFFFF;
