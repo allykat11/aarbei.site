@@ -769,7 +769,7 @@ ul li a:hover span::after {
     font-size: 30px;
     font-weight: 400;
 
-    color: #171717;
+    color: #DE2720;
     margin: 0;
 }
 
@@ -820,7 +820,7 @@ ul li a:hover span::after {
     font-size: 25px;
     font-weight: 400;
 
-    color: #171717;
+    color: #DE2720;
 
     list-style: none;
     cursor: pointer;
@@ -848,7 +848,7 @@ ul li a:hover span::after {
     font-size: 19px;
     font-weight: 400;
 
-    color: #171717;
+    color: #DE2720;
 
     transition: transform 0.3s ease;
 }
@@ -875,7 +875,7 @@ ul li a:hover span::after {
     font-weight: 400;
     line-height: 1.6;
 
-    color: #333333;
+    color: #DE2720;
     margin: 0;
 }
 
@@ -901,7 +901,7 @@ ul li a:hover span::after {
     font-size: 23px;
     font-weight: 400;
 
-    color: #171717;
+    color: #DE2720;
     text-decoration: none;
 
     transition: gap 0.3s ease;
