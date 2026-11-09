@@ -743,6 +743,265 @@ ul li a:hover span::after {
 }
 
 
+/* ==========================================
+   FAQ SECTION
+========================================== */
+
+.faq-section {
+    width: 100%;
+    padding: 75px 0 85px;
+
+    background-color: #FFFFFF;
+    color: #171717;
+}
+
+
+/* HEADING */
+
+.faq-heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-heading h2 {
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+
+    color: #171717;
+    margin: 0;
+}
+
+
+/* FAQ CONTAINER */
+
+.faq-container {
+    width: 84%;
+    max-width: 1570px;
+    margin: 0 auto;
+}
+
+
+/* INDIVIDUAL FAQ ROW */
+
+.faq-item {
+    width: 100%;
+    background-color: #DCDCDC;
+
+    border: none;
+    border-bottom: 1px solid #FFFFFF;
+
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item:hover {
+    background-color: #D5D5D5;
+}
+
+
+/* QUESTION / CLICKABLE AREA */
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 105px;
+
+    padding: 25px 48px;
+
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+
+    color: #171717;
+
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Remove default browser arrow */
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::marker {
+    display: none;
+    content: "";
+}
+
+
+/* CUSTOM ARROW */
+
+.faq-arrow {
+    display: inline-block;
+
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+
+    color: #171717;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* ROTATE ARROW WHEN OPEN */
+
+.faq-item[open] .faq-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* ANSWER */
+
+.faq-answer {
+    padding: 0 100px 30px 48px;
+}
+
+.faq-answer p {
+    max-width: 1000px;
+
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.6;
+
+    color: #333333;
+    margin: 0;
+}
+
+
+/* ==========================================
+   START A PROJECT CTA
+========================================== */
+
+.faq-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 75px;
+}
+
+.faq-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+
+    color: #171717;
+    text-decoration: none;
+
+    transition: gap 0.3s ease;
+}
+
+.faq-cta a:hover {
+    gap: 22px;
+}
+
+.faq-cta a span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.faq-cta a:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .faq-container {
+        width: 90%;
+    }
+
+    .faq-item summary {
+        min-height: 90px;
+        padding: 22px 30px;
+        font-size: 22px;
+    }
+
+    .faq-answer {
+        padding: 0 65px 25px 30px;
+    }
+
+    .faq-answer p {
+        font-size: 18px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .faq-section {
+        padding: 60px 0 65px;
+    }
+
+    .faq-heading {
+        margin-bottom: 30px;
+    }
+
+    .faq-heading h2 {
+        font-size: 25px;
+    }
+
+    .faq-container {
+        width: 90%;
+    }
+
+    .faq-item summary {
+        min-height: 75px;
+        padding: 20px 18px;
+
+        font-size: 19px;
+        gap: 15px;
+    }
+
+    .faq-arrow {
+        font-size: 17px;
+        flex-shrink: 0;
+    }
+
+    .faq-answer {
+        padding: 0 35px 22px 18px;
+    }
+
+    .faq-answer p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .faq-cta {
+        margin-top: 50px;
+    }
+
+    .faq-cta a {
+        font-size: 20px;
+    }
+}
+
+
+
 .site-footer {
   width: 100%;
   background-color: #F4ECE5;
