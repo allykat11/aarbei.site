@@ -111,6 +111,30 @@ ul li a:hover span::after {
 }
 
 /* Tablet and Mobile Styles */
+.about {
+    width: 100%;
+    background-color: #F4ECE5;
+    padding: 80px 0; /* space above & below section */
+}
+
+.about-inner {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+}
+
+.about-col {
+    width: 50%;
+}
+
+.about-col p {
+    font-family: Coromant;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #DE2720;
+}
 
 /* Tablet view: 1024px and below */
 @media (max-width: 1024px) {
