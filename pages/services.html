@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +10,10 @@
 
     <meta name="description" content="Brand identity, website design, Shopify development, digital content and creative services by aarbei.art.">
 
-    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/services.css?v=20261112-2">
     <link rel="icon" href="../imgs/favicon/favicon.png" type="image/png">
 
-    <title>Services + Packages | aarbei.art</title>
+    <title>Services &amp; Packages | aarbei.art</title>
 </head>
 
 <body class="services-page">
@@ -38,7 +39,9 @@
 
     <main>
 
-        <!-- 01 / SERVICES -->
+        <!-- =================================
+             01 / SERVICES
+        ================================== -->
 
         <section class="services-section" id="services">
 
@@ -57,6 +60,8 @@
 
 
             <div class="services-grid">
+
+                <!-- BRAND IDENTITY -->
 
                 <article class="service-card">
 
@@ -81,6 +86,8 @@
                 </article>
 
 
+                <!-- WEBSITES -->
+
                 <article class="service-card">
 
                     <span class="service-number">02</span>
@@ -104,6 +111,8 @@
                 </article>
 
 
+                <!-- CONTENT & CAMPAIGNS -->
+
                 <article class="service-card">
 
                     <span class="service-number">03</span>
@@ -126,6 +135,8 @@
 
                 </article>
 
+
+                <!-- MOTION & VIDEO -->
 
                 <article class="service-card">
 
@@ -154,7 +165,9 @@
         </section>
 
 
-        <!-- 02 / PACKAGES -->
+        <!-- =================================
+             02 / PACKAGES
+        ================================== -->
 
         <section class="pricing-section" id="packages">
 
@@ -330,7 +343,9 @@
         </section>
 
 
-        <!-- 03 / FAQ -->
+        <!-- =================================
+             03 / FAQ
+        ================================== -->
 
         <section class="faq-section" id="faq">
 
@@ -344,6 +359,8 @@
 
 
             <div class="faq-container">
+
+                <!-- FAQ 01 -->
 
                 <details class="faq-item">
 
@@ -363,6 +380,8 @@
                 </details>
 
 
+                <!-- FAQ 02 -->
+
                 <details class="faq-item">
 
                     <summary>
@@ -380,6 +399,8 @@
                 </details>
 
 
+                <!-- FAQ 03 -->
+
                 <details class="faq-item">
 
                     <summary>
@@ -396,6 +417,8 @@
 
                 </details>
 
+
+                <!-- FAQ 04 -->
 
                 <details class="faq-item">
 
@@ -416,6 +439,8 @@
             </div>
 
 
+            <!-- CONTACT CTA -->
+
             <div class="faq-cta">
 
                 <a href="../pages/contact.html">
@@ -429,7 +454,9 @@
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =================================
+         FOOTER
+    ================================== -->
 
     <footer class="site-footer">
 
@@ -463,9 +490,61 @@
     </footer>
 
 
-    <!-- CURRENCY CONVERSION SCRIPT -->
+    <!-- =================================
+         HEADER HIDE-ON-SCROLL
+    ================================== -->
 
     <script>
+    (function () {
+
+        const header = document.querySelector(".site-header");
+
+        if (!header) return;
+
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        window.addEventListener("scroll", function () {
+
+            if (ticking) return;
+
+            ticking = true;
+
+            window.requestAnimationFrame(function () {
+
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > lastScrollY && currentScrollY > 80) {
+
+                    header.classList.add("header-hidden");
+
+                } else if (currentScrollY < lastScrollY) {
+
+                    header.classList.remove("header-hidden");
+
+                }
+
+                if (currentScrollY <= 20) {
+                    header.classList.remove("header-hidden");
+                }
+
+                lastScrollY = currentScrollY;
+                ticking = false;
+
+            });
+
+        }, { passive: true });
+
+    })();
+    </script>
+
+
+    <!-- =================================
+         CURRENCY CONVERSION
+    ================================== -->
+
+    <script>
+
     document.addEventListener("DOMContentLoaded", function () {
 
         const currencyButtons =
@@ -721,6 +800,7 @@
         loadExchangeRates();
 
     });
+
     </script>
 
 </body>

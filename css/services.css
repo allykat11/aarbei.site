@@ -1,5 +1,6 @@
 
 
+
 /* ==========================================
    AARBEI.ART — SERVICES PAGE
 ========================================== */
@@ -21,6 +22,8 @@
     --red-faint: rgba(222, 39, 32, 0.12);
 }
 
+
+/* FONTS */
 
 @font-face {
     font-family: Inter;
@@ -50,6 +53,36 @@ body.services-page {
     background-color: var(--cream);
     color: var(--red);
     font-family: 'Coromant', serif;
+}
+
+
+/* EXPLICIT PAGE LAYOUT SAFEGUARDS */
+
+body.services-page main {
+    display: block;
+    width: 100%;
+}
+
+body.services-page .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+}
+
+body.services-page .service-card {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    min-width: 0;
+}
+
+body.services-page .service-content ul {
+    display: flex;
+    flex-direction: column;
+}
+
+body.services-page .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 
@@ -1167,6 +1200,37 @@ body.services-page {
 
     .faq-heading h2 {
         font-size: 24px;
+    }
+
+}
+
+
+/* ==========================================
+   LAYOUT SAFEGUARDS
+========================================== */
+
+@media (max-width: 1024px) {
+
+    body.services-page .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    body.services-page .pricing-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    body.services-page .services-grid,
+    body.services-page .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.services-page .service-card {
+        grid-template-columns: 30px minmax(0, 1fr);
     }
 
 }
