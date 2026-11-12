@@ -1,3 +1,8 @@
+
+/* ==========================================
+   GLOBAL STYLES
+========================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +10,10 @@
 }
 
 :root {
-    --header-height: 90px; /* adjust if needed */
+    --cream: #F4ECE5;
+    --red: #DE2720;
+    --dark-red: #BD211B;
+    --header-height: 110px;
 }
 
 @font-face {
@@ -23,241 +31,543 @@
     src: url(../fonts/Cormorant-VariableFont_wght.ttf);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body.about-page-body {
+    background-color: var(--cream);
+    color: var(--red);
+    font-family: 'Coromant', serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
 .site-header {
-    position: fixed;  /* must be fixed for hide-on-scroll */
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
+
     text-align: center;
-    background-color: #F4ECE5;
+    background-color: var(--cream);
+
     z-index: 1001;
-    transition: transform 0.3s ease; /* smooth hide/show */
+    transition: transform 0.3s ease;
 }
 
 .site-header.header-hidden {
-    transform: translateY(-100%); /* moves header completely out of view */
+    transform: translateY(-100%);
 }
 
 .site-title {
     font-family: 'Zen Kurenaido';
     font-size: 28px;
     font-weight: 400;
-    padding: 20px 0 10px 0; /* much less top padding */
-    margin: 0;
-    color: #DE2720;
-}
 
-body {
-    background-color: #F4ECE5;
-    color: #DE2720;
+    padding: 20px 0 10px;
     margin: 0;
-    padding-top: 20px; /* space for title + nav */
-    font-family: 'Coromant';
-}
 
-/* Center the nav and site-title */
-nav {
-    display: flex;
-    align-items: center;  /* Vertically center the items */
-    justify-content: center;  /* Center the nav and site title horizontally */
-    width: 100%;
-    padding: 10px 30px; /* Add some padding to the sides for breathing room */
+    color: var(--red);
 }
 
 .site-header nav {
     display: flex;
-    align-items: center;  /* Vertically align the title and nav */
-    justify-content: center;  /* Center everything horizontally */
-    gap: 30px; /* Space between the site title and the navigation items */
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 10px 30px;
 }
 
-ul {
-    list-style: none;
+.site-header ul {
     display: flex;
-    justify-content: center; /* Center the nav items horizontally */
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
     gap: 40px;
+
     margin: 0;
     padding: 0;
 }
 
-ul li a {
+.site-header ul li a {
     font-family: 'Zen Kurenaido';
     font-size: 16px;
     font-weight: 400;
-    color: #DE2720;
+
+    color: var(--red);
     text-decoration: none;
-    padding: 10px 0;
     letter-spacing: 0.03em;
 }
 
-ul li a span {
+.site-header ul li a span {
     position: relative;
 }
 
-ul li a span::after {
+.site-header ul li a span::after {
     content: "";
+
     position: absolute;
     left: 0;
     bottom: -4px;
+
     width: 100%;
     height: 1.5px;
-    background-color: #DE2720;
+
+    background-color: var(--red);
+
     transform: scaleX(0);
     transform-origin: left;
+
     transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
 
-ul li a:hover span::after {
+.site-header ul li a:hover span::after {
     transform: scaleX(1);
 }
 
-/* Tablet and Mobile Styles */
-.about {
+
+/* ==========================================
+   ABOUT PAGE LAYOUT
+========================================== */
+
+.about-page {
     width: 100%;
-    background-color: #F4ECE5;
-    padding: 80px 0; /* space above & below section */
+    min-height: 75vh;
+
+    padding: 160px 7% 100px;
 }
 
-.about-inner {
-    width: 90%;
+.about-section {
+    width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
+}
+
+
+/* TOP INFORMATION */
+
+.about-topline {
     display: flex;
-    gap: 60px;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(222, 39, 32, 0.25);
+
+    font-family: 'Zen Kurenaido';
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--red);
 }
 
-.about-col {
-    width: 50%;
+
+/* ==========================================
+   MAIN GRID
+========================================== */
+
+.about-layout {
+    display: grid;
+
+    grid-template-columns: 35px minmax(0, 0.85fr) minmax(0, 1.35fr);
+
+    column-gap: 65px;
+    align-items: start;
+
+    margin-top: 75px;
 }
 
-.about-col p {
-    font-family: Coromant;
-    font-size: 18px;
-    font-weight: 300;
+
+/* VERTICAL RAIL */
+
+.about-rail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 430px;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 10px;
+    letter-spacing: 0.12em;
+
+    color: var(--red);
+}
+
+.about-rail span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+
+/* ==========================================
+   LEFT COLUMN
+========================================== */
+
+.about-title-column {
+    padding-top: 65px;
+}
+
+.about-label {
+    font-family: 'Zen Kurenaido';
+    font-size: 12px;
+    letter-spacing: 0.17em;
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+.about-title-column h2 {
+    font-family: 'Zen Kurenaido';
+    font-size: clamp(65px, 7vw, 105px);
+    font-weight: 400;
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+    color: var(--red);
+}
+
+.about-title-column h2 span {
+    color: var(--dark-red);
+}
+
+.about-tagline {
+    font-family: 'Coromant';
+    font-size: 25px;
+    font-style: italic;
+
+    margin-top: 25px;
+    line-height: 1.3;
+}
+
+
+/* ==========================================
+   RIGHT COLUMN
+========================================== */
+
+.about-content-column {
+    width: 100%;
+}
+
+
+/* LEAD STATEMENT */
+
+.about-lead {
+    max-width: 850px;
+
+    font-family: 'Coromant';
+    font-size: clamp(29px, 3vw, 43px);
+    font-weight: 400;
+    line-height: 1.3;
+
+    color: var(--red);
+
+    margin-bottom: 65px;
+}
+
+
+/* INFORMATION GRID */
+
+.about-information {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1.5fr) minmax(180px, 0.8fr);
+
+    gap: 55px;
+    align-items: start;
+}
+
+
+/* ABOUT COPY */
+
+.about-copy h3 {
+    font-family: 'Zen Kurenaido';
+    font-size: 16px;
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+.about-copy p {
+    font-family: 'Coromant';
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+    color: var(--red);
+}
+
+
+/* STUDIO FACTS */
+
+.about-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about-fact span {
+    display: block;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 11px;
+    letter-spacing: 0.1em;
+
+    margin-bottom: 7px;
+}
+
+.about-fact p {
+    font-family: 'Coromant';
+    font-size: 17px;
     line-height: 1.4;
-    color: #DE2720;
 }
 
-/* Tablet view: 1024px and below */
-@media (max-width: 1024px) {
-    .site-header {
-        padding-top: 10px; /* Adjust for smaller screens */
-    }
 
-    nav {
-        padding: 10px 20px;  /* Reduce space on the sides */
-        gap: 20px;  /* Add some spacing between the title and nav */
-    }
+/* ==========================================
+   PAGE LINKS
+========================================== */
 
-    .site-title {
-        font-size: 24px; /* Smaller title on tablets */
-    }
+.about-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    ul {
-        gap: 30px; /* Less space between nav items */
-    }
+    margin-top: 45px;
+    padding-top: 20px;
 
-    ul li a {
-        font-size: 14px; /* Smaller font for mobile */
-    }
+    border-top: 1px solid rgba(222, 39, 32, 0.25);
 }
 
-/* Mobile view: 768px and below */
-@media (max-width: 768px) {
-    nav {
-        padding: 15px 15px;  /* Add padding for mobile */
-        justify-content: center; /* Ensure title and nav items stay centered */
-    }
+.about-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
 
-    .site-title {
-        font-size: 20px; /* Even smaller font size for mobile */
-    }
+    font-family: 'Zen Kurenaido';
+    font-size: 15px;
 
-    ul {
-        gap: 20px; /* Less space between nav items */
-    }
+    color: var(--red);
+    text-decoration: none;
 
-    ul li a {
-        font-size: 14px; /* Smaller font size */
-    }
+    transition: gap 0.3s ease;
 }
+
+.about-actions a:hover {
+    gap: 20px;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
 
 .site-footer {
-  width: 100%;
-  background-color: #F4ECE5;
-  padding: 40px 0;
+    width: 100%;
+    background-color: var(--cream);
+    padding: 40px 0;
 }
 
 .footer-inner {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* vertical centering */
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer-left p {
-  font-family: 'Zen Kurenaido';
-  font-size: 20px;
-  font-weight: 400;
-  color: #DE2720;
-  margin: 0;
+    font-family: 'Zen Kurenaido';
+    font-size: 20px;
+    font-weight: 400;
+
+    color: var(--red);
+    margin: 0;
 }
 
 .footer-right {
-  display: flex;
-  gap: 30px;
+    display: flex;
+    gap: 30px;
 }
 
 .footer-right a {
-  font-family: 'Zen Kurenaido';
-  font-size: 14px;
-  font-weight: 400;
-  color: #DE2720;
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  position: relative;
+    position: relative;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 14px;
+    font-weight: 400;
+
+    color: var(--red);
+    text-decoration: none;
+    letter-spacing: 0.03em;
 }
 
-/* underline hover, same language as nav */
 .footer-right a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 1.5px;
-  background-color: #DE2720;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 1.5px;
+
+    background-color: var(--red);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
 
 .footer-right a:hover::after {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .about-page {
+        padding: 145px 5% 80px;
+    }
+
+    .about-layout {
+        grid-template-columns: 25px minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: 35px;
+        margin-top: 60px;
+    }
+
+    .about-title-column {
+        padding-top: 45px;
+    }
+
+    .about-information {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .about-facts {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .about-lead {
+        margin-bottom: 40px;
+    }
+
+    .site-header ul {
+        gap: 25px;
+    }
+
+    .footer-right {
+        gap: 20px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
+
+    .site-title {
+        font-size: 23px;
     }
 
-    .about-inner {
-        flex-direction: column;
-        gap: 30px;
+    .site-header nav {
+        padding: 10px 12px;
     }
 
-    .about-col {
-        width: 100%;
+    .site-header ul {
+        gap: 16px;
+        flex-wrap: wrap;
     }
 
-    .about-col p {
+    .site-header ul li a {
+        font-size: 13px;
+    }
+
+    .about-page {
+        padding: 145px 7% 65px;
+    }
+
+    .about-topline {
+        font-size: 9px;
+    }
+
+    .about-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 0;
+        margin-top: 40px;
+    }
+
+    .about-rail {
+        display: none;
+    }
+
+    .about-title-column {
+        padding-top: 0;
+        margin-bottom: 40px;
+    }
+
+    .about-label {
+        font-size: 11px;
+        margin-bottom: 15px;
+    }
+
+    .about-title-column h2 {
+        font-size: clamp(65px, 16vw, 90px);
+    }
+
+    .about-tagline {
+        font-size: 22px;
+        margin-top: 15px;
+    }
+
+    .about-lead {
+        font-size: 29px;
+        line-height: 1.35;
+        margin-bottom: 35px;
+    }
+
+    .about-information {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-copy p {
         font-size: 18px;
     }
 
-    .projects-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .about-facts {
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+        padding-top: 15px;
+    }
+
+    .about-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+
+        margin-top: 35px;
     }
 
     .footer-inner {
@@ -265,4 +575,27 @@ ul li a:hover span::after {
         gap: 20px;
     }
 
+    .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 22px;
+    }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+
+    .about-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .about-lead {
+        font-size: 26px;
+    }
+
+    .about-topline {
+        letter-spacing: 0.05em;
+    }
 }
