@@ -1,12 +1,26 @@
+
+
+/* ==========================================
+   AARBEI.ART — SERVICES PAGE
+========================================== */
+
+
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 :root {
-    --header-height: 90px; /* adjust if needed */
+    --cream: #F4ECE5;
+    --red: #DE2720;
+    --red-light: rgba(222, 39, 32, 0.25);
+    --red-faint: rgba(222, 39, 32, 0.12);
 }
+
 
 @font-face {
     font-family: Inter;
@@ -23,238 +37,293 @@
     src: url(../fonts/Cormorant-VariableFont_wght.ttf);
 }
 
-.site-header {
-    position: fixed;  /* must be fixed for hide-on-scroll */
-    top: 0;
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+
+body.services-page {
     width: 100%;
-    text-align: center;
-    background-color: #F4ECE5;
-    z-index: 1001;
-    transition: transform 0.3s ease; /* smooth hide/show */
-}
-
-.site-header.header-hidden {
-    transform: translateY(-100%); /* moves header completely out of view */
-}
-
-.site-title {
-    font-family: 'Zen Kurenaido';
-    font-size: 28px;
-    font-weight: 400;
-    padding: 20px 0 10px 0; /* much less top padding */
     margin: 0;
-    color: #DE2720;
+    background-color: var(--cream);
+    color: var(--red);
+    font-family: 'Coromant', serif;
 }
-
-body {
-    background-color: #F4ECE5;
-    color: #DE2720;
-    margin: 0;
-    padding-top: 20px; /* space for title + nav */
-    font-family: 'Coromant';
-}
-
-/* Center the nav and site-title */
-nav {
-    display: flex;
-    align-items: center;  /* Vertically center the items */
-    justify-content: center;  /* Center the nav and site title horizontally */
-    width: 100%;
-    padding: 10px 30px; /* Add some padding to the sides for breathing room */
-}
-
-.site-header nav {
-    display: flex;
-    align-items: center;  /* Vertically align the title and nav */
-    justify-content: center;  /* Center everything horizontally */
-    gap: 30px; /* Space between the site title and the navigation items */
-}
-
-.site-header ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-}
-
-ul li a {
-    font-family: 'Zen Kurenaido';
-    font-size: 16px;
-    font-weight: 400;
-    color: #DE2720;
-    text-decoration: none;
-    padding: 10px 0;
-    letter-spacing: 0.03em;
-}
-
-ul li a span {
-    position: relative;
-}
-
-ul li a span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 1.5px;
-    background-color: #DE2720;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
-}
-
-ul li a:hover span::after {
-    transform: scaleX(1);
-}
-
-/* Tablet and Mobile Styles */
 
 
 /* ==========================================
-   SERVICES PAGE
+   HEADER & NAVIGATION
 ========================================== */
 
-.service-options {
-    width: 100%;
-    min-height: 100vh;
-    padding: 145px 0 100px;
-    background-color: #F4ECE5;
-    color: #DE2720;
-}
-
-/* HEADING */
-
-.services-heading {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 65px;
-}
-
-.services-heading h2 {
-    font-family: 'Zen Kurenaido';
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    color: #DE2720;
-}
-
-
-/* GRID */
-
-.service-options-inner {
-    position: relative;
-    width: 85%;
-    max-width: 1450px;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    column-gap: 100px;
-    row-gap: 85px;
-}
-
-
-/* DIVIDER LINES */
-
-.service-options-inner::before {
-    content: "";
-    position: absolute;
-    left: 50%;
+.site-header {
+    position: fixed;
     top: 0;
-    bottom: 0;
-    width: 1px;
-    background: rgba(222, 39, 32, 0.25);
-    transform: translateX(-50%);
-    pointer-events: none;
-}
-
-.service-options-inner::after {
-    content: "";
-    position: absolute;
     left: 0;
-    right: 0;
-    top: 50%;
-    height: 1px;
-    background: rgba(222, 39, 32, 0.25);
-    pointer-events: none;
+    width: 100%;
+
+    text-align: center;
+    background-color: var(--cream);
+
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.site-header.header-hidden {
+    transform: translateY(-100%);
 }
 
 
-/* SERVICE ITEM */
-
-.service-col {
-    display: grid;
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 18px;
-    align-items: start;
-
-    min-width: 0;
-    padding: 0 10px;
-}
-
-
-/* NUMBER */
-
-.service-number {
-    font-family: 'Coromant';
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 1.1;
-    color: #DE2720;
-}
-
-
-/* TITLE */
-
-.service-content h3 {
+.site-title {
     font-family: 'Zen Kurenaido';
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 400;
-    line-height: 1.2;
-    color: #DE2720;
-    margin: 0 0 2px;
+
+    padding: 12px 0 5px;
+    margin: 0;
+
+    color: var(--red);
 }
 
 
-/* DESCRIPTION */
+.site-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.service-description {
-    font-family: 'Coromant';
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.35;
-    color: #DE2720;
-    margin: 0 0 5px;
+    width: 100%;
+    padding: 5px 20px 8px;
 }
 
 
-/* BULLET POINTS */
+.site-header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.service-list {
-    display: block;
     list-style: none;
+    gap: 32px;
+
     margin: 0;
     padding: 0;
 }
 
-.service-list li {
-    display: block;
+
+.site-header ul li a {
+    font-family: 'Zen Kurenaido';
+    font-size: 14px;
+    font-weight: 400;
+
+    color: var(--red);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+}
+
+
+.site-header ul li a span {
+    position: relative;
+}
+
+
+.site-header ul li a span::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--red);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+
+.site-header ul li a:hover span::after,
+.site-header ul li a.current-page span::after {
+    transform: scaleX(1);
+}
+
+
+/* ==========================================
+   SHARED SECTION LABELS
+========================================== */
+
+.section-eyebrow {
+    font-family: 'Zen Kurenaido';
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+
+    color: var(--red);
+}
+
+
+/* ==========================================
+   01 / SERVICES
+========================================== */
+
+.services-section {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+    padding: 115px 7% 45px;
+}
+
+
+/* INTRO */
+
+.services-intro {
+    max-width: 580px;
+    margin-bottom: 35px;
+}
+
+
+.services-intro h2 {
+    font-family: 'Zen Kurenaido';
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1;
+
+    margin: 8px 0 10px;
+}
+
+
+.services-intro-text {
+    max-width: 450px;
+
+    font-family: 'Coromant';
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+
+/* SERVICE GRID */
+
+.services-grid {
+    display: grid;
+    width: 100%;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* SERVICE CARDS */
+
+.service-card {
+    display: grid;
+
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 12px;
+
+    min-width: 0;
+    padding: 22px 25px;
+}
+
+
+/* LEFT COLUMN */
+
+.service-card:nth-child(odd) {
+    padding-left: 0;
+    padding-right: 30px;
+
+    border-right: 1px solid var(--red-light);
+}
+
+
+/* RIGHT COLUMN */
+
+.service-card:nth-child(even) {
+    padding-left: 30px;
+    padding-right: 0;
+}
+
+
+/* TOP ROW DIVIDER */
+
+.service-card:nth-child(-n+2) {
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--red-light);
+}
+
+
+/* BOTTOM ROW */
+
+.service-card:nth-child(n+3) {
+    padding-top: 28px;
+    padding-bottom: 12px;
+}
+
+
+/* NUMBERS */
+
+.service-number {
+    font-family: 'Coromant';
+    font-size: 27px;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+
+/* CONTENT */
+
+.service-content {
+    min-width: 0;
+}
+
+
+.service-content h3 {
+    font-family: 'Zen Kurenaido';
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    margin-bottom: 4px;
+}
+
+
+.service-content p {
+    font-family: 'Coromant';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.3;
+
+    margin-bottom: 7px;
+}
+
+
+/* SERVICE LISTS */
+
+.service-content ul {
+    display: flex;
+    flex-direction: column;
+
+    list-style: none;
+    gap: 1px;
+}
+
+
+.service-content ul li {
     position: relative;
 
     font-family: 'Coromant';
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.35;
 
-    padding-left: 20px;
-    color: #DE2720;
+    padding-left: 15px;
 }
 
-.service-list li::before {
+
+.service-content ul li::before {
     content: "•";
     position: absolute;
     left: 0;
@@ -262,166 +331,62 @@ ul li a:hover span::after {
 
 
 /* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width: 1024px) {
-
-    .service-options {
-        padding: 130px 0 80px;
-    }
-
-    .service-options-inner {
-        width: 90%;
-        column-gap: 45px;
-        row-gap: 75px;
-    }
-
-    .service-col {
-        grid-template-columns: 38px minmax(0, 1fr);
-        gap: 12px;
-    }
-
-    .service-number {
-        font-size: 32px;
-    }
-
-    .service-content h3 {
-        font-size: 23px;
-    }
-
-    .service-description {
-        font-size: 19px;
-    }
-
-    .service-list li {
-        font-size: 18px;
-    }
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 768px) {
-
-    .service-options {
-        padding: 125px 0 60px;
-    }
-
-    .services-heading {
-        margin-bottom: 45px;
-    }
-
-    .services-heading h2 {
-        font-size: 23px;
-    }
-
-    .service-options-inner {
-        width: 88%;
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    /* Remove grid dividers */
-
-    .service-options-inner::before,
-    .service-options-inner::after {
-        display: none;
-    }
-
-    .service-col {
-        grid-template-columns: 38px minmax(0, 1fr);
-        gap: 12px;
-
-        padding: 0 0 30px;
-        border-bottom: 1px solid rgba(222, 39, 32, 0.25);
-    }
-
-    .service-col:last-child {
-        border-bottom: none;
-    }
-
-    .service-number {
-        font-size: 30px;
-    }
-
-    .service-content h3 {
-        font-size: 23px;
-    }
-
-    .service-description {
-        font-size: 19px;
-    }
-
-    .service-list li {
-        font-size: 18px;
-        line-height: 1.5;
-    }
-}
-
-
-/* ==========================================
-   PRICING / PACKAGES SECTION
+   02 / PACKAGES
 ========================================== */
 
 .pricing-section {
-    display: block;
-    position: relative;
-
     width: 100%;
-    padding: 105px 0 85px;
+    padding: 55px 0;
 
-    background-color: #F4ECE5;
-    color: #DE2720;
+    background-color: var(--cream);
 }
 
 
-/* HEADING */
+/* PACKAGES HEADER */
 
-.pricing-heading {
-    display: block;
-    width: 100%;
-    text-align: center;
+.pricing-top {
+    width: 90%;
+    max-width: 1540px;
 
-    margin: 0 auto 15px;
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
 }
+
 
 .pricing-heading h2 {
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 24px;
+    font-family: 'Zen Kurenaido';
+    font-size: 30px;
     font-weight: 400;
-    line-height: 1.3;
-    letter-spacing: 0.02em;
+    line-height: 1.1;
 
-    color: #DE2720;
-    margin: 0;
-}
-
-.pricing-heading p {
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-
-    color: #DE2720;
-    margin: 3px 0 0;
+    margin-top: 8px;
 }
 
 
 /* CURRENCY SELECTOR */
 
-.pricing-currency {
-    width: 90%;
-    max-width: 1540px;
-
-    margin: 20px auto 35px;
-
+.currency-wrapper {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 3px;
 }
+
+
+.pricing-currency {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 5px;
+}
+
 
 .currency-option {
     display: inline-flex;
@@ -430,32 +395,54 @@ ul li a:hover span::after {
 
     border: none;
     border-radius: 30px;
+
     background: transparent;
 
-    padding: 10px 20px;
+    padding: 7px 15px;
 
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 20px;
+    font-family: 'Zen Kurenaido';
+    font-size: 17px;
     font-weight: 400;
 
-    color: #DE2720;
+    color: var(--red);
     cursor: pointer;
 
-    transition: background-color 0.3s ease,
-                color 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
-.currency-option:hover {
-    background-color: rgba(222, 39, 32, 0.10);
+
+.currency-option:hover:not(:disabled) {
+    background-color: var(--red-faint);
 }
+
 
 .currency-option.active {
-    background-color: #DE2720;
-    color: #F4ECE5;
+    background-color: rgba(222, 39, 32, 0.17);
+    color: var(--red);
 }
 
 
-/* THREE-COLUMN GRID */
+.currency-option:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* EXCHANGE RATE NOTE */
+
+.pricing-rate-note {
+    min-height: 13px;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 10px;
+
+    color: rgba(222, 39, 32, 0.65);
+}
+
+
+/* PACKAGE GRID */
 
 .pricing-grid {
     display: grid;
@@ -466,311 +453,174 @@ ul li a:hover span::after {
     margin: 0 auto;
 
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 35px;
+    gap: 22px;
 
     align-items: stretch;
 }
 
 
-/* PRICING CARDS */
+/* PACKAGE CARDS */
 
 .pricing-card {
     display: flex;
     flex-direction: column;
 
     min-width: 0;
-    min-height: 450px;
+    min-height: 260px;
 
-    padding: 25px 30px;
+    padding: 20px 23px;
 
-    border: 1px solid rgba(222, 39, 32, 0.25);
+    border: 1px solid var(--red-light);
     background: transparent;
 
     transition: border-color 0.3s ease;
 }
 
+
 .pricing-card:hover {
-    border-color: #DE2720;
+    border-color: var(--red);
 }
 
 
-/* CARD TITLES */
+/* PACKAGE TITLES */
 
 .pricing-card h3 {
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 25px;
+    font-family: 'Zen Kurenaido';
+    font-size: 21px;
     font-weight: 400;
     line-height: 1.3;
 
-    color: #DE2720;
-
-    margin: 0 0 18px;
+    margin-bottom: 10px;
 }
 
 
-/* PRICES */
+/* PACKAGE PRICES */
 
 .pricing-amount {
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 27px;
+    font-family: 'Zen Kurenaido';
+    font-size: 23px;
+    font-weight: 400;
+
+    margin-bottom: 2px;
+}
+
+
+/* PROJECT TYPE */
+
+.pricing-type {
+    font-family: 'Zen Kurenaido';
+    font-size: 10px;
+    letter-spacing: 0.12em;
+
+    color: rgba(222, 39, 32, 0.7);
+
+    margin-bottom: 10px;
+}
+
+
+/* PACKAGE DESCRIPTION */
+
+.pricing-description {
+    font-family: 'Coromant';
+    font-size: 18px;
     font-weight: 400;
     line-height: 1.4;
 
-    color: #DE2720;
-
-    margin: 0 0 18px;
+    margin-bottom: 7px;
 }
 
 
-/* DESCRIPTIONS */
-
-.pricing-description {
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 21px;
-    font-weight: 400;
-    line-height: 1.7;
-
-    color: #DE2720;
-
-    margin: 0 0 5px;
-}
-
-
-/* FEATURE LISTS */
+/* PACKAGE FEATURES */
 
 .pricing-features {
     display: flex;
     flex-direction: column;
 
     list-style: none;
+    gap: 2px;
 
     margin: 0;
     padding: 0;
-
-    gap: 5px;
 }
+
 
 .pricing-features li {
-    display: block;
     position: relative;
 
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 20px;
+    font-family: 'Coromant';
+    font-size: 17px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.35;
 
-    color: #DE2720;
-
-    padding-left: 22px;
-    margin: 0;
+    padding-left: 18px;
 }
+
 
 .pricing-features li::before {
     content: "•";
-
     position: absolute;
     left: 0;
-    top: 0;
-}
-
-
-/* PROJECT TYPE LABEL */
-
-.pricing-type {
-    display: block;
-
-    margin-top: auto;
-    padding-top: 25px;
-
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-
-    color: rgba(222, 39, 32, 0.7);
 }
 
 
 /* CUSTOM PROJECTS */
 
 .pricing-custom {
-    display: block;
-
     width: 85%;
-    max-width: 1100px;
+    max-width: 900px;
 
-    margin: 55px auto 0;
+    margin: 30px auto 0;
 
     text-align: center;
 }
 
+
 .pricing-custom h3 {
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-
-    color: #DE2720;
-
-    margin: 0 0 5px;
-}
-
-.pricing-custom p {
-    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Zen Kurenaido';
     font-size: 21px;
     font-weight: 400;
-    line-height: 1.7;
 
-    color: #DE2720;
+    margin-bottom: 4px;
+}
 
-    margin: 0;
+
+.pricing-custom p {
+    font-family: 'Coromant';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
 }
 
 
 /* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width: 1024px) {
-
-    .pricing-grid {
-        width: 92%;
-        gap: 18px;
-    }
-
-    .pricing-card {
-        padding: 22px 18px;
-        min-height: 430px;
-    }
-
-    .pricing-card h3 {
-        font-size: 21px;
-    }
-
-    .pricing-amount {
-        font-size: 24px;
-    }
-
-    .pricing-description {
-        font-size: 18px;
-        line-height: 1.55;
-    }
-
-    .pricing-features li {
-        font-size: 17px;
-    }
-
-    .pricing-custom p {
-        font-size: 19px;
-    }
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 768px) {
-
-    .pricing-section {
-        padding: 75px 0 65px;
-    }
-
-    .pricing-heading h2 {
-        font-size: 25px;
-    }
-
-    .pricing-heading p {
-        font-size: 19px;
-    }
-
-    .pricing-currency {
-        width: 90%;
-        justify-content: center;
-        gap: 3px;
-
-        margin: 25px auto 30px;
-    }
-
-    .currency-option {
-        font-size: 16px;
-        padding: 9px 13px;
-    }
-
-    .pricing-grid {
-        width: 88%;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .pricing-card {
-        min-height: 0;
-        padding: 25px 22px;
-    }
-
-    .pricing-card h3 {
-        font-size: 23px;
-    }
-
-    .pricing-amount {
-        font-size: 25px;
-    }
-
-    .pricing-description {
-        font-size: 19px;
-        line-height: 1.5;
-    }
-
-    .pricing-features li {
-        font-size: 18px;
-    }
-
-    .pricing-type {
-        padding-top: 20px;
-    }
-
-    .pricing-custom {
-        width: 88%;
-        margin-top: 45px;
-    }
-
-    .pricing-custom h3 {
-        font-size: 22px;
-    }
-
-    .pricing-custom p {
-        font-size: 18px;
-        line-height: 1.5;
-    }
-}
-
-
-/* ==========================================
-   FAQ SECTION
+   03 / FAQ
 ========================================== */
 
 .faq-section {
     width: 100%;
-    padding: 75px 0 85px;
+    padding: 45px 0 50px;
 
-    background-color: #F4ECE5;
-    color: #DE2720;
+    background-color: var(--cream);
 }
 
 
-/* HEADING */
+/* FAQ HEADING */
 
 .faq-heading {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 40px;
+    width: 84%;
+    max-width: 1570px;
+
+    margin: 0 auto 20px;
 }
 
+
 .faq-heading h2 {
-    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Zen Kurenaido';
     font-size: 30px;
     font-weight: 400;
+    line-height: 1.2;
 
-    color: #DE2720;
-    margin: 0;
+    margin-top: 8px;
 }
 
 
@@ -779,32 +629,34 @@ ul li a:hover span::after {
 .faq-container {
     width: 84%;
     max-width: 1570px;
+
     margin: 0 auto;
 }
 
 
-/* INDIVIDUAL FAQ ROW */
+/* FAQ ROW */
 
 .faq-item {
     width: 100%;
-    background-color: none;
+
+    background-color: rgba(222, 39, 32, 0.07);
 
     border: none;
-    border-bottom: 1px solid #FFFFFF;
-
-    transition: background-color 0.3s ease;
+    border-bottom: 1px solid var(--cream);
 }
+
 
 .faq-item:last-child {
     border-bottom: none;
 }
 
+
 .faq-item:hover {
-    background-color: #ffe5e5;
+    background-color: rgba(222, 39, 32, 0.11);
 }
 
 
-/* QUESTION / CLICKABLE AREA */
+/* QUESTION */
 
 .faq-item summary {
     display: flex;
@@ -812,112 +664,172 @@ ul li a:hover span::after {
     justify-content: space-between;
 
     width: 100%;
-    min-height: 105px;
+    min-height: 62px;
 
-    padding: 25px 48px;
+    padding: 15px 25px;
 
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 25px;
+    font-family: 'Zen Kurenaido';
+    font-size: 20px;
     font-weight: 400;
 
-    color: #DE2720;
+    color: var(--red);
 
     list-style: none;
     cursor: pointer;
     user-select: none;
 }
 
-/* Remove default browser arrow */
 
 .faq-item summary::-webkit-details-marker {
     display: none;
 }
 
+
 .faq-item summary::marker {
-    display: none;
     content: "";
+    display: none;
 }
 
 
-/* CUSTOM ARROW */
+/* FAQ ARROW */
 
 .faq-arrow {
     display: inline-block;
+    flex-shrink: 0;
 
     font-family: Arial, sans-serif;
-    font-size: 19px;
-    font-weight: 400;
-
-    color: #DE2720;
+    font-size: 16px;
 
     transition: transform 0.3s ease;
 }
 
-
-/* ROTATE ARROW WHEN OPEN */
 
 .faq-item[open] .faq-arrow {
     transform: rotate(180deg);
 }
 
 
-/* ANSWER */
+/* FAQ ANSWER */
 
 .faq-answer {
-    padding: 0 100px 30px 48px;
+    padding: 0 65px 20px 25px;
 }
+
 
 .faq-answer p {
-    max-width: 1000px;
+    max-width: 900px;
 
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 19px;
+    font-family: 'Coromant';
+    font-size: 17px;
     font-weight: 400;
-    line-height: 1.6;
-
-    color: #DE2720;
-    margin: 0;
+    line-height: 1.45;
 }
 
 
-/* ==========================================
-   START A PROJECT CTA
-========================================== */
+/* START A PROJECT */
 
 .faq-cta {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    margin-top: 75px;
+    margin-top: 40px;
 }
+
 
 .faq-cta a {
     display: inline-flex;
     align-items: center;
     gap: 12px;
 
-    font-family: 'Zen Kurenaido', sans-serif;
-    font-size: 23px;
+    font-family: 'Zen Kurenaido';
+    font-size: 20px;
     font-weight: 400;
 
-    color: #DE2720;
+    color: var(--red);
     text-decoration: none;
 
     transition: gap 0.3s ease;
 }
 
+
 .faq-cta a:hover {
+    gap: 20px;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.site-footer {
+    width: 100%;
+    background-color: var(--cream);
+
+    padding: 25px 0;
+}
+
+
+.footer-inner {
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.footer-left p {
+    font-family: 'Zen Kurenaido';
+    font-size: 18px;
+    font-weight: 400;
+
+    color: var(--red);
+    margin: 0;
+}
+
+
+.footer-right {
+    display: flex;
     gap: 22px;
 }
 
-.faq-cta a span {
-    display: inline-block;
-    transition: transform 0.3s ease;
+
+.footer-right a {
+    position: relative;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 13px;
+    font-weight: 400;
+
+    color: var(--red);
+    text-decoration: none;
+    letter-spacing: 0.03em;
 }
 
-.faq-cta a:hover span {
-    transform: translateX(5px);
+
+.footer-right a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--red);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.4s ease;
+}
+
+
+.footer-right a:hover::after {
+    transform: scaleX(1);
 }
 
 
@@ -927,23 +839,79 @@ ul li a:hover span::after {
 
 @media (max-width: 1024px) {
 
-    .faq-container {
+    /* SERVICES */
+
+    .services-section {
+        padding: 120px 6% 40px;
+    }
+
+    .service-card {
+        gap: 12px;
+    }
+
+    .service-card:nth-child(odd) {
+        padding-right: 22px;
+    }
+
+    .service-card:nth-child(even) {
+        padding-left: 22px;
+    }
+
+    .service-content h3 {
+        font-size: 20px;
+    }
+
+    .service-content p {
+        font-size: 17px;
+    }
+
+    .service-content ul li {
+        font-size: 16px;
+    }
+
+
+    /* PACKAGES */
+
+    .pricing-grid {
+        width: 92%;
+        gap: 15px;
+    }
+
+    .pricing-card {
+        padding: 18px 15px;
+    }
+
+    .pricing-card h3 {
+        font-size: 19px;
+    }
+
+    .pricing-amount {
+        font-size: 21px;
+    }
+
+    .pricing-description {
+        font-size: 17px;
+    }
+
+    .pricing-features li {
+        font-size: 16px;
+    }
+
+
+    /* FAQ */
+
+    .faq-container,
+    .faq-heading {
         width: 90%;
     }
 
-    .faq-item summary {
-        min-height: 90px;
-        padding: 22px 30px;
-        font-size: 22px;
+
+    /* FOOTER */
+
+    .footer-right {
+        gap: 15px;
     }
 
-    .faq-answer {
-        padding: 0 65px 25px 30px;
-    }
-
-    .faq-answer p {
-        font-size: 18px;
-    }
 }
 
 
@@ -953,16 +921,177 @@ ul li a:hover span::after {
 
 @media (max-width: 768px) {
 
+    /* HEADER */
+
+    .site-title {
+        font-size: 22px;
+        padding: 10px 0 4px;
+    }
+
+    .site-header nav {
+        padding: 5px 10px 8px;
+    }
+
+    .site-header ul {
+        flex-wrap: wrap;
+        gap: 10px 16px;
+    }
+
+    .site-header ul li a {
+        font-size: 13px;
+    }
+
+
+    /* SERVICES */
+
+    .services-section {
+        padding: 125px 7% 35px;
+    }
+
+    .services-intro {
+        margin-bottom: 25px;
+    }
+
+    .services-intro h2 {
+        font-size: 43px;
+    }
+
+    .services-intro-text {
+        font-size: 18px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card,
+    .service-card:nth-child(odd),
+    .service-card:nth-child(even),
+    .service-card:nth-child(n+3) {
+
+        grid-template-columns: 30px minmax(0, 1fr);
+
+        gap: 12px;
+        padding: 20px 0;
+
+        border-right: none;
+        border-bottom: 1px solid var(--red-light);
+    }
+
+    .service-card:last-child {
+        border-bottom: none;
+    }
+
+    .service-number {
+        font-size: 26px;
+    }
+
+    .service-content h3 {
+        font-size: 21px;
+    }
+
+    .service-content p {
+        font-size: 18px;
+    }
+
+    .service-content ul li {
+        font-size: 17px;
+        line-height: 1.4;
+    }
+
+
+    /* PACKAGES */
+
+    .pricing-section {
+        padding: 45px 0;
+    }
+
+    .pricing-top {
+        width: 88%;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .pricing-heading h2 {
+        font-size: 27px;
+    }
+
+    .currency-wrapper {
+        align-items: flex-start;
+    }
+
+    .pricing-currency {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .currency-option {
+        font-size: 15px;
+        padding: 7px 12px;
+    }
+
+    .pricing-rate-note {
+        text-align: left;
+    }
+
+    .pricing-grid {
+        width: 88%;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .pricing-card {
+        min-height: 0;
+        padding: 20px;
+    }
+
+    .pricing-card h3 {
+        font-size: 21px;
+    }
+
+    .pricing-amount {
+        font-size: 23px;
+    }
+
+    .pricing-description {
+        font-size: 18px;
+    }
+
+    .pricing-features li {
+        font-size: 17px;
+    }
+
+    .pricing-custom {
+        width: 88%;
+        margin-top: 28px;
+    }
+
+    .pricing-custom h3 {
+        font-size: 20px;
+    }
+
+    .pricing-custom p {
+        font-size: 17px;
+    }
+
+
+    /* FAQ */
+
     .faq-section {
-        padding: 60px 0 65px;
+        padding: 40px 0;
     }
 
     .faq-heading {
-        margin-bottom: 30px;
+        width: 90%;
+        margin-bottom: 20px;
     }
 
     .faq-heading h2 {
-        font-size: 25px;
+        font-size: 26px;
     }
 
     .faq-container {
@@ -970,121 +1099,74 @@ ul li a:hover span::after {
     }
 
     .faq-item summary {
-        min-height: 75px;
-        padding: 20px 18px;
-
-        font-size: 19px;
+        min-height: 58px;
+        padding: 14px 17px;
+        font-size: 17px;
         gap: 15px;
     }
 
-    .faq-arrow {
-        font-size: 17px;
-        flex-shrink: 0;
-    }
-
     .faq-answer {
-        padding: 0 35px 22px 18px;
+        padding: 0 35px 17px 17px;
     }
 
     .faq-answer p {
-        font-size: 17px;
-        line-height: 1.5;
+        font-size: 16px;
+        line-height: 1.45;
     }
 
     .faq-cta {
-        margin-top: 50px;
+        margin-top: 30px;
     }
 
     .faq-cta a {
-        font-size: 20px;
-    }
-}
-
-
-
-.site-footer {
-  width: 100%;
-  background-color: #F4ECE5;
-  padding: 40px 0;
-}
-
-.footer-inner {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* vertical centering */
-}
-
-.footer-left p {
-  font-family: 'Zen Kurenaido';
-  font-size: 20px;
-  font-weight: 400;
-  color: #DE2720;
-  margin: 0;
-}
-
-.footer-right {
-  display: flex;
-  gap: 30px;
-}
-
-.footer-right a {
-  font-family: 'Zen Kurenaido';
-  font-size: 14px;
-  font-weight: 400;
-  color: #DE2720;
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  position: relative;
-}
-
-/* underline hover, same language as nav */
-.footer-right a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 1.5px;
-  background-color: #DE2720;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
-}
-
-.footer-right a:hover::after {
-  transform: scaleX(1);
-}
-
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
+        font-size: 19px;
     }
 
-    .about-inner {
-        flex-direction: column;
-        gap: 30px;
-    }
 
-    .about-col {
-        width: 100%;
-    }
+    /* FOOTER */
 
-    .about-col p {
-        font-size: 18px;
-    }
-
-    .projects-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .site-footer {
+        padding: 25px 0;
     }
 
     .footer-inner {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
+    }
+
+    .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+    .site-header ul {
+        gap: 8px 12px;
+    }
+
+    .site-header ul li a {
+        font-size: 12px;
+    }
+
+    .services-intro h2 {
+        font-size: 39px;
+    }
+
+    .pricing-heading h2 {
+        font-size: 24px;
+    }
+
+    .faq-heading h2 {
+        font-size: 24px;
     }
 
 }
