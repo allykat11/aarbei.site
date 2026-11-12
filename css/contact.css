@@ -23,6 +23,10 @@
 }
 
 
+/* ==========================================
+   FONTS
+========================================== */
+
 @font-face {
     font-family: Inter;
     src: url(../fonts/InterTight-VariableFont_wght.ttf);
@@ -39,13 +43,17 @@
 }
 
 
+/* ==========================================
+   GLOBAL
+========================================== */
+
 html {
     scroll-behavior: smooth;
 }
 
-
 body.contact-page-body {
     width: 100%;
+    min-height: 100vh;
     margin: 0;
 
     background-color: var(--cream);
@@ -165,24 +173,28 @@ body.contact-page-body {
 }
 
 
+/* OUTER PAGE */
+
 .contact-section {
     width: 100%;
-    max-width: 1500px;
+    max-width: 1800px;
+
+    min-height: calc(100svh - 65px);
 
     margin: 0 auto;
 
-    padding: 140px 6% 80px;
+    padding: 135px 4% 60px;
 }
 
 
-/* TOP LINE */
+/* TOP INFORMATION */
 
 .contact-topline {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding-bottom: 12px;
+    padding-bottom: 15px;
     margin-bottom: 35px;
 
     border-bottom: 1px solid var(--red-light);
@@ -200,7 +212,7 @@ body.contact-page-body {
 
 
 /* ==========================================
-   TWO COLUMN LAYOUT
+   MAIN TWO-COLUMN LAYOUT
 ========================================== */
 
 .contact-layout {
@@ -210,11 +222,15 @@ body.contact-page-body {
         minmax(0, 0.95fr)
         minmax(0, 1.05fr);
 
-    gap: 55px;
+    gap: clamp(30px, 4vw, 65px);
 
     align-items: stretch;
 
-    padding: 35px;
+    width: 100%;
+
+    min-height: clamp(620px, calc(100svh - 270px), 780px);
+
+    padding: clamp(28px, 3.5vw, 50px);
 
     background-color: var(--white);
 
@@ -231,8 +247,11 @@ body.contact-page-body {
     flex-direction: column;
 
     min-width: 0;
+    min-height: 100%;
 }
 
+
+/* INTRO LABEL */
 
 .contact-eyebrow {
     font-family: 'Zen Kurenaido';
@@ -242,15 +261,17 @@ body.contact-page-body {
 
     color: var(--red);
 
-    margin-bottom: 13px;
+    margin-bottom: 15px;
 }
 
 
 /* MAIN HEADING */
 
 .contact-intro h2 {
+    max-width: 560px;
+
     font-family: 'Zen Kurenaido';
-    font-size: clamp(35px, 3.5vw, 53px);
+    font-size: clamp(42px, 4vw, 62px);
     font-weight: 400;
     line-height: 1.12;
 
@@ -258,7 +279,7 @@ body.contact-page-body {
 
     color: var(--red);
 
-    margin-bottom: 17px;
+    margin-bottom: 18px;
 }
 
 
@@ -274,12 +295,12 @@ body.contact-page-body {
 /* DESCRIPTION */
 
 .contact-description {
-    max-width: 440px;
+    max-width: 500px;
 
     font-family: 'Coromant';
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.5;
 
     color: var(--red);
 
@@ -294,12 +315,14 @@ body.contact-page-body {
 .contact-image {
     position: relative;
 
+    flex: 1;
+
     width: 100%;
-    aspect-ratio: 4 / 3;
+    min-height: 320px;
 
     overflow: hidden;
 
-    margin-top: auto;
+    margin-top: 10px;
 
     background-color: #D8C5B8;
 }
@@ -333,7 +356,7 @@ body.contact-page-body {
     flex-direction: column;
     justify-content: space-between;
 
-    padding: 22px;
+    padding: clamp(18px, 2.5vw, 30px);
 
     background: linear-gradient(
         to bottom,
@@ -348,10 +371,10 @@ body.contact-page-body {
 
 .image-overlay-heading {
     font-family: 'Coromant';
-    font-size: clamp(25px, 2.5vw, 36px);
+    font-size: clamp(28px, 3vw, 42px);
     font-style: italic;
     font-weight: 400;
-    line-height: 1.05;
+    line-height: 1.08;
 }
 
 
@@ -363,7 +386,7 @@ body.contact-page-body {
     gap: 10px;
 
     font-family: 'Zen Kurenaido';
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.03em;
 
     color: #FFFFFF;
@@ -415,38 +438,43 @@ body.contact-page-body {
 ========================================== */
 
 .contact-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     width: 100%;
     min-width: 0;
+    min-height: 100%;
+
+    padding: clamp(28px, 3.5vw, 50px);
 
     background-color: var(--soft-red);
-
-    padding: 28px 30px;
 
     border: 1px solid rgba(222, 39, 32, 0.09);
 }
 
 
-/* FORM INTRO */
+/* FORM HEADING */
 
 .form-heading {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 }
 
 
 .form-heading h3 {
     font-family: 'Zen Kurenaido';
-    font-size: 29px;
+    font-size: 34px;
     font-weight: 400;
 
     color: var(--red);
 
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 }
 
 
 .form-heading > p:last-child {
     font-family: 'Coromant';
-    font-size: 17px;
+    font-size: 19px;
     line-height: 1.4;
 }
 
@@ -459,9 +487,11 @@ body.contact-page-body {
     display: flex;
     flex-direction: column;
 
-    gap: 17px;
+    gap: 18px;
 }
 
+
+/* NAME ROW */
 
 .form-row {
     display: grid;
@@ -470,12 +500,14 @@ body.contact-page-body {
 }
 
 
+/* FIELD GROUP */
+
 .form-group {
     display: flex;
     flex-direction: column;
 
     min-width: 0;
-    gap: 6px;
+    gap: 7px;
 }
 
 
@@ -483,7 +515,7 @@ body.contact-page-body {
 
 .form-group label {
     font-family: 'Zen Kurenaido';
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
 
     color: var(--red);
@@ -498,16 +530,17 @@ body.contact-page-body {
     display: block;
 
     width: 100%;
+    min-height: 46px;
 
-    border: 1px solid rgba(222, 39, 32, 0.15);
+    border: 1px solid rgba(222, 39, 32, 0.17);
     border-radius: 0;
 
     background-color: #FFFFFF;
 
-    padding: 11px 12px;
+    padding: 13px 15px;
 
     font-family: 'Coromant';
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
 
     color: #51413B;
@@ -540,19 +573,19 @@ body.contact-page-body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23DE2720' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
 
     background-repeat: no-repeat;
-    background-position: right 12px center;
+    background-position: right 15px center;
 
-    padding-right: 35px;
+    padding-right: 38px;
 }
 
 
-/* TEXTAREA */
+/* PROJECT TEXTAREA */
 
 .form-group textarea {
-    min-height: 115px;
-    resize: vertical;
+    min-height: 135px;
 
-    line-height: 1.45;
+    resize: vertical;
+    line-height: 1.5;
 }
 
 
@@ -583,10 +616,10 @@ body.contact-page-body {
     background-color: var(--red);
     color: #FFFFFF;
 
-    padding: 13px 16px;
+    padding: 16px 20px;
 
     font-family: 'Zen Kurenaido';
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
 
     cursor: pointer;
@@ -605,7 +638,7 @@ body.contact-page-body {
 
 .submit-arrow {
     font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: 19px;
 
     transition: transform 0.3s ease;
 }
@@ -620,10 +653,11 @@ body.contact-page-body {
 
 .form-note {
     font-family: 'Zen Kurenaido';
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.4;
 
     color: rgba(222, 39, 32, 0.7);
+
     text-align: center;
 }
 
@@ -711,28 +745,40 @@ body.contact-page-body {
 @media (max-width: 1024px) {
 
     .contact-section {
-        padding: 130px 5% 65px;
+        padding: 130px 4% 55px;
     }
 
     .contact-layout {
-        gap: 28px;
-        padding: 25px;
-    }
+        gap: 30px;
+        padding: 28px;
 
-    .contact-form-container {
-        padding: 23px 20px;
+        min-height: 620px;
     }
 
     .contact-intro h2 {
-        font-size: 39px;
+        font-size: 42px;
     }
 
     .contact-description {
-        font-size: 18px;
+        font-size: 19px;
+    }
+
+    .contact-form-container {
+        padding: 28px 22px;
+    }
+
+    .form-heading h3 {
+        font-size: 29px;
     }
 
     .form-row {
         gap: 10px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
     }
 
     .footer-right {
@@ -747,6 +793,7 @@ body.contact-page-body {
 ========================================== */
 
 @media (max-width: 768px) {
+
 
     /* HEADER */
 
@@ -769,11 +816,16 @@ body.contact-page-body {
     }
 
 
-    /* MAIN CONTACT */
+    /* CONTACT SECTION */
 
     .contact-section {
-        padding: 130px 6% 50px;
+        min-height: auto;
+
+        padding: 130px 5% 45px;
     }
+
+
+    /* TOP LINE */
 
     .contact-topline {
         margin-bottom: 25px;
@@ -785,43 +837,54 @@ body.contact-page-body {
     }
 
 
-    /* STACK COLUMNS */
+    /* STACK LAYOUT */
 
     .contact-layout {
         grid-template-columns: 1fr;
 
         gap: 35px;
 
-        padding: 22px;
+        min-height: auto;
 
+        padding: 23px;
     }
 
 
     /* INTRO */
 
+    .contact-intro {
+        min-height: auto;
+    }
+
     .contact-intro h2 {
-        font-size: clamp(38px, 9vw, 50px);
+        font-size: clamp(40px, 9vw, 54px);
     }
 
     .contact-description {
         max-width: 100%;
-        font-size: 18px;
+        font-size: 19px;
     }
 
 
     /* IMAGE */
 
     .contact-image {
+        flex: none;
+
+        width: 100%;
+        min-height: 0;
+
         aspect-ratio: 4 / 3;
+
         margin-top: 5px;
     }
 
     .contact-image-overlay {
-        padding: 16px;
+        padding: 18px;
     }
 
     .image-overlay-heading {
-        font-size: 29px;
+        font-size: 32px;
     }
 
     .image-overlay-bottom {
@@ -829,7 +892,7 @@ body.contact-page-body {
     }
 
 
-    /* DIRECT EMAIL */
+    /* EMAIL */
 
     .contact-direct a {
         font-size: 17px;
@@ -839,15 +902,24 @@ body.contact-page-body {
     /* FORM */
 
     .contact-form-container {
-        padding: 23px 18px;
+        min-height: auto;
+        padding: 28px 20px;
+    }
+
+    .form-heading {
+        margin-bottom: 25px;
     }
 
     .form-heading h3 {
-        font-size: 26px;
+        font-size: 29px;
+    }
+
+    .form-heading > p:last-child {
+        font-size: 17px;
     }
 
     .contact-form {
-        gap: 15px;
+        gap: 17px;
     }
 
     .form-row {
@@ -858,8 +930,17 @@ body.contact-page-body {
     .form-group input,
     .form-group select,
     .form-group textarea {
+        min-height: 44px;
         font-size: 16px;
         padding: 11px;
+    }
+
+    .form-group textarea {
+        min-height: 125px;
+    }
+
+    .submit-button {
+        padding: 14px 16px;
     }
 
 
@@ -898,8 +979,8 @@ body.contact-page-body {
     }
 
     .contact-section {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 4%;
+        padding-right: 4%;
     }
 
     .contact-layout {
@@ -910,17 +991,25 @@ body.contact-page-body {
         font-size: 36px;
     }
 
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
     .contact-image-overlay {
-        padding: 12px;
+        padding: 13px;
     }
 
     .image-overlay-heading {
-        font-size: 25px;
+        font-size: 26px;
+    }
+
+    .image-overlay-bottom {
+        flex-wrap: wrap;
+    }
+
+    .contact-form-container {
+        padding: 22px 15px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
 }

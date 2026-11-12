@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,12 +9,11 @@
 
     <meta name="description" content="Get in touch with aarbei.art about branding, website design, digital content and creative projects.">
 
-    <link rel="stylesheet" href="../css/contact.css?v=20261112">
+    <link rel="stylesheet" href="../css/contact.css?v=20261112-2">
     <link rel="icon" href="../imgs/favicon/favicon.png" type="image/png">
 
     <title>Start a Project | aarbei.art</title>
 </head>
-
 
 <body class="contact-page-body">
 
@@ -32,6 +32,7 @@
                 <li><a href="../pages/work.html"><span>work</span></a></li>
                 <li><a href="../pages/services.html"><span>services</span></a></li>
                 <li><a href="../pages/about.html"><span>about</span></a></li>
+
                 <li>
                     <a href="../pages/contact.html" class="current-page">
                         <span>start a project</span>
@@ -44,15 +45,14 @@
 
 
     <!-- =================================
-         CONTACT PAGE
+         MAIN CONTACT PAGE
     ================================== -->
 
     <main class="contact-main">
 
         <section class="contact-section">
 
-
-            <!-- PAGE INTRO -->
+            <!-- PAGE TOPLINE -->
 
             <div class="contact-topline">
 
@@ -162,13 +162,15 @@
                     <form id="contactForm" class="contact-form">
 
 
-                        <!-- NAME FIELDS -->
+                        <!-- NAME -->
 
                         <div class="form-row">
 
                             <div class="form-group">
 
-                                <label for="firstName">First name *</label>
+                                <label for="firstName">
+                                    First name *
+                                </label>
 
                                 <input
                                     type="text"
@@ -184,7 +186,9 @@
 
                             <div class="form-group">
 
-                                <label for="lastName">Last name *</label>
+                                <label for="lastName">
+                                    Last name *
+                                </label>
 
                                 <input
                                     type="text"
@@ -205,7 +209,9 @@
 
                         <div class="form-group">
 
-                            <label for="email">Email address *</label>
+                            <label for="email">
+                                Email address *
+                            </label>
 
                             <input
                                 type="email"
@@ -224,7 +230,9 @@
 
                         <div class="form-group">
 
-                            <label for="phone">Phone number</label>
+                            <label for="phone">
+                                Phone number
+                            </label>
 
                             <input
                                 type="tel"
@@ -242,7 +250,9 @@
 
                         <div class="form-group">
 
-                            <label for="service">What are you looking for?</label>
+                            <label for="service">
+                                What are you looking for? *
+                            </label>
 
                             <select
                                 id="service"
@@ -296,7 +306,9 @@
 
                         <div class="form-group">
 
-                            <label for="budget">Estimated budget</label>
+                            <label for="budget">
+                                Estimated budget
+                            </label>
 
                             <select
                                 id="budget"
@@ -337,7 +349,7 @@
 
 
 
-                        <!-- PROJECT INFORMATION -->
+                        <!-- PROJECT DETAILS -->
 
                         <div class="form-group">
 
@@ -423,6 +435,58 @@
 
 
     <!-- =================================
+         HEADER HIDE ON SCROLL
+    ================================== -->
+
+    <script>
+
+    (function () {
+
+        const header = document.querySelector(".site-header");
+
+        if (!header) return;
+
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        window.addEventListener("scroll", function () {
+
+            if (ticking) return;
+
+            ticking = true;
+
+            window.requestAnimationFrame(function () {
+
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > lastScrollY && currentScrollY > 80) {
+
+                    header.classList.add("header-hidden");
+
+                } else if (currentScrollY < lastScrollY) {
+
+                    header.classList.remove("header-hidden");
+
+                }
+
+                if (currentScrollY <= 20) {
+                    header.classList.remove("header-hidden");
+                }
+
+                lastScrollY = currentScrollY;
+                ticking = false;
+
+            });
+
+        }, { passive: true });
+
+    })();
+
+    </script>
+
+
+
+    <!-- =================================
          CONTACT FORM
     ================================== -->
 
@@ -458,10 +522,13 @@
             const projectDetails = formData.get("projectDetails").trim();
 
 
-            /* CREATE EMAIL */
+            /* CREATE EMAIL SUBJECT */
 
             const subject =
                 "Project enquiry - " + firstName + " " + lastName;
+
+
+            /* CREATE EMAIL BODY */
 
             const body =
 
@@ -493,15 +560,14 @@
                 "&body=" + encodeURIComponent(body);
 
 
-            window.location.href = mailtoLink;
-
-
             if (formNote) {
 
                 formNote.textContent =
                     "Your email application should open with your enquiry ready to send.";
 
             }
+
+            window.location.href = mailtoLink;
 
         });
 
