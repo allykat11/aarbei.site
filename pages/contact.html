@@ -1,105 +1,514 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/contact.css">
+
+    <meta name="description" content="Get in touch with aarbei.art about branding, website design, digital content and creative projects.">
+
+    <link rel="stylesheet" href="../css/contact.css?v=20261112">
     <link rel="icon" href="../imgs/favicon/favicon.png" type="image/png">
+
     <title>Start a Project | aarbei.art</title>
 </head>
 
-<body class="home">
+
+<body class="contact-page-body">
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
 
     <header class="site-header">
+
         <h1 class="site-title">aarbei</h1>
+
         <nav>
             <ul>
                 <li><a href="../index.html"><span>home</span></a></li>
                 <li><a href="../pages/work.html"><span>work</span></a></li>
                 <li><a href="../pages/services.html"><span>services</span></a></li>
                 <li><a href="../pages/about.html"><span>about</span></a></li>
-               <!---- <li><a href="pages/photography"><span>photography prints</span></a></li> ---->
-                <li><a href="../pages/contact.html"><span>start a project</span></a></li>
+                <li>
+                    <a href="../pages/contact.html" class="current-page">
+                        <span>start a project</span>
+                    </a>
+                </li>
             </ul>
         </nav>
+
     </header>
 
-<section class="skills skills-contact">
-    <div class="skills-inner">
 
-        <h2 class="skills-title">contact me for:</h2>
+    <!-- =================================
+         CONTACT PAGE
+    ================================== -->
 
-        <div class="skills-row">
-            <span class="skill-tag tag-uiux">ui/ux design</span>
-            <span class="skill-tag tag-digital">digital design</span>
-        </div>
+    <main class="contact-main">
 
-        <div class="skills-row">
-            <span class="skill-tag tag-motion">motion graphics</span>
-            <span class="skill-tag tag-graphic">graphic design</span>
-        </div>
+        <section class="contact-section">
 
-    </div>
-</section>
 
-    <section class="portrait-section">
-    <div class="portrait-wrapper">
-        <img 
-        src="../imgs/contact/alex sepia2.png" 
-        alt="Portrait of Alexandra"
-        class="portrait-image"
-        >
-    </div>
-    </section>
+            <!-- PAGE INTRO -->
 
-    <main class="contact-page">
-        <div class="contact-content">
-            <p class="contact-focus">
-            Available for commissions, collaborations, and purpose-driven projects. 
-            <br>Especially interested in projects that support environmental conservation
-  and positive impact.
-            </p>
+            <div class="contact-topline">
 
-            <a href="mailto:alexandrakappers@gmail.com"
-                class="contact-button">
-                send me a mail
-            </a>
+                <p>INDEPENDENT CREATIVE & DIGITAL STUDIO</p>
 
-            <p class="contact-note">
-            (say hi!)
-            </p>
-        </div>
+                <p>CONTACT / 01</p>
 
-        <div class="cv-download">
-                <a href="../imgs/contact/Alexandra Kappers - CV.pdf" download class="cv-button">
-                download my CV (.pdf)
-                </a>
-        </div>
+            </div>
+
+
+            <!-- TWO COLUMN LAYOUT -->
+
+            <div class="contact-layout">
+
+
+                <!-- =================================
+                     LEFT COLUMN
+                ================================== -->
+
+                <div class="contact-intro">
+
+                    <p class="contact-eyebrow">
+                        HAVE A PROJECT IN MIND?
+                    </p>
+
+
+                    <h2>
+                        Let's talk about
+                        <span>your next project.</span>
+                    </h2>
+
+
+                    <p class="contact-description">
+                        Tell me a little about what you're working on.
+                        Whether it's a new brand, a website or ongoing
+                        creative support, I'd love to hear about it.
+                    </p>
+
+
+                    <!-- FEATURE IMAGE -->
+
+                    <div class="contact-image">
+
+                        <img
+                            src="../imgs/contact/alex%20sepia2.png"
+                            alt="Alex Kappers, multidisciplinary designer"
+                            loading="eager"
+                        >
+
+                        <div class="contact-image-overlay">
+
+                            <p class="image-overlay-heading">
+                                Independent creative.
+                                <br>
+                                Thoughtful design.
+                            </p>
+
+                            <div class="image-overlay-bottom">
+
+                                <p>Brand · Digital · Content</p>
+
+                                <p>Cape Town, South Africa</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIRECT EMAIL -->
+
+                    <div class="contact-direct">
+
+                        <p>Prefer email?</p>
+
+                        <a href="mailto:alexandrakappers@gmail.com">
+                            alexandrakappers@gmail.com
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     RIGHT COLUMN / FORM
+                ================================== -->
+
+                <div class="contact-form-container">
+
+                    <div class="form-heading">
+
+                        <p class="contact-eyebrow">PROJECT ENQUIRY</p>
+
+                        <h3>Tell me about it.</h3>
+
+                        <p>
+                            Fill in the details below and I'll get back to you.
+                        </p>
+
+                    </div>
+
+
+                    <form id="contactForm" class="contact-form">
+
+
+                        <!-- NAME FIELDS -->
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="firstName">First name *</label>
+
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    name="firstName"
+                                    placeholder="Your first name"
+                                    autocomplete="given-name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="lastName">Last name *</label>
+
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    name="lastName"
+                                    placeholder="Your last name"
+                                    autocomplete="family-name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="email">Email address *</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- PHONE -->
+
+                        <div class="form-group">
+
+                            <label for="phone">Phone number</label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+27"
+                                autocomplete="tel"
+                            >
+
+                        </div>
+
+
+
+                        <!-- SERVICE -->
+
+                        <div class="form-group">
+
+                            <label for="service">What are you looking for?</label>
+
+                            <select
+                                id="service"
+                                name="service"
+                                required
+                            >
+
+                                <option value="" disabled selected>
+                                    Select a service
+                                </option>
+
+                                <option value="Brand identity">
+                                    Brand identity
+                                </option>
+
+                                <option value="Website design and development">
+                                    Website design & development
+                                </option>
+
+                                <option value="Shopify and e-commerce">
+                                    Shopify & e-commerce
+                                </option>
+
+                                <option value="Content and digital campaigns">
+                                    Content & digital campaigns
+                                </option>
+
+                                <option value="Motion graphics and video">
+                                    Motion graphics & video
+                                </option>
+
+                                <option value="Ongoing creative support">
+                                    Ongoing creative support
+                                </option>
+
+                                <option value="Multiple services">
+                                    Multiple services
+                                </option>
+
+                                <option value="Other">
+                                    Something else
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- BUDGET -->
+
+                        <div class="form-group">
+
+                            <label for="budget">Estimated budget</label>
+
+                            <select
+                                id="budget"
+                                name="budget"
+                            >
+
+                                <option value="" selected>
+                                    Select a budget range
+                                </option>
+
+                                <option value="Under R5,000">
+                                    Under R5,000
+                                </option>
+
+                                <option value="R5,000 – R10,000">
+                                    R5,000 – R10,000
+                                </option>
+
+                                <option value="R10,000 – R20,000">
+                                    R10,000 – R20,000
+                                </option>
+
+                                <option value="R20,000 – R40,000">
+                                    R20,000 – R40,000
+                                </option>
+
+                                <option value="R40,000+">
+                                    R40,000+
+                                </option>
+
+                                <option value="Not sure yet">
+                                    Not sure yet
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- PROJECT INFORMATION -->
+
+                        <div class="form-group">
+
+                            <label for="projectDetails">
+                                Tell me about your project *
+                            </label>
+
+                            <textarea
+                                id="projectDetails"
+                                name="projectDetails"
+                                rows="5"
+                                placeholder="A little about your business, what you need and what you're hoping to achieve..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- SUBMIT -->
+
+                        <button type="submit" class="submit-button">
+
+                            <span>Send enquiry</span>
+
+                            <span class="submit-arrow">→</span>
+
+                        </button>
+
+
+                        <p class="form-note" id="formNote">
+                            * Required fields. Submitting opens your email application.
+                        </p>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
 
 
-
-
+    <!-- =================================
+         FOOTER
+    ================================== -->
 
     <footer class="site-footer">
+
         <div class="footer-inner">
 
             <div class="footer-left">
-            <p>aarbei.art</p>
+                <p>aarbei.art</p>
             </div>
 
             <div class="footer-right">
-            <a href="https://www.instagram.com/aarbei.art/" target="_blank">instagram</a>
-            <a href="https://www.tiktok.com/@aarbei.art" target="_blank">tiktok</a>
-            <a href="https://www.youtube.com/@aarbei-art" target="_blank">youtube</a>
-            <a href="https://www.upwork.com/freelancers/~01f7b39bdf13a6c040?mp_source=share" target="_blank">upwork</a>
-            <a href="https://www.linkedin.com/in/alexandra-kappers-4b0252357" target="_blank">linkedin</a>
+
+                <a href="https://www.instagram.com/aarbei.art/"
+                   target="_blank" rel="noopener noreferrer">instagram</a>
+
+                <a href="https://www.tiktok.com/@aarbei.art"
+                   target="_blank" rel="noopener noreferrer">tiktok</a>
+
+                <a href="https://www.youtube.com/@aarbei-art"
+                   target="_blank" rel="noopener noreferrer">youtube</a>
+
+                <a href="https://www.upwork.com/freelancers/~01f7b39bdf13a6c040?mp_source=share"
+                   target="_blank" rel="noopener noreferrer">upwork</a>
+
+                <a href="https://www.linkedin.com/in/alexandra-kappers-4b0252357"
+                   target="_blank" rel="noopener noreferrer">linkedin</a>
+
             </div>
 
         </div>
+
     </footer>
-    
+
+
+
+    <!-- =================================
+         CONTACT FORM
+    ================================== -->
+
+    <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const contactForm = document.getElementById("contactForm");
+        const formNote = document.getElementById("formNote");
+
+        if (!contactForm) return;
+
+
+        contactForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            if (!contactForm.reportValidity()) {
+                return;
+            }
+
+
+            /* GET FORM INFORMATION */
+
+            const formData = new FormData(contactForm);
+
+            const firstName = formData.get("firstName").trim();
+            const lastName = formData.get("lastName").trim();
+            const email = formData.get("email").trim();
+            const phone = formData.get("phone").trim();
+            const service = formData.get("service");
+            const budget = formData.get("budget") || "Not specified";
+            const projectDetails = formData.get("projectDetails").trim();
+
+
+            /* CREATE EMAIL */
+
+            const subject =
+                "Project enquiry - " + firstName + " " + lastName;
+
+            const body =
+
+                "NEW PROJECT ENQUIRY\n\n" +
+
+                "Name: " + firstName + " " + lastName + "\n" +
+
+                "Email: " + email + "\n" +
+
+                "Phone: " + (phone || "Not provided") + "\n" +
+
+                "Service: " + service + "\n" +
+
+                "Estimated budget: " + budget + "\n\n" +
+
+                "PROJECT DETAILS\n\n" +
+
+                projectDetails;
+
+
+            /* OPEN EMAIL APPLICATION */
+
+            const mailtoLink =
+
+                "mailto:alexandrakappers@gmail.com" +
+
+                "?subject=" + encodeURIComponent(subject) +
+
+                "&body=" + encodeURIComponent(body);
+
+
+            window.location.href = mailtoLink;
+
+
+            if (formNote) {
+
+                formNote.textContent =
+                    "Your email application should open with your enquiry ready to send.";
+
+            }
+
+        });
+
+    });
+
+    </script>
+
 
 </body>
 </html>

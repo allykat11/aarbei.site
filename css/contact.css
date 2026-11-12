@@ -1,12 +1,27 @@
+
+/* ==========================================
+   AARBEI.ART — CONTACT PAGE
+========================================== */
+
+
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 :root {
-    --header-height: 90px; /* adjust if needed */
+    --cream: #F4ECE5;
+    --red: #DE2720;
+    --red-dark: #B9211B;
+    --red-light: rgba(222, 39, 32, 0.22);
+    --white: #FFFCF9;
+    --soft-red: rgba(222, 39, 32, 0.045);
 }
+
 
 @font-face {
     font-family: Inter;
@@ -23,523 +38,889 @@
     src: url(../fonts/Cormorant-VariableFont_wght.ttf);
 }
 
-.site-header {
-    position: fixed;  /* must be fixed for hide-on-scroll */
-    top: 0;
-    width: 100%;
-    text-align: center;
-    background-color: #F4ECE5;
-    z-index: 1001;
-    transition: transform 0.3s ease; /* smooth hide/show */
+
+html {
+    scroll-behavior: smooth;
 }
 
-.site-header.header-hidden {
-    transform: translateY(-100%); /* moves header completely out of view */
+
+body.contact-page-body {
+    width: 100%;
+    margin: 0;
+
+    background-color: var(--cream);
+    color: var(--red);
+
+    font-family: 'Coromant', serif;
 }
+
+
+/* ==========================================
+   HEADER & NAVIGATION
+========================================== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+    background-color: var(--cream);
+
+    z-index: 1001;
+
+    transition: transform 0.3s ease;
+}
+
+
+.site-header.header-hidden {
+    transform: translateY(-100%);
+}
+
 
 .site-title {
     font-family: 'Zen Kurenaido';
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 400;
-    padding: 20px 0 10px 0; /* much less top padding */
+
+    padding: 12px 0 5px;
     margin: 0;
-    color: #DE2720;
+
+    color: var(--red);
 }
 
-body {
-    background-color: #F4ECE5;
-    color: #DE2720;
-    margin: 0;
-    padding-top: 20px; /* space for title + nav */
-    font-family: 'Coromant';
-}
-
-/* Center the nav and site-title */
-nav {
-    display: flex;
-    align-items: center;  /* Vertically center the items */
-    justify-content: center;  /* Center the nav and site title horizontally */
-    width: 100%;
-    padding: 10px 30px; /* Add some padding to the sides for breathing room */
-}
 
 .site-header nav {
     display: flex;
-    align-items: center;  /* Vertically align the title and nav */
-    justify-content: center;  /* Center everything horizontally */
-    gap: 30px; /* Space between the site title and the navigation items */
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 5px 20px 8px;
 }
 
-ul {
-    list-style: none;
+
+.site-header ul {
     display: flex;
-    justify-content: center; /* Center the nav items horizontally */
-    gap: 40px;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+    gap: 32px;
+
     margin: 0;
     padding: 0;
 }
 
-ul li a {
+
+.site-header ul li a {
     font-family: 'Zen Kurenaido';
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    color: #DE2720;
+
+    color: var(--red);
     text-decoration: none;
-    padding: 10px 0;
     letter-spacing: 0.03em;
 }
 
-ul li a span {
+
+.site-header ul li a span {
     position: relative;
 }
 
-ul li a span::after {
+
+.site-header ul li a span::after {
     content: "";
+
     position: absolute;
     left: 0;
     bottom: -4px;
+
     width: 100%;
-    height: 1.5px;
-    background-color: #DE2720;
+    height: 1px;
+
+    background-color: var(--red);
+
     transform: scaleX(0);
     transform-origin: left;
+
     transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
 
-ul li a:hover span::after {
+
+.site-header ul li a:hover span::after,
+.site-header ul li a.current-page span::after {
     transform: scaleX(1);
 }
 
-/* Tablet and Mobile Styles */
 
-/* Tablet view: 1024px and below */
-@media (max-width: 1024px) {
-    .site-header {
-        padding-top: 10px; /* Adjust for smaller screens */
-    }
+/* ==========================================
+   CONTACT PAGE
+========================================== */
 
-    nav {
-        padding: 10px 20px;  /* Reduce space on the sides */
-        gap: 20px;  /* Add some spacing between the title and nav */
-    }
-
-    .site-title {
-        font-size: 24px; /* Smaller title on tablets */
-    }
-
-    ul {
-        gap: 30px; /* Less space between nav items */
-    }
-
-    ul li a {
-        font-size: 14px; /* Smaller font for mobile */
-    }
-}
-
-/* Mobile view: 768px and below */
-@media (max-width: 768px) {
-    nav {
-        padding: 15px 15px;  /* Add padding for mobile */
-        justify-content: center; /* Ensure title and nav items stay centered */
-    }
-
-    .site-title {
-        font-size: 20px; /* Even smaller font size for mobile */
-    }
-
-    ul {
-        gap: 20px; /* Less space between nav items */
-    }
-
-    ul li a {
-        font-size: 14px; /* Smaller font size */
-    }
+.contact-main {
+    width: 100%;
 }
 
 
-/*---------------------contact--------------------*/
+.contact-section {
+    width: 100%;
+    max-width: 1500px;
 
-/* Contact page layout */
-.contact-page {
-    margin-top: 40px;
-    padding-bottom: 120px;
+    margin: 0 auto;
+
+    padding: 140px 6% 80px;
+}
+
+
+/* TOP LINE */
+
+.contact-topline {
     display: flex;
-    flex-direction: column;   /* stack vertically */
+    justify-content: space-between;
     align-items: center;
-}
-/* Text container */
-.contact-content {
-    width: 70%;
-    max-width: 900px;
-    text-align: center;
-    font-family: "Cormorant Garamond", serif;
-    color: #DE2720;
-    transform: none;
+
+    padding-bottom: 12px;
+    margin-bottom: 35px;
+
+    border-bottom: 1px solid var(--red-light);
 }
 
-.skills-contact {
-  margin-top: 140px;    /* pushes it down below header */
-  padding-top: 40px;    /* internal breathing room */
-  padding-bottom: 40px;
+
+.contact-topline p {
+    font-family: 'Zen Kurenaido';
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.13em;
+
+    color: var(--red);
 }
 
-.portrait-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 24px 0 36px;
+
+/* ==========================================
+   TWO COLUMN LAYOUT
+========================================== */
+
+.contact-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+    gap: 55px;
+
+    align-items: stretch;
+
+    padding: 35px;
+
+    background-color: var(--white);
+
+    border: 1px solid var(--red-light);
 }
 
-.portrait-wrapper {
-  transform: rotate(-2deg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.18),
-    0 4px 10px rgba(0, 0, 0, 0.12);
 
-}
-.portrait-wrapper:hover {
-  transform: rotate(-1deg) translateY(-3px);
-  box-shadow:
-    0 16px 36px rgba(0, 0, 0, 0.22),
-    0 6px 14px rgba(0, 0, 0, 0.14);
+/* ==========================================
+   LEFT COLUMN / INTRO
+========================================== */
+
+.contact-intro {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
 }
 
-.portrait-image {
-  display: block;
-  max-width: 280px;   /* control size without forcing ratio */
-  height: auto;
-  border-radius: 2px;
+
+.contact-eyebrow {
+    font-family: 'Zen Kurenaido';
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+
+    color: var(--red);
+
+    margin-bottom: 13px;
 }
 
-/* Contact text */
-.contact-content p {
-    font-size: 18px; /* slightly smaller */
-    font-weight: 300;
-    line-height: 1.4;
-    margin-bottom: 40px;
+
+/* MAIN HEADING */
+
+.contact-intro h2 {
+    font-family: 'Zen Kurenaido';
+    font-size: clamp(35px, 3.5vw, 53px);
+    font-weight: 400;
+    line-height: 1.12;
+
+    letter-spacing: -0.025em;
+
+    color: var(--red);
+
+    margin-bottom: 17px;
 }
 
-/* Button */
-.contact-button {
-    display: inline-block;
-    padding: 14px 40px;
-    border: 1.5px solid #DE2720;
-    border-radius: 50px;
+
+.contact-intro h2 span {
+    display: block;
+
+    font-family: 'Coromant';
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+/* DESCRIPTION */
+
+.contact-description {
+    max-width: 440px;
+
+    font-family: 'Coromant';
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.45;
+
+    color: var(--red);
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   FEATURE IMAGE
+========================================== */
+
+.contact-image {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    margin-top: auto;
+
+    background-color: #D8C5B8;
+}
+
+
+.contact-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 35%;
+
+    transition: transform 0.6s ease;
+}
+
+
+.contact-image:hover img {
+    transform: scale(1.025);
+}
+
+
+/* IMAGE OVERLAY */
+
+.contact-image-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 22px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(20, 10, 5, 0.2) 0%,
+        transparent 35%,
+        rgba(20, 10, 5, 0.58) 100%
+    );
+
+    color: #FFFFFF;
+}
+
+
+.image-overlay-heading {
+    font-family: 'Coromant';
+    font-size: clamp(25px, 2.5vw, 36px);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+
+.image-overlay-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 10px;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 11px;
+    letter-spacing: 0.03em;
+
+    color: #FFFFFF;
+}
+
+
+/* ==========================================
+   DIRECT EMAIL
+========================================== */
+
+.contact-direct {
+    margin-top: 22px;
+}
+
+
+.contact-direct p {
+    font-family: 'Zen Kurenaido';
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+
+.contact-direct a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    font-family: 'Coromant';
+    font-size: 19px;
+
+    color: var(--red);
     text-decoration: none;
-    color: #DE2720;
-    font-family: "Zen Kurenaido", sans-serif;
+
+    border-bottom: 1px solid var(--red-light);
+    padding-bottom: 3px;
+
+    transition: gap 0.3s ease;
+}
+
+
+.contact-direct a:hover {
+    gap: 15px;
+}
+
+
+/* ==========================================
+   RIGHT COLUMN / FORM
+========================================== */
+
+.contact-form-container {
+    width: 100%;
+    min-width: 0;
+
+    background-color: var(--soft-red);
+
+    padding: 28px 30px;
+
+    border: 1px solid rgba(222, 39, 32, 0.09);
+}
+
+
+/* FORM INTRO */
+
+.form-heading {
+    margin-bottom: 25px;
+}
+
+
+.form-heading h3 {
+    font-family: 'Zen Kurenaido';
+    font-size: 29px;
+    font-weight: 400;
+
+    color: var(--red);
+
+    margin-bottom: 5px;
+}
+
+
+.form-heading > p:last-child {
+    font-family: 'Coromant';
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+
+/* ==========================================
+   FORM FIELDS
+========================================== */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    gap: 6px;
+}
+
+
+/* LABELS */
+
+.form-group label {
+    font-family: 'Zen Kurenaido';
+    font-size: 13px;
+    font-weight: 400;
+
+    color: var(--red);
+}
+
+
+/* INPUTS AND SELECTS */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    display: block;
+
+    width: 100%;
+
+    border: 1px solid rgba(222, 39, 32, 0.15);
+    border-radius: 0;
+
+    background-color: #FFFFFF;
+
+    padding: 11px 12px;
+
+    font-family: 'Coromant';
     font-size: 17px;
     font-weight: 400;
-    transition: all 0.3s ease;
-}
-/* Hover effect */
-.contact-button:hover {
-    background-color: #DE2720;
-    color: white;
+
+    color: #51413B;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease;
 }
 
-.contact-focus {
-  margin-top: 20px;
-  font-family: 'Coromant';
-  font-size: 16px;
-  font-weight: 300;
-  text-align: center;
-  opacity: 0.9;
+
+/* PLACEHOLDERS */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #A99B94;
+    opacity: 1;
 }
 
-.contact-tags {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
+
+/* SELECT */
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23DE2720' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+
+    padding-right: 35px;
 }
 
-.contact-tags span {
-  font-family: 'Zen Kurenaido';
-  font-size: 13px;
-  padding: 8px 18px;
-  border: 1px solid #DE2720;
-  border-radius: 40px;
-  opacity: 0.8;
+
+/* TEXTAREA */
+
+.form-group textarea {
+    min-height: 115px;
+    resize: vertical;
+
+    line-height: 1.45;
 }
 
-.contact-note {
-  margin-top: 20px;
-  font-size: 6px;
-  opacity: 0.7;
-  text-align: center;
-  font-family: 'Zen Kurenaido';
+
+/* FOCUS STATES */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--red);
+    background-color: #FFFFFF;
 }
 
-.cv-download {
-    margin-top: 20px;
-}
 
-.cv-button {
-    text-decoration: underline;
-    font-size: 16px;
-    color: inherit;
-    border: none;
-    padding: 10px;
+/* ==========================================
+   SUBMIT BUTTON
+========================================== */
+
+.submit-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    border: 1px solid var(--red);
+    border-radius: 0;
+
+    background-color: var(--red);
+    color: #FFFFFF;
+
+    padding: 13px 16px;
+
     font-family: 'Zen Kurenaido';
+    font-size: 15px;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
-.cv-button:hover {
-    background-color: #DE2720;
-    color: #fff;
+
+.submit-button:hover {
+    background-color: transparent;
+    color: var(--red);
 }
 
 
-/* Mobile */
-@media (max-width: 768px) {
-    .contact-content {
-        width: 90%;
+.submit-arrow {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.submit-button:hover .submit-arrow {
+    transform: translateX(5px);
+}
+
+
+/* FORM NOTE */
+
+.form-note {
+    font-family: 'Zen Kurenaido';
+    font-size: 11px;
+    line-height: 1.4;
+
+    color: rgba(222, 39, 32, 0.7);
+    text-align: center;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.site-footer {
+    width: 100%;
+
+    background-color: var(--cream);
+
+    padding: 30px 0;
+}
+
+
+.footer-inner {
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.footer-left p {
+    font-family: 'Zen Kurenaido';
+    font-size: 18px;
+    font-weight: 400;
+
+    color: var(--red);
+    margin: 0;
+}
+
+
+.footer-right {
+    display: flex;
+    gap: 22px;
+}
+
+
+.footer-right a {
+    position: relative;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 13px;
+    font-weight: 400;
+
+    color: var(--red);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+}
+
+
+.footer-right a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--red);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.4s ease;
+}
+
+
+.footer-right a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .contact-section {
+        padding: 130px 5% 65px;
     }
 
-    .contact-content p {
+    .contact-layout {
+        gap: 28px;
+        padding: 25px;
+    }
+
+    .contact-form-container {
+        padding: 23px 20px;
+    }
+
+    .contact-intro h2 {
+        font-size: 39px;
+    }
+
+    .contact-description {
         font-size: 18px;
     }
 
-    .contact-button {
-        font-size: 15px;
-        padding: 12px 32px;
-    }
-}
-
-/* ---------------- SKILLS / CONTACT TAGS ---------------- */
-
-.skills {
-    width: 100%;
-    background-color: #F4ECE5;
-    padding: 20px 0 40px;
-}
-
-.skills-contact {
-    margin-top: 140px;
-}
-
-.skills-inner {
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.skills-title {
-    font-family: 'Zen Kurenaido';
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    color: #DE2720;
-    margin-bottom: 35px;
-}
-
-.skills-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    width: 100%;
-    margin-bottom: 16px;
-}
-
-.skill-tag {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    font-family: 'Zen Kurenaido';
-    font-size: 14px;
-    letter-spacing: 0.05em;
-
-    padding: 10px 24px;
-    border-radius: 50px;
-    border: 1.5px solid;
-
-    white-space: nowrap;
-    cursor: default;
-    user-select: none;
-
-    transition: background-color 0.3s ease,
-                color 0.3s ease,
-                transform 0.3s ease;
-}
-
-/* Individual tag colours */
-
-.tag-uiux {
-    --tag-color: #DE2720;
-    color: var(--tag-color);
-    border-color: var(--tag-color);
-}
-
-.tag-digital {
-    --tag-color: #2f292a;
-    color: var(--tag-color);
-    border-color: var(--tag-color);
-}
-
-.tag-motion {
-    --tag-color: #254d8d;
-    color: var(--tag-color);
-    border-color: var(--tag-color);
-}
-
-.tag-graphic {
-    --tag-color: #669BBC;
-    color: var(--tag-color);
-    border-color: var(--tag-color);
-}
-
-/* Hover effect */
-
-.skill-tag:hover {
-    background-color: var(--tag-color);
-    color: #F4ECE5;
-    transform: translateY(-2px);
-}
-
-/* TABLET */
-
-@media (max-width: 1024px) {
-
-    .skills-contact {
-        margin-top: 130px;
+    .form-row {
+        gap: 10px;
     }
 
-    .skills-inner {
-        width: 95%;
-    }
-
-    .skills-row {
-        gap: 12px;
+    .footer-right {
+        gap: 15px;
     }
 
 }
 
-/* MOBILE */
+
+/* ==========================================
+   MOBILE
+========================================== */
 
 @media (max-width: 768px) {
 
-    .skills-contact {
-        margin-top: 120px;
-        padding-bottom: 25px;
+    /* HEADER */
+
+    .site-title {
+        font-size: 22px;
+        padding: 10px 0 4px;
     }
 
-    .skills-title {
-        font-size: 20px;
+    .site-header nav {
+        padding: 5px 10px 8px;
+    }
+
+    .site-header ul {
+        flex-wrap: wrap;
+        gap: 10px 16px;
+    }
+
+    .site-header ul li a {
+        font-size: 13px;
+    }
+
+
+    /* MAIN CONTACT */
+
+    .contact-section {
+        padding: 130px 6% 50px;
+    }
+
+    .contact-topline {
         margin-bottom: 25px;
     }
 
-    .skills-row {
-        gap: 10px;
-        margin-bottom: 12px;
+    .contact-topline p {
+        font-size: 9px;
+        letter-spacing: 0.07em;
     }
 
-    .skill-tag {
-        font-size: 12px;
-        padding: 9px 16px;
+
+    /* STACK COLUMNS */
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 22px;
+
     }
 
-}
 
-.site-footer {
-  width: 100%;
-  background-color: #F4ECE5;
-  padding: 40px 0;
-}
+    /* INTRO */
 
-.footer-inner {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* vertical centering */
-}
-
-.footer-left p {
-  font-family: 'Zen Kurenaido';
-  font-size: 20px;
-  font-weight: 400;
-  color: #DE2720;
-  margin: 0;
-}
-
-.footer-right {
-  display: flex;
-  gap: 30px;
-}
-
-.footer-right a {
-  font-family: 'Zen Kurenaido';
-  font-size: 14px;
-  font-weight: 400;
-  color: #DE2720;
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  position: relative;
-}
-
-/* underline hover, same language as nav */
-.footer-right a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 1.5px;
-  background-color: #DE2720;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
-}
-
-.footer-right a:hover::after {
-  transform: scaleX(1);
-}
-
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
+    .contact-intro h2 {
+        font-size: clamp(38px, 9vw, 50px);
     }
 
-    .about-inner {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .about-col {
-        width: 100%;
-    }
-
-    .about-col p {
+    .contact-description {
+        max-width: 100%;
         font-size: 18px;
     }
 
-    .projects-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
+
+    /* IMAGE */
+
+    .contact-image {
+        aspect-ratio: 4 / 3;
+        margin-top: 5px;
+    }
+
+    .contact-image-overlay {
+        padding: 16px;
+    }
+
+    .image-overlay-heading {
+        font-size: 29px;
+    }
+
+    .image-overlay-bottom {
+        font-size: 10px;
+    }
+
+
+    /* DIRECT EMAIL */
+
+    .contact-direct a {
+        font-size: 17px;
+    }
+
+
+    /* FORM */
+
+    .contact-form-container {
+        padding: 23px 18px;
+    }
+
+    .form-heading h3 {
+        font-size: 26px;
+    }
+
+    .contact-form {
+        gap: 15px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
+        padding: 11px;
+    }
+
+
+    /* FOOTER */
+
+    .site-footer {
+        padding: 25px 0;
     }
 
     .footer-inner {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
     }
 
-      .skills-title {
-    font-size: 20px;
-  }
+    .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
 
-  .skill-tag {
-    font-size: 13px;
-    padding: 8px 18px;
-  }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+    .site-header ul {
+        gap: 8px 12px;
+    }
+
+    .site-header ul li a {
+        font-size: 12px;
+    }
+
+    .contact-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .contact-layout {
+        padding: 16px;
+    }
+
+    .contact-intro h2 {
+        font-size: 36px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .contact-image-overlay {
+        padding: 12px;
+    }
+
+    .image-overlay-heading {
+        font-size: 25px;
+    }
+
 }
