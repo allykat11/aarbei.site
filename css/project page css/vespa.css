@@ -166,17 +166,17 @@ ul li a:hover span::after {
   color: #DE2720;
 }
 
-/* Hero */
-/* Hero that respects image ratio */
+/* HERO */
+
 .editorial-hero {
-  width: 100%;
-  margin-top: 40px; /* small breathing room below header */
+    width: 100%;
+    margin-top: 65px;
 }
 
 .editorial-hero img {
-  width: 100%;
-  height: auto;      /* 👈 this is the key */
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 /* Intro */
 .editorial-intro {
