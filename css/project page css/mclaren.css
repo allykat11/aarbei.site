@@ -1,367 +1,876 @@
+
+/* ==========================================
+   AARBEI.ART — MCLAREN PROJECT
+========================================== */
+
+
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 :root {
-    --header-height: 90px; /* adjust if needed */
+    --cream: #F4ECE5;
+    --red: #DE2720;
+    --red-light: rgba(222, 39, 32, 0.25);
+    --header-height: 110px;
 }
+
+
+/* ==========================================
+   FONTS
+========================================== */
 
 @font-face {
     font-family: Inter;
-    src: url(../fonts/InterTight-VariableFont_wght.ttf);
+    src: url(../../fonts/InterTight-VariableFont_wght.ttf);
 }
 
 @font-face {
     font-family: Zen Kurenaido;
-    src: url(../fonts/ZenKurenaido-Regular.ttf);
+    src: url(../../fonts/ZenKurenaido-Regular.ttf);
 }
 
 @font-face {
     font-family: Coromant;
-    src: url(../fonts/Cormorant-VariableFont_wght.ttf);
+    src: url(../../fonts/Cormorant-VariableFont_wght.ttf);
 }
+
+
+/* ==========================================
+   GLOBAL
+========================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.mclaren-page {
+    width: 100%;
+    margin: 0;
+
+    background-color: var(--cream);
+    color: var(--red);
+
+    font-family: 'Coromant', serif;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   HEADER & NAVIGATION
+========================================== */
 
 .site-header {
-    position: fixed;  /* must be fixed for hide-on-scroll */
+    position: fixed;
     top: 0;
+    left: 0;
+
     width: 100%;
+
     text-align: center;
-    background-color: #F4ECE5;
+    background-color: var(--cream);
+
     z-index: 1001;
-    transition: transform 0.3s ease; /* smooth hide/show */
+
+    transition: transform 0.3s ease;
 }
 
+
 .site-header.header-hidden {
-    transform: translateY(-100%); /* moves header completely out of view */
+    transform: translateY(-100%);
 }
+
 
 .site-title {
     font-family: 'Zen Kurenaido';
     font-size: 28px;
     font-weight: 400;
-    padding: 20px 0 10px 0; /* much less top padding */
+
+    padding: 20px 0 10px;
+
     margin: 0;
-    color: #DE2720;
+
+    color: var(--red);
 }
 
-body {
-    background-color: #F4ECE5;
-    color: #DE2720;
-    margin: 0;
-    padding-top: 20px; /* space for title + nav */
-    font-family: 'Coromant';
-}
-
-/* Center the nav and site-title */
-nav {
-    display: flex;
-    align-items: center;  /* Vertically center the items */
-    justify-content: center;  /* Center the nav and site title horizontally */
-    width: 100%;
-    padding: 10px 30px; /* Add some padding to the sides for breathing room */
-}
 
 .site-header nav {
     display: flex;
-    align-items: center;  /* Vertically align the title and nav */
-    justify-content: center;  /* Center everything horizontally */
-    gap: 30px; /* Space between the site title and the navigation items */
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 10px 30px;
 }
 
-ul {
-    list-style: none;
+
+.site-header ul {
     display: flex;
-    justify-content: center; /* Center the nav items horizontally */
+    align-items: center;
+    justify-content: center;
+
+    list-style: none;
     gap: 40px;
+
     margin: 0;
     padding: 0;
 }
 
-ul li a {
+
+.site-header ul li a {
     font-family: 'Zen Kurenaido';
     font-size: 16px;
     font-weight: 400;
-    color: #DE2720;
+
+    color: var(--red);
     text-decoration: none;
-    padding: 10px 0;
+
     letter-spacing: 0.03em;
 }
 
-ul li a span {
+
+.site-header ul li a span {
     position: relative;
 }
 
-ul li a span::after {
+
+.site-header ul li a span::after {
     content: "";
+
     position: absolute;
     left: 0;
     bottom: -4px;
+
     width: 100%;
     height: 1.5px;
-    background-color: #DE2720;
+
+    background-color: var(--red);
+
     transform: scaleX(0);
     transform-origin: left;
+
     transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
 
-ul li a:hover span::after {
+
+.site-header ul li a:hover span::after {
     transform: scaleX(1);
 }
 
-/* Tablet and Mobile Styles */
 
-/* Tablet view: 1024px and below */
-@media (max-width: 1024px) {
-    .site-header {
-        padding-top: 10px; /* Adjust for smaller screens */
-    }
+/* ==========================================
+   MAIN PROJECT LAYOUT
+========================================== */
 
-    nav {
-        padding: 10px 20px;  /* Reduce space on the sides */
-        gap: 20px;  /* Add some spacing between the title and nav */
-    }
-
-    .site-title {
-        font-size: 24px; /* Smaller title on tablets */
-    }
-
-    ul {
-        gap: 30px; /* Less space between nav items */
-    }
-
-    ul li a {
-        font-size: 14px; /* Smaller font for mobile */
-    }
+.project-page {
+    width: 100%;
 }
 
-/* Mobile view: 768px and below */
-@media (max-width: 768px) {
-    nav {
-        padding: 15px 15px;  /* Add padding for mobile */
-        justify-content: center; /* Ensure title and nav items stay centered */
-    }
-
-    .site-title {
-        font-size: 20px; /* Even smaller font size for mobile */
-    }
-
-    ul {
-        gap: 20px; /* Less space between nav items */
-    }
-
-    ul li a {
-        font-size: 14px; /* Smaller font size */
-    }
+.editorial-project {
+    width: 100%;
+    color: var(--red);
 }
 
-/*---- mclaren ----*/
 
-/* ---------------- McLaren Editorial Extensions ---------------- */
+/* Push project below fixed navigation */
 
-/* Mailer grid */
+.mclaren-project {
+    padding-top: calc(var(--header-height) + 20px);
+    display: flow-root;
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.editorial-hero {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    line-height: 0;
+}
+
+
+.editorial-hero img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ==========================================
+   PROJECT INTRODUCTION
+========================================== */
+
+.editorial-intro {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 100px auto 80px;
+
+    padding: 0 25px;
+
+    text-align: center;
+}
+
+
+.editorial-intro.compact {
+    margin: 85px auto 65px;
+}
+
+
+.editorial-label {
+    display: block;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    opacity: 0.65;
+
+    margin-bottom: 8px;
+}
+
+
+.editorial-title {
+    font-family: 'Zen Kurenaido';
+    font-size: 36px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    margin: 12px 0 8px;
+}
+
+
+.editorial-meta {
+    font-family: 'Zen Kurenaido';
+    font-size: 13px;
+    font-weight: 400;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    opacity: 0.7;
+
+    margin-bottom: 35px;
+}
+
+
+.editorial-description {
+    font-family: 'Coromant';
+    font-size: 19px;
+    font-weight: 300;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   EDITORIAL IMAGE ROWS
+========================================== */
+
+.editorial-image-row {
+    display: grid;
+
+    width: 100%;
+
+    margin: 0 auto;
+
+    padding: 0 40px 75px;
+
+    align-items: start;
+
+    gap: 24px;
+}
+
+
+/* THREE COLUMN IMAGE ROW */
+
+.editorial-image-row.three-up {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+/* TWO COLUMN IMAGE ROW */
+
+.editorial-image-row.two-up {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+
+/* IMAGE STYLING */
+
+.editorial-image-row img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.editorial-image-row img:hover {
+    opacity: 0.92;
+}
+
+
+/* ==========================================
+   MCLAREN EMAIL MAILERS
+========================================== */
+
 .editorial-mailers {
-  max-width: 1100px;
-  margin: 0 auto 140px;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+    display: grid;
+
+    width: 100%;
+    max-width: 1300px;
+
+    margin: 0 auto 80px;
+
+    padding: 0 40px;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 32px;
+
+    align-items: start;
 }
 
-.mailer-square img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+
+/* SQUARE MAILER PREVIEWS */
+
+.editorial-mailers img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+    object-position: top;
+
+    cursor: zoom-in;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
 }
 
-.mailer-square img:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
+
+.editorial-mailers img:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
 }
 
-/* Feature section */
+
+/* ==========================================
+   COLLABORATION FEATURE
+========================================== */
+
 .editorial-feature {
-  max-width: 720px;
-  margin: 0 auto 60px;
-  padding: 0 20px;
-  text-align: center;
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto 65px;
+
+    padding: 0 25px;
+
+    text-align: center;
 }
+
 
 .editorial-feature-label {
-  font-family: 'Zen Kurenaido';
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.6;
-  margin-bottom: 8px;
+    font-family: 'Zen Kurenaido';
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    opacity: 0.65;
+
+    margin-bottom: 8px;
 }
+
 
 .editorial-feature-title {
-  font-family: 'Zen Kurenaido';
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom: 40px;
+    font-family: 'Zen Kurenaido';
+    font-size: 28px;
+    font-weight: 400;
+
+    margin-bottom: 35px;
 }
 
-/* ---------------- McLaren Mailer Section ---------------- */
 
-/* Bigger square grid */
-.editorial-mailers.large {
-  max-width: 1300px;
-  margin: 0 auto 80px;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+/* SINGLE FEATURE IMAGE */
+
+.editorial-image.single {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
 }
 
-/* Square previews */
-.editorial-mailers.large img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: top; /* 👈 anchor to top */
-  cursor: zoom-in;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+
+.editorial-image.single img {
+    display: block;
+
+    width: 100%;
+    height: auto;
 }
 
-.editorial-mailers.large img:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
+
+/* ==========================================
+   PROJECT OUTRO
+========================================== */
+
+.editorial-outro {
+    width: 100%;
+    max-width: 680px;
+
+    margin: 0 auto 80px;
+
+    padding: 0 25px;
+
+    text-align: center;
 }
 
-/* Fullscreen modal */
+
+.editorial-outro p {
+    font-family: 'Coromant';
+    font-size: 19px;
+    font-weight: 300;
+
+    line-height: 1.6;
+
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   IMAGE EXPANSION MODAL
+========================================== */
+
 .mclaren-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+    position: fixed;
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.93);
+
+    z-index: 9999;
 }
+
 
 .mclaren-modal.active {
-  display: flex;
+    display: flex;
 }
+
+
+/* EXPANDED IMAGE */
 
 .mclaren-modal img {
-  max-width: 90vw;
-  max-height: 90vh;
-  object-fit: contain;
+    display: block;
+
+    max-width: 90vw;
+    max-height: 90vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
 }
 
-/* Close button */
+
+/* CLOSE BUTTON */
+
 .mclaren-modal-close {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 32px;
-  cursor: pointer;
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    background: transparent;
+
+    color: #FFFFFF;
+
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
 }
 
 
-@media (max-width: 900px) {
-  .editorial-mailers {
-    grid-template-columns: 1fr;
-    padding: 0 20px 100px;
-  }
+.mclaren-modal-close:hover {
+    transform: rotate(90deg);
 }
 
-@media (max-width: 900px) {
-  .editorial-mailers.large {
-    grid-template-columns: 1fr;
-    padding: 0 20px 100px;
-  }
-}
 
+/* ==========================================
+   FOOTER
+========================================== */
 
 .site-footer {
-  width: 100%;
-  background-color: #F4ECE5;
-  padding: 40px 0;
+    width: 100%;
+
+    background-color: var(--cream);
+
+    padding: 40px 0;
 }
+
 
 .footer-inner {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* vertical centering */
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 
 .footer-left p {
-  font-family: 'Zen Kurenaido';
-  font-size: 20px;
-  font-weight: 400;
-  color: #DE2720;
-  margin: 0;
+    font-family: 'Zen Kurenaido';
+    font-size: 20px;
+    font-weight: 400;
+
+    color: var(--red);
+
+    margin: 0;
 }
+
 
 .footer-right {
-  display: flex;
-  gap: 30px;
+    display: flex;
+    gap: 30px;
 }
+
 
 .footer-right a {
-  font-family: 'Zen Kurenaido';
-  font-size: 14px;
-  font-weight: 400;
-  color: #DE2720;
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  position: relative;
+    position: relative;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 14px;
+    font-weight: 400;
+
+    color: var(--red);
+
+    text-decoration: none;
+    letter-spacing: 0.03em;
 }
 
-/* underline hover, same language as nav */
+
 .footer-right a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 1.5px;
-  background-color: #DE2720;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 1.5px;
+
+    background-color: var(--red);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
+
 
 .footer-right a:hover::after {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+    :root {
+        --header-height: 120px;
     }
 
-    .about-inner {
-        flex-direction: column;
+
+    /* HEADER */
+
+    .site-header {
+        padding-top: 10px;
+    }
+
+    .site-title {
+        font-size: 24px;
+    }
+
+    .site-header nav {
+        padding: 10px 20px;
+    }
+
+    .site-header ul {
         gap: 30px;
     }
 
-    .about-col {
+    .site-header ul li a {
+        font-size: 14px;
+    }
+
+
+    /* PROJECT SPACING */
+
+    .mclaren-project {
+        padding-top: calc(var(--header-height) + 10px);
+    }
+
+
+    /* INTRO */
+
+    .editorial-intro {
+        margin: 75px auto 60px;
+    }
+
+    .editorial-intro.compact {
+        margin: 65px auto 55px;
+    }
+
+
+    /* IMAGES */
+
+    .editorial-image-row {
+        padding: 0 25px 60px;
+        gap: 18px;
+    }
+
+    .editorial-mailers {
+        padding: 0 25px;
+        gap: 20px;
+        margin-bottom: 65px;
+    }
+
+
+    /* OUTRO */
+
+    .editorial-outro {
+        margin-bottom: 65px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-right {
+        gap: 20px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    :root {
+        --header-height: 110px;
+    }
+
+
+    /* HEADER */
+
+    .site-title {
+        font-size: 22px;
+        padding: 10px 0 4px;
+    }
+
+    .site-header nav {
+        padding: 5px 10px 8px;
+    }
+
+    .site-header ul {
+        flex-wrap: wrap;
+        gap: 10px 16px;
+    }
+
+    .site-header ul li a {
+        font-size: 13px;
+    }
+
+
+    /* PROJECT SPACING */
+
+    .mclaren-project {
+        padding-top: 130px;
+    }
+
+
+    /* HERO */
+
+    .editorial-hero {
+        width: 100%;
+        margin: 0;
+    }
+
+    .editorial-hero img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* INTRO */
+
+    .editorial-intro {
+        margin: 55px auto 45px;
+        padding: 0 22px;
+    }
+
+    .editorial-intro.compact {
+        margin: 55px auto 45px;
+    }
+
+    .editorial-title {
+        font-size: 30px;
+    }
+
+    .editorial-meta {
+        font-size: 11px;
+        margin-bottom: 25px;
+    }
+
+    .editorial-description {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+
+    /* IMAGE ROWS */
+
+    .editorial-image-row {
+        padding: 0 20px 45px;
+        gap: 18px;
+    }
+
+    .editorial-image-row.three-up {
+        grid-template-columns: 1fr;
+    }
+
+    .editorial-image-row.two-up {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* MAILERS */
+
+    .editorial-mailers {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        padding: 0 20px 50px;
+
+        gap: 20px;
+
+        margin-bottom: 40px;
+    }
+
+    .editorial-mailers img {
+        aspect-ratio: auto;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+
+    /* FEATURE */
+
+    .editorial-feature {
+        padding: 0 20px;
+        margin-bottom: 45px;
+    }
+
+    .editorial-feature-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .editorial-image.single {
         width: 100%;
     }
 
-    .about-col p {
-        font-size: 18px;
+
+    /* OUTRO */
+
+    .editorial-outro {
+        padding: 0 25px;
+        margin-bottom: 50px;
     }
 
-    .projects-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .editorial-outro p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+
+    /* MODAL */
+
+    .mclaren-modal {
+        padding: 20px;
+    }
+
+    .mclaren-modal img {
+        max-width: 95vw;
+        max-height: 85vh;
+    }
+
+    .mclaren-modal-close {
+        top: 10px;
+        right: 12px;
+    }
+
+
+    /* FOOTER */
+
+    .site-footer {
+        padding: 30px 0;
     }
 
     .footer-inner {
@@ -369,12 +878,50 @@ ul li a:hover span::after {
         gap: 20px;
     }
 
-      .skills-title {
-    font-size: 20px;
-  }
+    .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
 
-  .skill-tag {
-    font-size: 13px;
-    padding: 8px 18px;
-  }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+    .site-header ul {
+        gap: 8px 12px;
+    }
+
+    .site-header ul li a {
+        font-size: 12px;
+    }
+
+    .mclaren-project {
+        padding-top: 125px;
+    }
+
+    .editorial-title {
+        font-size: 28px;
+    }
+
+    .editorial-image-row {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .editorial-mailers {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .editorial-feature {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
 }
