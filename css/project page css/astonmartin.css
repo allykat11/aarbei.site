@@ -1,404 +1,868 @@
+
+/* ==========================================
+   AARBEI.ART — ASTON MARTIN PROJECT
+========================================== */
+
+
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 :root {
-    --header-height: 90px; /* adjust if needed */
+    --cream: #F4ECE5;
+    --red: #DE2720;
+    --red-light: rgba(222, 39, 32, 0.25);
+
+    --header-height: 110px;
 }
+
+
+/* ==========================================
+   FONTS
+========================================== */
 
 @font-face {
     font-family: Inter;
-    src: url(../fonts/InterTight-VariableFont_wght.ttf);
+    src: url(../../fonts/InterTight-VariableFont_wght.ttf);
 }
 
 @font-face {
     font-family: Zen Kurenaido;
-    src: url(../fonts/ZenKurenaido-Regular.ttf);
+    src: url(../../fonts/ZenKurenaido-Regular.ttf);
 }
 
 @font-face {
     font-family: Coromant;
-    src: url(../fonts/Cormorant-VariableFont_wght.ttf);
+    src: url(../../fonts/Cormorant-VariableFont_wght.ttf);
 }
+
+
+/* ==========================================
+   GLOBAL
+========================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.aston-page {
+    width: 100%;
+    margin: 0;
+
+    background-color: var(--cream);
+    color: var(--red);
+
+    font-family: 'Coromant', serif;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   HEADER & NAVIGATION
+========================================== */
 
 .site-header {
-    position: fixed;  /* must be fixed for hide-on-scroll */
+    position: fixed;
     top: 0;
+    left: 0;
+
     width: 100%;
+
     text-align: center;
-    background-color: #F4ECE5;
+    background-color: var(--cream);
+
     z-index: 1001;
-    transition: transform 0.3s ease; /* smooth hide/show */
+
+    transition: transform 0.3s ease;
 }
 
+
 .site-header.header-hidden {
-    transform: translateY(-100%); /* moves header completely out of view */
+    transform: translateY(-100%);
 }
+
 
 .site-title {
     font-family: 'Zen Kurenaido';
     font-size: 28px;
     font-weight: 400;
-    padding: 20px 0 10px 0; /* much less top padding */
+
+    padding: 20px 0 10px;
+
     margin: 0;
-    color: #DE2720;
+
+    color: var(--red);
 }
 
-body {
-    background-color: #F4ECE5;
-    color: #DE2720;
-    margin: 0;
-    padding-top: 20px; /* space for title + nav */
-    font-family: 'Coromant';
-}
-
-/* Center the nav and site-title */
-nav {
-    display: flex;
-    align-items: center;  /* Vertically center the items */
-    justify-content: center;  /* Center the nav and site title horizontally */
-    width: 100%;
-    padding: 10px 30px; /* Add some padding to the sides for breathing room */
-}
 
 .site-header nav {
     display: flex;
-    align-items: center;  /* Vertically align the title and nav */
-    justify-content: center;  /* Center everything horizontally */
-    gap: 30px; /* Space between the site title and the navigation items */
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 10px 30px;
 }
 
-ul {
-    list-style: none;
+
+.site-header ul {
     display: flex;
-    justify-content: center; /* Center the nav items horizontally */
+    align-items: center;
+    justify-content: center;
+
+    list-style: none;
     gap: 40px;
+
     margin: 0;
     padding: 0;
 }
 
-ul li a {
+
+.site-header ul li a {
     font-family: 'Zen Kurenaido';
     font-size: 16px;
     font-weight: 400;
-    color: #DE2720;
+
+    color: var(--red);
     text-decoration: none;
-    padding: 10px 0;
+
     letter-spacing: 0.03em;
 }
 
-ul li a span {
+
+.site-header ul li a span {
     position: relative;
 }
 
-ul li a span::after {
+
+.site-header ul li a span::after {
     content: "";
+
     position: absolute;
     left: 0;
     bottom: -4px;
+
     width: 100%;
     height: 1.5px;
-    background-color: #DE2720;
+
+    background-color: var(--red);
+
     transform: scaleX(0);
     transform-origin: left;
+
     transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
 
-ul li a:hover span::after {
+
+.site-header ul li a:hover span::after {
     transform: scaleX(1);
 }
 
-/* Tablet and Mobile Styles */
 
-/* Tablet view: 1024px and below */
-@media (max-width: 1024px) {
-    .site-header {
-        padding-top: 10px; /* Adjust for smaller screens */
-    }
+/* ==========================================
+   PROJECT LAYOUT
+========================================== */
 
-    nav {
-        padding: 10px 20px;  /* Reduce space on the sides */
-        gap: 20px;  /* Add some spacing between the title and nav */
-    }
-
-    .site-title {
-        font-size: 24px; /* Smaller title on tablets */
-    }
-
-    ul {
-        gap: 30px; /* Less space between nav items */
-    }
-
-    ul li a {
-        font-size: 14px; /* Smaller font for mobile */
-    }
+.project-page {
+    width: 100%;
 }
 
-/* Mobile view: 768px and below */
-@media (max-width: 768px) {
-    nav {
-        padding: 15px 15px;  /* Add padding for mobile */
-        justify-content: center; /* Ensure title and nav items stay centered */
-    }
-
-    .site-title {
-        font-size: 20px; /* Even smaller font size for mobile */
-    }
-
-    ul {
-        gap: 20px; /* Less space between nav items */
-    }
-
-    ul li a {
-        font-size: 14px; /* Smaller font size */
-    }
+.editorial-project {
+    width: 100%;
+    color: var(--red);
 }
 
-/*--- aston martin ----*/
 
-/* ---------------- Aston Martin Editorial Tweaks ---------------- */
+/* Push the project below fixed navigation */
 
-.editorial-intro.compact {
-  margin: 60px auto 60px;
+.aston-project {
+    width: 100%;
+
+    padding-top: calc(var(--header-height) + 20px);
+
+    display: flow-root;
 }
 
-/* ---------------- Editorial Hero ---------------- */
+
+/* ==========================================
+   HERO
+========================================== */
+
 .editorial-hero {
-  position: relative;
-  width: 100%;
-  height: 70vh; /* 70% of viewport height */
-  max-height: 800px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+
+    width: 100%;
+
+    height: 70vh;
+    min-height: 400px;
+    max-height: 800px;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    line-height: 0;
 }
+
+
+/* HERO IMAGE OR VIDEO */
 
 .editorial-hero img,
 .editorial-hero video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* ensures it fills area without distortion */
-  object-position: bottom; /* aligns image/video from the top */
-  display: block;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
 }
 
-/* Optional overlay for text or gradient */
+
+/* HERO OVERLAY */
+
 .editorial-hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
-  pointer-events: none;
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.12),
+        rgba(0, 0, 0, 0.12)
+    );
+
+    pointer-events: none;
 }
 
-/* Optional hero text */
+
+/* OPTIONAL HERO TEXT */
+
 .editorial-hero .hero-text {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #ffffff;
-  text-align: center;
-  font-family: 'Cormorant', serif;
-  font-size: 2.5rem;
-  font-weight: 400;
-  z-index: 2;
+    position: absolute;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    color: #FFFFFF;
+
+    text-align: center;
+
+    font-family: 'Coromant', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    z-index: 2;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .editorial-hero {
-    height: 50vh;
-  }
 
-  .editorial-hero .hero-text {
-    font-size: 1.8rem;
-    bottom: 15px;
-  }
+/* ==========================================
+   PROJECT INTRO
+========================================== */
+
+.editorial-intro {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 100px auto 80px;
+
+    padding: 0 25px;
+
+    text-align: center;
 }
 
 
-/* 3-up row (WhatsApp graphics) */
+.editorial-intro.compact {
+    margin: 65px auto 60px;
+}
+
+
+.editorial-label {
+    display: block;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    opacity: 0.6;
+
+    margin-bottom: 8px;
+}
+
+
+.editorial-title {
+    font-family: 'Zen Kurenaido';
+    font-size: 36px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    margin: 16px 0 8px;
+}
+
+
+.editorial-meta {
+    font-family: 'Zen Kurenaido';
+    font-size: 13px;
+    font-weight: 400;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    opacity: 0.7;
+
+    margin-bottom: 35px;
+}
+
+
+.editorial-description {
+    font-family: 'Coromant';
+    font-size: 19px;
+    font-weight: 300;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   WHATSAPP IMAGE GRID
+========================================== */
+
+.editorial-image-row {
+    display: grid;
+
+    width: 100%;
+
+    margin: 0 auto;
+
+    padding: 0 40px 100px;
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
 .editorial-image-row.three-up {
-  width: 100%;
-  padding: 0 40px 120px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.editorial-image-row.three-up img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
+
+.editorial-image-row img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    transition: opacity 0.4s ease;
 }
 
-/* Single image section */
+
+.editorial-image-row img:hover {
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   SINGLE IMAGE / MAILER
+========================================== */
+
 .editorial-image.single {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto 60px;
-  padding: 0 20px;
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto 60px;
+
+    padding: 0 20px;
 }
 
-/* Minimal outro */
-.editorial-outro.minimal {
-  margin-bottom: 80px;
-  font-size: 17px;
-  opacity: 0.8;
-}
 
-/* Square mailer preview */
+/* SQUARE MAILER */
+
 .editorial-image.square {
-  max-width: 680px;      /* 👈 bigger, more editorial */
-  margin: 0 auto 80px;
-  padding: 0 20px;
-  background-color: #F4ECE5;
+    width: 100%;
+    max-width: 680px;
+
+    margin: 0 auto 80px;
+
+    padding: 0 20px;
+
+    background-color: var(--cream);
 }
+
 
 .editorial-image.square img {
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  width: 100%;
-  aspect-ratio: 1 / 1;      /* square */
-  object-fit: cover;
-  object-position: top;     /* 👈 THIS is the key */
-  display: block;
-  cursor: zoom-in;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+    object-position: top;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+    cursor: zoom-in;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
 }
+
 
 .editorial-image.square img:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
+    transform: scale(1.02);
+    opacity: 0.9;
 }
 
-/* Modal already exists, but ensure priority */
+
+/* ==========================================
+   OUTRO
+========================================== */
+
+.editorial-outro {
+    width: 100%;
+    max-width: 680px;
+
+    margin: 0 auto 80px;
+
+    padding: 0 25px;
+
+    text-align: center;
+}
+
+
+.editorial-outro.minimal {
+    margin-bottom: 80px;
+
+    font-family: 'Coromant';
+    font-size: 17px;
+
+    opacity: 0.8;
+}
+
+
+.editorial-outro p {
+    font-family: 'Coromant';
+    font-size: 19px;
+    font-weight: 300;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   IMAGE LIGHTBOX
+========================================== */
+
 .image-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+    position: fixed;
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.93);
+
+    z-index: 9999;
 }
 
-.image-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-
-}
 
 .image-modal.active {
-  display: flex;
+    display: flex;
 }
 
-/* Close button */
+
+/* EXPANDED IMAGE */
+
+.image-modal img {
+    display: block;
+
+    max-width: 90vw;
+    max-height: 90vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* CLOSE BUTTON */
+
 .modal-close {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 32px;
-  cursor: pointer;
+    position: absolute;
+
+    top: 24px;
+    right: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    background: transparent;
+
+    color: #FFFFFF;
+
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
 }
 
 
-@media (max-width: 900px) {
-  .editorial-image-row.three-up {
-    grid-template-columns: 1fr;
-    padding: 0 20px 80px;
-  }
+.modal-close:hover {
+    transform: rotate(90deg);
 }
+
+
+/* ==========================================
+   FOOTER
+========================================== */
 
 .site-footer {
-  width: 100%;
-  background-color: #F4ECE5;
-  padding: 40px 0;
+    width: 100%;
+
+    background-color: var(--cream);
+
+    padding: 40px 0;
 }
+
 
 .footer-inner {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* vertical centering */
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 
 .footer-left p {
-  font-family: 'Zen Kurenaido';
-  font-size: 20px;
-  font-weight: 400;
-  color: #DE2720;
-  margin: 0;
+    font-family: 'Zen Kurenaido';
+    font-size: 20px;
+    font-weight: 400;
+
+    color: var(--red);
+
+    margin: 0;
 }
+
 
 .footer-right {
-  display: flex;
-  gap: 30px;
+    display: flex;
+    gap: 30px;
 }
+
 
 .footer-right a {
-  font-family: 'Zen Kurenaido';
-  font-size: 14px;
-  font-weight: 400;
-  color: #DE2720;
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  position: relative;
+    position: relative;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 14px;
+    font-weight: 400;
+
+    color: var(--red);
+
+    text-decoration: none;
+    letter-spacing: 0.03em;
 }
 
-/* underline hover, same language as nav */
+
 .footer-right a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 1.5px;
-  background-color: #DE2720;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 1.5px;
+
+    background-color: var(--red);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
+
 
 .footer-right a:hover::after {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+    :root {
+        --header-height: 120px;
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+        padding-top: 10px;
+    }
+
+    .site-title {
+        font-size: 24px;
+    }
+
+    .site-header nav {
+        padding: 10px 20px;
+    }
+
+    .site-header ul {
+        gap: 30px;
+    }
+
+    .site-header ul li a {
+        font-size: 14px;
+    }
+
+
+    /* HERO */
+
+    .editorial-hero {
+        height: 60vh;
+        min-height: 350px;
+    }
+
+
+    /* INTRO */
+
+    .editorial-intro {
+        margin: 75px auto 60px;
+    }
+
+    .editorial-intro.compact {
+        margin: 60px auto 50px;
+    }
+
+
+    /* IMAGES */
+
+    .editorial-image-row {
+        padding: 0 25px 70px;
+        gap: 18px;
+    }
+
+
+    /* MAILER */
+
+    .editorial-image.square {
+        max-width: 620px;
+        margin-bottom: 65px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
+
+    /* HEADER */
+
+    :root {
+        --header-height: 110px;
     }
 
-    .about-inner {
-        flex-direction: column;
-        gap: 30px;
+    .site-title {
+        font-size: 22px;
+        padding: 10px 0 4px;
     }
 
-    .about-col {
+    .site-header nav {
+        padding: 5px 10px 8px;
+    }
+
+    .site-header ul {
+        flex-wrap: wrap;
+        gap: 10px 16px;
+    }
+
+    .site-header ul li a {
+        font-size: 13px;
+    }
+
+
+    /* PROJECT SPACING */
+
+    .aston-project {
+        padding-top: 130px;
+    }
+
+
+    /* HERO */
+
+    .editorial-hero {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+
+        display: block;
+    }
+
+    .editorial-hero img {
         width: 100%;
+        height: auto;
+
+        object-fit: contain;
     }
 
-    .about-col p {
-        font-size: 18px;
+    .editorial-hero .hero-text {
+        font-size: 1.8rem;
+        bottom: 15px;
     }
 
-    .projects-inner {
+
+    /* INTRO */
+
+    .editorial-intro {
+        margin: 55px auto 45px;
+        padding: 0 22px;
+    }
+
+    .editorial-intro.compact {
+        margin: 50px auto 40px;
+    }
+
+    .editorial-title {
+        font-size: 30px;
+    }
+
+    .editorial-meta {
+        font-size: 11px;
+        margin-bottom: 25px;
+    }
+
+    .editorial-description {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+
+    /* THREE-UP IMAGES */
+
+    .editorial-image-row {
         grid-template-columns: 1fr;
-        gap: 30px;
+
+        padding: 0 20px 50px;
+
+        gap: 18px;
+    }
+
+    .editorial-image-row.three-up img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* MAILER */
+
+    .editorial-image.square {
+        width: 100%;
+
+        max-width: 600px;
+
+        margin-bottom: 50px;
+
+        padding: 0 20px;
+    }
+
+    .editorial-image.square img {
+        aspect-ratio: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+
+    /* OUTRO */
+
+    .editorial-outro {
+        padding: 0 25px;
+        margin-bottom: 50px;
+    }
+
+    .editorial-outro.minimal {
+        margin-bottom: 50px;
+    }
+
+    .editorial-outro p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+
+    /* LIGHTBOX */
+
+    .image-modal {
+        padding: 20px;
+    }
+
+    .image-modal img {
+        max-width: 95vw;
+        max-height: 85vh;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 12px;
+    }
+
+
+    /* FOOTER */
+
+    .site-footer {
+        padding: 30px 0;
     }
 
     .footer-inner {
@@ -406,12 +870,45 @@ ul li a:hover span::after {
         gap: 20px;
     }
 
-      .skills-title {
-    font-size: 20px;
-  }
+    .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
 
-  .skill-tag {
-    font-size: 13px;
-    padding: 8px 18px;
-  }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+    .site-header ul {
+        gap: 8px 12px;
+    }
+
+    .site-header ul li a {
+        font-size: 12px;
+    }
+
+    .aston-project {
+        padding-top: 125px;
+    }
+
+    .editorial-title {
+        font-size: 28px;
+    }
+
+    .editorial-image-row {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .editorial-image.square {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
 }
