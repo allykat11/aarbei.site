@@ -168,9 +168,11 @@ ul li a:hover span::after {
 
 /* HERO */
 
+/* VESPA HERO */
+
 .editorial-hero {
     width: 100%;
-    margin-top: 65px;
+    margin-top: calc(var(--header-height) + 25px);
 }
 
 .editorial-hero img {
@@ -178,6 +180,30 @@ ul li a:hover span::after {
     height: auto;
     display: block;
 }
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+    .editorial-hero {
+        margin-top: 125px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .editorial-hero {
+        margin-top: 130px;
+        height: auto;
+    }
+
+    .editorial-hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
 /* Intro */
 .editorial-intro {
   max-width: 720px;
