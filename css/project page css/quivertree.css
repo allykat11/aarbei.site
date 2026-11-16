@@ -1,407 +1,1024 @@
+
+/* ==========================================
+   AARBEI.ART — QUIVERTREE PROJECT
+========================================== */
+
+
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 :root {
-    --header-height: 90px; /* adjust if needed */
+    --cream: #F4ECE5;
+    --red: #DE2720;
+    --red-light: rgba(222, 39, 32, 0.25);
+    --header-height: 110px;
 }
+
+
+/* ==========================================
+   FONTS
+========================================== */
 
 @font-face {
     font-family: Inter;
-    src: url(../fonts/InterTight-VariableFont_wght.ttf);
+    src: url(../../fonts/InterTight-VariableFont_wght.ttf);
 }
 
 @font-face {
     font-family: Zen Kurenaido;
-    src: url(../fonts/ZenKurenaido-Regular.ttf);
+    src: url(../../fonts/ZenKurenaido-Regular.ttf);
 }
 
 @font-face {
     font-family: Coromant;
-    src: url(../fonts/Cormorant-VariableFont_wght.ttf);
+    src: url(../../fonts/Cormorant-VariableFont_wght.ttf);
 }
 
-.site-header {
-    position: fixed;  /* must be fixed for hide-on-scroll */
-    top: 0;
+
+/* ==========================================
+   GLOBAL
+========================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.quivertree-page {
     width: 100%;
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--cream);
+    color: var(--red);
+
+    font-family: 'Coromant', serif;
+}
+
+
+.project-page {
+    width: 100%;
+}
+
+.editorial-project {
+    width: 100%;
+    color: var(--red);
+}
+
+
+/* ==========================================
+   HEADER & NAVIGATION
+========================================== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
     text-align: center;
-    background-color: #F4ECE5;
+    background-color: var(--cream);
+
     z-index: 1001;
-    transition: transform 0.3s ease; /* smooth hide/show */
+
+    transition: transform 0.3s ease;
 }
 
 .site-header.header-hidden {
-    transform: translateY(-100%); /* moves header completely out of view */
+    transform: translateY(-100%);
 }
+
 
 .site-title {
     font-family: 'Zen Kurenaido';
     font-size: 28px;
     font-weight: 400;
-    padding: 20px 0 10px 0; /* much less top padding */
+
+    padding: 20px 0 10px;
     margin: 0;
-    color: #DE2720;
+
+    color: var(--red);
 }
 
-body {
-    background-color: #F4ECE5;
-    color: #DE2720;
-    margin: 0;
-    padding-top: 20px; /* space for title + nav */
-    font-family: 'Coromant';
-}
-
-/* Center the nav and site-title */
-nav {
-    display: flex;
-    align-items: center;  /* Vertically center the items */
-    justify-content: center;  /* Center the nav and site title horizontally */
-    width: 100%;
-    padding: 10px 30px; /* Add some padding to the sides for breathing room */
-}
 
 .site-header nav {
     display: flex;
-    align-items: center;  /* Vertically align the title and nav */
-    justify-content: center;  /* Center everything horizontally */
-    gap: 30px; /* Space between the site title and the navigation items */
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 10px 30px;
 }
 
-ul {
-    list-style: none;
+
+.site-header ul {
     display: flex;
-    justify-content: center; /* Center the nav items horizontally */
+    align-items: center;
+    justify-content: center;
+
+    list-style: none;
     gap: 40px;
+
     margin: 0;
     padding: 0;
 }
 
-ul li a {
+
+.site-header ul li a {
     font-family: 'Zen Kurenaido';
     font-size: 16px;
     font-weight: 400;
-    color: #DE2720;
+
+    color: var(--red);
     text-decoration: none;
-    padding: 10px 0;
+
     letter-spacing: 0.03em;
 }
 
-ul li a span {
+
+.site-header ul li a span {
     position: relative;
 }
 
-ul li a span::after {
+
+.site-header ul li a span::after {
     content: "";
+
     position: absolute;
     left: 0;
     bottom: -4px;
+
     width: 100%;
     height: 1.5px;
-    background-color: #DE2720;
+
+    background-color: var(--red);
+
     transform: scaleX(0);
     transform-origin: left;
+
     transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
 
-ul li a:hover span::after {
+
+.site-header ul li a:hover span::after {
     transform: scaleX(1);
 }
 
-/* Tablet and Mobile Styles */
 
-/* Tablet view: 1024px and below */
-@media (max-width: 1024px) {
-    .site-header {
-        padding-top: 10px; /* Adjust for smaller screens */
-    }
-
-    nav {
-        padding: 10px 20px;  /* Reduce space on the sides */
-        gap: 20px;  /* Add some spacing between the title and nav */
-    }
-
-    .site-title {
-        font-size: 24px; /* Smaller title on tablets */
-    }
-
-    ul {
-        gap: 30px; /* Less space between nav items */
-    }
-
-    ul li a {
-        font-size: 14px; /* Smaller font for mobile */
-    }
-}
-
-/* Mobile view: 768px and below */
-@media (max-width: 768px) {
-    nav {
-        padding: 15px 15px;  /* Add padding for mobile */
-        justify-content: center; /* Ensure title and nav items stay centered */
-    }
-
-    .site-title {
-        font-size: 20px; /* Even smaller font size for mobile */
-    }
-
-    ul {
-        gap: 20px; /* Less space between nav items */
-    }
-
-    ul li a {
-        font-size: 14px; /* Smaller font size */
-    }
-}
-
-/*----- Quivertree Work -----*/
-
-/* --- Hospitality editorial sections --- */
+/* ==========================================
+   MAIN PROJECT POSITIONING
+========================================== */
 
 .hospitality-project {
-  color: #DE2720;
+    width: 100%;
+
+    padding-top: calc(var(--header-height) + 20px);
+
+    display: flow-root;
 }
 
-/* Section spacing */
-.editorial-section {
-  margin-bottom: 30px;
-}
+
+/* ==========================================
+   HERO
+========================================== */
 
 .editorial-hero {
-  padding: 60px 0;   /* top, sides, no bottom */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    line-height: 0;
 }
+
 
 .editorial-hero img {
-  width: 100%;
-  height: 85vh;           /* adjust if needed */
-  object-fit: cover;
-  object-position: top;   /* 👈 this is the key part */
-  display: block;
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    object-position: center;
 }
 
 
-/* Luxury header */
+/* ==========================================
+   PROJECT INTRODUCTION
+========================================== */
+
+.editorial-intro {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 90px auto 80px;
+
+    padding: 0 25px;
+
+    text-align: center;
+}
+
+
+.editorial-label {
+    display: block;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    opacity: 0.6;
+
+    margin-bottom: 12px;
+}
+
+
+.editorial-title {
+    font-family: 'Zen Kurenaido';
+    font-size: 36px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    margin: 12px 0 15px;
+}
+
+
+.editorial-description {
+    font-family: 'Coromant';
+    font-size: 20px;
+    font-weight: 300;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   EDITORIAL SECTIONS
+========================================== */
+
+.editorial-section {
+    width: 100%;
+
+    margin: 0 auto 100px;
+}
+
+
+/* SECTION HEADINGS */
+
 .section-header {
-  max-width: 720px;
-  margin: 0 auto 60px;
-  text-align: center;
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0 auto 45px;
+
+    padding: 0 25px;
+
+    text-align: center;
 }
+
+
+.section-eyebrow {
+    font-family: 'Zen Kurenaido';
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0.6;
+
+    margin-bottom: 10px;
+}
+
 
 .section-title {
-  font-family: 'Zen Kurenaido';
-  font-size: 30px;
-  font-weight: 400;
-  margin-bottom: 8px;
+    font-family: 'Zen Kurenaido';
+    font-size: 30px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    margin-bottom: 8px;
 }
+
 
 .section-meta {
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.7;
-  margin-bottom: 24px;
+    font-family: 'Zen Kurenaido';
+    font-size: 13px;
+    font-weight: 400;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    opacity: 0.7;
+
+    margin-bottom: 18px;
 }
+
 
 .section-description {
-  font-family: 'Cormorant';
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.5;
+    font-family: 'Coromant';
+    font-size: 19px;
+    font-weight: 300;
+
+    line-height: 1.5;
 }
 
-/* Slideshow (luxury = no chaos) */
-.editorial-slideshow {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 80%;
-  gap: 24px;
-  overflow-x: auto;
-  padding: 0 40px;
-  scroll-snap-type: x mandatory;
-}
 
-.editorial-slideshow img {
-  width: 100%;
-  height: auto;
-  scroll-snap-align: center;
-  object-fit: cover;
-}
-
-/* Banhoek – natural ratio image stack */
-.editorial-image-stack {
-  max-width: 720px;          /* keeps it intimate + print-like */
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;                 /* space between images */
-}
-
-.editorial-image-stack img {
-  width: 100%;
-  height: auto;              /* 👈 respects original resolution */
-  display: block;
-}
-
-.editorial-image-stack img {
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-}
-
-.editorial-image-stack img:first-child {
-  margin-bottom: 12px;
-}
-
-/* Providence website credit section */
-.website-credit {
-  margin-top: 40px;          /* pulls it closer to Banhoek */
-}
+/* SMALL SECTION HEADER */
 
 .section-header.small {
-  margin-bottom: 24px;
+    margin-bottom: 25px;
 }
 
 .section-header.small .section-title {
-  font-size: 24px;
+    font-size: 25px;
 }
 
-.website-credit-content {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
+
+/* ==========================================
+   HERIOT HOTEL — BRAND GUIDE SLIDESHOW
+========================================== */
+
+.editorial-slideshow {
+    display: grid;
+
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    grid-auto-flow: column;
+    grid-auto-columns: 80%;
+
+    gap: 24px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 5px 40px 25px;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(222, 39, 32, 0.35) transparent;
 }
+
+
+.editorial-slideshow img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    scroll-snap-align: start;
+}
+
+
+/* SLIDESHOW SCROLLBAR */
+
+.editorial-slideshow::-webkit-scrollbar {
+    height: 4px;
+}
+
+.editorial-slideshow::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.editorial-slideshow::-webkit-scrollbar-thumb {
+    background: rgba(222, 39, 32, 0.35);
+    border-radius: 10px;
+}
+
+
+/* SLIDESHOW INSTRUCTION */
+
+.slideshow-hint {
+    width: 100%;
+
+    margin: 12px auto 0;
+
+    text-align: center;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 11px;
+
+    letter-spacing: 0.08em;
+
+    opacity: 0.6;
+}
+
+
+/* ==========================================
+   SOCIAL MEDIA / THREE COLUMN GRID
+========================================== */
+
+.editorial-image-row {
+    display: grid;
+
+    width: 100%;
+
+    margin: 0 auto;
+
+    padding: 0 40px 20px;
+
+    gap: 22px;
+
+    align-items: start;
+}
+
+
+/* THREE COLUMN GRID */
+
+.editorial-image-row.three-up {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+/* IMAGE STYLING */
+
+.editorial-image-row img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.editorial-image-row img:hover {
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   CAMPAIGN MAILERS
+========================================== */
+
+.editorial-mailers {
+    display: grid;
+
+    width: 100%;
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    padding: 0 40px;
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* THREE MAILER COLUMNS */
+
+.editorial-mailers.large {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+.editorial-mailers img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    transition: opacity 0.4s ease;
+}
+
+
+.editorial-mailers img:hover {
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   DE ZEVEN — SINGLE IMAGE
+========================================== */
+
+.editorial-image.single {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto 40px;
+
+    padding: 0 25px;
+}
+
+
+.editorial-image.single img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ==========================================
+   BANHOEK — POSTCARD IMAGE STACK
+========================================== */
+
+.editorial-image-stack {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    padding: 0 25px;
+
+    gap: 32px;
+}
+
+
+.editorial-image-stack img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+.editorial-image-stack img:first-child {
+    margin-bottom: 5px;
+}
+
+
+/* ==========================================
+   EDITORIAL OUTRO
+========================================== */
+
+.editorial-outro {
+    width: 100%;
+    max-width: 680px;
+
+    margin: 0 auto 65px;
+
+    padding: 0 25px;
+
+    text-align: center;
+}
+
+
+.editorial-outro.minimal {
+    font-family: 'Coromant';
+    font-size: 19px;
+    font-weight: 300;
+
+    line-height: 1.6;
+
+    opacity: 0.85;
+}
+
+
+/* ==========================================
+   PROVIDENCE HOTELS WEBSITE CREDIT
+========================================== */
+
+.website-credit {
+    margin-top: 45px;
+    margin-bottom: 80px;
+}
+
+
+.website-credit-content {
+    width: 100%;
+    max-width: 660px;
+
+    margin: 0 auto;
+
+    padding: 20px 25px;
+
+    text-align: center;
+}
+
 
 .website-credit-content p {
-  font-family: 'Cormorant';
-  font-size: 17px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  opacity: 0.9;
+    font-family: 'Coromant';
+    font-size: 19px;
+    font-weight: 300;
+
+    line-height: 1.5;
+
+    margin-bottom: 22px;
+
+    opacity: 0.9;
 }
 
-/* Editorial link style */
+
+/* WEBSITE LINK */
+
 .editorial-link {
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: inherit;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 4px;
+    display: inline-block;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 13px;
+    font-weight: 400;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    color: var(--red);
+
+    border-bottom: 1px solid currentColor;
+
+    padding-bottom: 5px;
+
+    transition: opacity 0.3s ease;
 }
+
 
 .editorial-link:hover {
-  opacity: 0.7;
-}
-
-.website-credit-content {
-  opacity: 0.85;
-  padding: 20px;
+    opacity: 0.65;
 }
 
 
-@media (max-width: 768px) {
-  .editorial-slideshow {
-    grid-auto-columns: 90%;
-    padding: 0 20px;
-  }
-
-  .editorial-section {
-    margin-bottom: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .editorial-hero {
-    padding: 80px 0 0;
-  }
-  .editorial-hero img {
-    height: 50vh;
-  }
-}
-
+/* ==========================================
+   FOOTER
+========================================== */
 
 .site-footer {
-  width: 100%;
-  background-color: #F4ECE5;
-  padding: 40px 0;
+    width: 100%;
+
+    background-color: var(--cream);
+
+    padding: 40px 0;
 }
+
 
 .footer-inner {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* vertical centering */
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
 
 .footer-left p {
-  font-family: 'Zen Kurenaido';
-  font-size: 20px;
-  font-weight: 400;
-  color: #DE2720;
-  margin: 0;
+    font-family: 'Zen Kurenaido';
+    font-size: 20px;
+    font-weight: 400;
+
+    color: var(--red);
+
+    margin: 0;
 }
+
 
 .footer-right {
-  display: flex;
-  gap: 30px;
+    display: flex;
+    gap: 30px;
 }
+
 
 .footer-right a {
-  font-family: 'Zen Kurenaido';
-  font-size: 14px;
-  font-weight: 400;
-  color: #DE2720;
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  position: relative;
+    position: relative;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 14px;
+    font-weight: 400;
+
+    color: var(--red);
+
+    text-decoration: none;
+    letter-spacing: 0.03em;
 }
 
-/* underline hover, same language as nav */
+
 .footer-right a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 1.5px;
-  background-color: #DE2720;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: 100%;
+    height: 1.5px;
+
+    background-color: var(--red);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
+
 
 .footer-right a:hover::after {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+    :root {
+        --header-height: 120px;
+    }
+
+
+    /* HEADER */
+
+    .site-header {
+        padding-top: 10px;
+    }
+
+    .site-title {
+        font-size: 24px;
+    }
+
+    .site-header nav {
+        padding: 10px 20px;
+    }
+
+    .site-header ul {
+        gap: 30px;
+    }
+
+    .site-header ul li a {
+        font-size: 14px;
+    }
+
+
+    /* PROJECT INTRO */
+
+    .editorial-intro {
+        margin: 70px auto 65px;
+    }
+
+    .editorial-title {
+        font-size: 32px;
+    }
+
+
+    /* SECTIONS */
+
+    .editorial-section {
+        margin-bottom: 80px;
+    }
+
+    .section-header {
+        margin-bottom: 35px;
+    }
+
+
+    /* BRAND GUIDE SLIDESHOW */
+
+    .editorial-slideshow {
+        grid-auto-columns: 85%;
+        padding: 5px 25px 22px;
+        gap: 18px;
+    }
+
+
+    /* SOCIAL MEDIA */
+
+    .editorial-image-row.three-up {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .editorial-image-row {
+        padding: 0 25px 20px;
+        gap: 18px;
+    }
+
+
+    /* MAILERS */
+
+    .editorial-mailers.large {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .editorial-mailers {
+        padding: 0 25px;
+        gap: 20px;
+    }
+
+
+    /* BANHOEK */
+
+    .editorial-image-stack {
+        max-width: 680px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
+
+    :root {
+        --header-height: 110px;
     }
 
-    .about-inner {
-        flex-direction: column;
-        gap: 30px;
+
+    /* HEADER */
+
+    .site-title {
+        font-size: 22px;
+        padding: 10px 0 4px;
     }
 
-    .about-col {
+    .site-header nav {
+        padding: 5px 10px 8px;
+    }
+
+    .site-header ul {
+        flex-wrap: wrap;
+        gap: 10px 16px;
+    }
+
+    .site-header ul li a {
+        font-size: 13px;
+    }
+
+
+    /* PROJECT SPACING */
+
+    .hospitality-project {
+        padding-top: 130px;
+    }
+
+
+    /* HERO */
+
+    .editorial-hero {
+        padding: 0;
+    }
+
+    .editorial-hero img {
         width: 100%;
+        height: auto;
+
+        object-fit: contain;
     }
 
-    .about-col p {
-        font-size: 18px;
+
+    /* PROJECT INTRO */
+
+    .editorial-intro {
+        margin: 50px auto 50px;
+        padding: 0 22px;
     }
 
-    .projects-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .editorial-title {
+        font-size: 29px;
+    }
+
+    .editorial-description {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+
+    /* SECTIONS */
+
+    .editorial-section {
+        margin-bottom: 60px;
+    }
+
+    .section-header {
+        padding: 0 22px;
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .section-description {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+
+    /* BRAND GUIDE SLIDESHOW */
+
+    .editorial-slideshow {
+        width: 100%;
+
+        grid-auto-columns: 90%;
+
+        gap: 15px;
+
+        padding: 5px 20px 20px;
+    }
+
+
+    /* SOCIAL CONTENT */
+
+    .editorial-image-row {
+        padding: 0 20px;
+        gap: 15px;
+    }
+
+    .editorial-image-row.three-up {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* MAILERS */
+
+    .editorial-mailers.large {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .editorial-mailers {
+        padding: 0 20px;
+        gap: 15px;
+    }
+
+
+    /* DE ZEVEN */
+
+    .editorial-image.single {
+        padding: 0 20px;
+        margin-bottom: 25px;
+    }
+
+
+    /* BANHOEK */
+
+    .editorial-image-stack {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .editorial-image-stack img {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+
+    /* OUTRO */
+
+    .editorial-outro {
+        padding: 0 22px;
+        margin-bottom: 45px;
+    }
+
+    .editorial-outro.minimal {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+
+    /* WEBSITE CREDIT */
+
+    .website-credit {
+        margin-top: 30px;
+        margin-bottom: 55px;
+    }
+
+    .website-credit-content {
+        padding: 10px 22px;
+    }
+
+    .website-credit-content p {
+        font-size: 17px;
+    }
+
+
+    /* FOOTER */
+
+    .site-footer {
+        padding: 30px 0;
     }
 
     .footer-inner {
@@ -409,12 +1026,53 @@ ul li a:hover span::after {
         gap: 20px;
     }
 
-      .skills-title {
-    font-size: 20px;
-  }
+    .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
 
-  .skill-tag {
-    font-size: 13px;
-    padding: 8px 18px;
-  }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+    .site-header ul {
+        gap: 8px 12px;
+    }
+
+    .site-header ul li a {
+        font-size: 12px;
+    }
+
+    .hospitality-project {
+        padding-top: 125px;
+    }
+
+    .editorial-title {
+        font-size: 26px;
+    }
+
+    .editorial-image-row.three-up {
+        grid-template-columns: 1fr;
+    }
+
+    .editorial-mailers.large {
+        grid-template-columns: 1fr;
+    }
+
+    .editorial-image-row {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .editorial-mailers {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
 }
