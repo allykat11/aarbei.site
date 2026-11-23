@@ -1,10 +1,11 @@
-
 /* ==========================================
    AARBEI.ART — CONTACT PAGE
 ========================================== */
 
 
-/* RESET */
+/* ==========================================
+   RESET
+========================================== */
 
 * {
     margin: 0;
@@ -28,18 +29,26 @@
 ========================================== */
 
 @font-face {
-    font-family: Inter;
-    src: url(../fonts/InterTight-VariableFont_wght.ttf);
+    font-family: 'Inter';
+    src: url('../fonts/InterTight-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: Zen Kurenaido;
-    src: url(../fonts/ZenKurenaido-Regular.ttf);
+    font-family: 'Zen Kurenaido';
+    src: url('../fonts/ZenKurenaido-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: Coromant;
-    src: url(../fonts/Cormorant-VariableFont_wght.ttf);
+    font-family: 'Cormorant';
+    src: url('../fonts/Cormorant-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 
@@ -59,7 +68,7 @@ body.contact-page-body {
     background-color: var(--cream);
     color: var(--red);
 
-    font-family: 'Coromant', serif;
+    font-family: 'Cormorant', serif;
 }
 
 
@@ -82,11 +91,9 @@ body.contact-page-body {
     transition: transform 0.3s ease;
 }
 
-
 .site-header.header-hidden {
     transform: translateY(-100%);
 }
-
 
 .site-title {
     font-family: 'Zen Kurenaido';
@@ -99,7 +106,6 @@ body.contact-page-body {
     color: var(--red);
 }
 
-
 .site-header nav {
     display: flex;
     align-items: center;
@@ -108,7 +114,6 @@ body.contact-page-body {
     width: 100%;
     padding: 5px 20px 8px;
 }
-
 
 .site-header ul {
     display: flex;
@@ -122,7 +127,6 @@ body.contact-page-body {
     padding: 0;
 }
 
-
 .site-header ul li a {
     font-family: 'Zen Kurenaido';
     font-size: 16px;
@@ -133,11 +137,9 @@ body.contact-page-body {
     letter-spacing: 0.03em;
 }
 
-
 .site-header ul li a span {
     position: relative;
 }
-
 
 .site-header ul li a span::after {
     content: "";
@@ -156,7 +158,6 @@ body.contact-page-body {
 
     transition: transform 0.4s cubic-bezier(.4,0,.2,1);
 }
-
 
 .site-header ul li a:hover span::after,
 .site-header ul li a.current-page span::after {
@@ -199,7 +200,6 @@ body.contact-page-body {
 
     border-bottom: 1px solid var(--red-light);
 }
-
 
 .contact-topline p {
     font-family: 'Zen Kurenaido';
@@ -282,11 +282,10 @@ body.contact-page-body {
     margin-bottom: 18px;
 }
 
-
 .contact-intro h2 span {
     display: block;
 
-    font-family: 'Coromant';
+    font-family: 'Cormorant';
     font-style: italic;
     font-weight: 400;
 }
@@ -297,7 +296,7 @@ body.contact-page-body {
 .contact-description {
     max-width: 500px;
 
-    font-family: 'Coromant';
+    font-family: 'Cormorant';
     font-size: 21px;
     font-weight: 400;
     line-height: 1.5;
@@ -327,7 +326,6 @@ body.contact-page-body {
     background-color: #D8C5B8;
 }
 
-
 .contact-image img {
     display: block;
 
@@ -339,7 +337,6 @@ body.contact-page-body {
 
     transition: transform 0.6s ease;
 }
-
 
 .contact-image:hover img {
     transform: scale(1.025);
@@ -368,15 +365,13 @@ body.contact-page-body {
     color: #FFFFFF;
 }
 
-
 .image-overlay-heading {
-    font-family: 'Coromant';
+    font-family: 'Cormorant';
     font-size: clamp(28px, 3vw, 42px);
     font-style: italic;
     font-weight: 400;
     line-height: 1.08;
 }
-
 
 .image-overlay-bottom {
     display: flex;
@@ -401,7 +396,6 @@ body.contact-page-body {
     margin-top: 22px;
 }
 
-
 .contact-direct p {
     font-family: 'Zen Kurenaido';
     font-size: 13px;
@@ -409,13 +403,12 @@ body.contact-page-body {
     margin-bottom: 5px;
 }
 
-
 .contact-direct a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
 
-    font-family: 'Coromant';
+    font-family: 'Cormorant';
     font-size: 19px;
 
     color: var(--red);
@@ -426,7 +419,6 @@ body.contact-page-body {
 
     transition: gap 0.3s ease;
 }
-
 
 .contact-direct a:hover {
     gap: 15px;
@@ -460,7 +452,6 @@ body.contact-page-body {
     margin-bottom: 28px;
 }
 
-
 .form-heading h3 {
     font-family: 'Zen Kurenaido';
     font-size: 34px;
@@ -471,9 +462,8 @@ body.contact-page-body {
     margin-bottom: 7px;
 }
 
-
 .form-heading > p:last-child {
-    font-family: 'Coromant';
+    font-family: 'Cormorant';
     font-size: 19px;
     line-height: 1.4;
 }
@@ -488,6 +478,8 @@ body.contact-page-body {
     flex-direction: column;
 
     gap: 18px;
+
+    width: 100%;
 }
 
 
@@ -539,7 +531,7 @@ body.contact-page-body {
 
     padding: 13px 15px;
 
-    font-family: 'Coromant';
+    font-family: 'Cormorant';
     font-size: 18px;
     font-weight: 400;
 
@@ -578,6 +570,14 @@ body.contact-page-body {
     padding-right: 38px;
 }
 
+.form-group select option {
+    background-color: #FFFFFF;
+    color: #51413B;
+
+    font-family: 'Cormorant';
+    font-size: 16px;
+}
+
 
 /* PROJECT TEXTAREA */
 
@@ -596,6 +596,101 @@ body.contact-page-body {
 .form-group textarea:focus {
     border-color: var(--red);
     background-color: #FFFFFF;
+}
+
+
+/* DISABLED FIELDS */
+
+.form-group select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* ==========================================
+   CURRENCY INFORMATION
+========================================== */
+
+#currencyNote {
+    margin-top: 2px;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: rgba(222, 39, 32, 0.72);
+
+    text-align: left;
+}
+
+
+/* ==========================================
+   FORM NOTES
+========================================== */
+
+.form-note {
+    font-family: 'Zen Kurenaido';
+    font-size: 12px;
+    line-height: 1.6;
+
+    color: rgba(222, 39, 32, 0.7);
+
+    text-align: center;
+}
+
+
+/* TIMEZONE / REPLY INFORMATION */
+
+.contact-form > .form-note:not(.form-status) {
+    margin-top: 2px;
+}
+
+
+/* ==========================================
+   FORM SUBMISSION FEEDBACK
+========================================== */
+
+.form-status {
+    display: block;
+
+    margin-top: 0;
+    min-height: 0;
+
+    font-family: 'Zen Kurenaido';
+    font-size: 13px;
+    line-height: 1.6;
+
+    text-align: center;
+
+    transition: color 0.2s ease;
+}
+
+.form-status:empty {
+    display: none;
+}
+
+.form-status.success {
+    color: #27633B;
+}
+
+.form-status.error {
+    color: var(--red);
+}
+
+
+/* ==========================================
+   HONEYPOT SPAM PROTECTION
+========================================== */
+
+.form-honeypot {
+    position: absolute;
+
+    left: -10000px;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
 }
 
 
@@ -626,15 +721,19 @@ body.contact-page-body {
 
     transition:
         background-color 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        opacity 0.3s ease;
 }
-
 
 .submit-button:hover {
     background-color: transparent;
     color: var(--red);
 }
 
+.submit-button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
 
 .submit-arrow {
     font-family: Arial, sans-serif;
@@ -643,22 +742,8 @@ body.contact-page-body {
     transition: transform 0.3s ease;
 }
 
-
 .submit-button:hover .submit-arrow {
     transform: translateX(5px);
-}
-
-
-/* FORM NOTE */
-
-.form-note {
-    font-family: 'Zen Kurenaido';
-    font-size: 12px;
-    line-height: 1.4;
-
-    color: rgba(222, 39, 32, 0.7);
-
-    text-align: center;
 }
 
 
@@ -674,7 +759,6 @@ body.contact-page-body {
     padding: 30px 0;
 }
 
-
 .footer-inner {
     width: 90%;
     margin: 0 auto;
@@ -683,7 +767,6 @@ body.contact-page-body {
     justify-content: space-between;
     align-items: center;
 }
-
 
 .footer-left p {
     font-family: 'Zen Kurenaido';
@@ -694,12 +777,10 @@ body.contact-page-body {
     margin: 0;
 }
 
-
 .footer-right {
     display: flex;
     gap: 22px;
 }
-
 
 .footer-right a {
     position: relative;
@@ -712,7 +793,6 @@ body.contact-page-body {
     text-decoration: none;
     letter-spacing: 0.03em;
 }
-
 
 .footer-right a::after {
     content: "";
@@ -731,7 +811,6 @@ body.contact-page-body {
 
     transition: transform 0.4s ease;
 }
-
 
 .footer-right a:hover::after {
     transform: scaleX(1);
@@ -793,7 +872,6 @@ body.contact-page-body {
 ========================================== */
 
 @media (max-width: 768px) {
-
 
     /* HEADER */
 
